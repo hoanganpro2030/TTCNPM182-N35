@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/hangrongbku',[
+	'as'=>'index.getIndex',
+	'uses'=>'ProductController@getIndex'
+]);
