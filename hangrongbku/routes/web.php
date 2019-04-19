@@ -18,3 +18,6 @@ Route::get('/hangrongbku',[
 	'as'=>'index.getIndex',
 	'uses'=>'ProductController@getIndex'
 ]);
+Route::get('/hangrongbku/products',function(){
+	return view('template.pages.product');
+});
