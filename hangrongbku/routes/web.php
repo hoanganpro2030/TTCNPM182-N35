@@ -21,3 +21,6 @@ Route::get('/hangrongbku',[
 Route::get('/hangrongbku/products',function(){
 	return view('template.pages.product');
 });
+Route::get('/hangrongbku/user',function(){
+	return view('template.pages.user_inform');
+});
