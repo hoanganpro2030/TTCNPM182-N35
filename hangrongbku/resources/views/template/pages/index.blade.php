@@ -2,12 +2,7 @@
 @section('content')
 <div class="container">
 		<div id="content" class="space-top-none">
-			<div class="beta-comp">
-				<form role="search" method="get" id="searchform" action="/">
-			        <input type="text" value="" name="s" id="s" rows="10" placeholder="Nhập từ khóa..." />
-			        <button class="fa fa-search" type="submit" id="searchsubmit"></button>
-				</form>
-			</div>
+			
 			<div class="main-content">
 				<div class="space60">&nbsp;</div>
 				<div class="row">
