@@ -6,20 +6,20 @@
 	<title>Hàng Rong BKU </title>
 	<link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="{{url('assets/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="{{url('assets/dest/css/font-awesome.min.css')}}">
 	<link rel="stylesheet" href="{{url('assets/dest/vendors/colorbox/example3/colorbox.css')}}">
 	<link rel="stylesheet" href="{{url('assets/dest/rs-plugin/css/settings.css')}}">
 	<link rel="stylesheet" href="{{url('assets/dest/rs-plugin/css/responsive.css')}}">
 	<link rel="stylesheet" title="style" href="{{url('assets/dest/css/style.css')}}">
 	<link rel="stylesheet" href="{{url('assets/dest/css/animate.css')}}">
-	<link rel="stylesheet" title="style" href="{{url('assets/dest/css/huong-style.css')}}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" title="style" href="{{url('assets/dest/css/huong-style.css')}}">
 </head>
 <body>
 	<div class="header">
 		<div class="container">
-		<a><img src="{{url('assets/dest/images/pay/master.jpg')}}" alt="" height="120px" width="265px"/></a>	
-		<div class="header-right" style="background-color: #0277b8;">
+			<a><img src="{{url('assets/dest/images/pay/master.jpg')}}" alt="" height="120px" width="265px"/></a>	
+			<div class="header-right" style="background-color: #0277b8;">
 					<a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
 					<div class="visible-xs clearfix"></div>
 					<nav class="main-menu">
@@ -73,7 +73,7 @@
 	@yield('content')
 
 
-	{{-- <div id="footer" class="color-div">
+	<!-- <div id="footer" class="color-div">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-3">
@@ -134,12 +134,13 @@
 			</p>
 			<div class="clearfix"></div>
 		</div> <!-- .container -->
-	</div> <!-- .copyright --> --}}
+	</div> <!-- .copyright --> -->
 
 
 	<!-- include js files -->
 	<script src="{{url('assets/dest/js/jquery.js')}}"></script>
 	<script src="{{url('assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js')}}"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 	<script src="{{url('assets/dest/vendors/bxslider/jquery.bxslider.min.js')}}"></script>
 	<script src="{{url('assets/dest/vendors/colorbox/jquery.colorbox-min.js')}}"></script>
 	<script src="{{url('assets/dest/vendors/animo/Animo.js')}}"></script>
@@ -151,9 +152,6 @@
 	<script src="{{url('assets/dest/js/wow.min.js')}}"></script>
 	<!--customjs-->
 	<script src="{{url('assets/dest/js/custom2.js')}}"></script>
-	<script type="text/javascript" src="{{url('assets/jquery-3.3.1.slim.min.js')}}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="{{url('assets/popper.min.js')}}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="{{url('assets/bootstrap.min.js')}}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script>
 	$(document).ready(function($) {    
 		$(window).scroll(function(){
