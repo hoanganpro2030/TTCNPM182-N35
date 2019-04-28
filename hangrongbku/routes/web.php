@@ -24,3 +24,26 @@ Route::get('/hangrongbku/products',function(){
 Route::get('/hangrongbku/user',function(){
 	return view('template.pages.user_inform');
 });
+Route::get('/sign-out',[
+	'as' => 'signout.logout',
+	'uses' => 'Auth\LoginController@logout'
+]);
+
+
+
+Route::get('/sign-up',[
+	'as' => 'signup.getSignUp',
+	'uses' => 'Auth\RegisterController@getSignUp'
+]);
+Route::post('/sign-up',[
+	'as' => 'signup.postSignUp',
+	'uses' => 'Auth\RegisterController@postSignUp'
+]);
+Route::get('/sign-in',[
+	'as'=> 'signin.getSignin',
+	'uses' => 'Auth\LoginController@getSignin'
+]);
+Route::post('/sign-in',[
+	'as' => 'signin.postSignin',
+	'uses' => 'Auth\LoginController@postSignin'
+]);

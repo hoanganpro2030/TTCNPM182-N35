@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Illuminate\Http\Request;
+use Auth;
 class LoginController extends Controller
 {
     /*
@@ -35,5 +36,21 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+    public function getSignin(){
+        return view('login.sign-in');
+    }
+    public function postSignin(Request $request){
+        $user = array('email' =>$request->email ,'password'=>$request->pass);
+        if(Auth::attempt($user)){
+            return redirect()->route('index.getIndex');
+        }
+        else{
+            return redirect()->back()->with(['error'=>'Tên đăng nhập hoặc mật khẩu không chính xác !']);
+        }
+    }
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('signin.getSignin');
     }
 }

@@ -7,7 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Http\Request;
+use App\Http\Requests\RegisterRequest;
 class RegisterController extends Controller
 {
     /*
@@ -61,6 +62,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
+
     protected function create(array $data)
     {
         return User::create([
@@ -68,5 +70,25 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function getSignUp(){
+        return view('login.sign-up');
+    }
+
+    public function postSignUp(RegisterRequest $request){
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->pass);
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        //$user->avatar = $request->avatar;
+        $user->sex = $request->sex;
+        $user->status = 1;
+        $user->dateOfBirth = $request->dateOfBirth;
+        $user->remember_token = $request->_token;
+        $user->save();
+        return redirect()->route('signin.getSignin')->with(['signup'=>'Đăng kí tài khoản thành công !']);
     }
 }

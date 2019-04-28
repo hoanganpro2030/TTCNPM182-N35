@@ -47,8 +47,8 @@
 			<div class="visible-xs clearfix"></div>
 			<nav class="main-account">		
 				<ul class ="l-inline ov">
-						<li><a href="#" style ="font-size: 16px;margin-right:10px">Tài khoản <i class="fa fa-user fa-lg"></i></a> </li>
-						<li><a href="#" style ="font-size: 16px;margin-left:14px"> Đăng xuất<i class="fa fa-sign-out fa-lg"></i></a> </li>			
+						<li><a href="#" style ="font-size: 16px;margin-right:10px">{{Auth::User()->name}} <i class="fa fa-user fa-lg"></i></a> </li>
+						<li><a href="{{route('signout.logout')}}" style ="font-size: 16px;margin-left:14px"> Đăng xuất<i class="fa fa-sign-out fa-lg"></i></a> </li>			
 				</ul>	
 			</nav>
 		</div>
