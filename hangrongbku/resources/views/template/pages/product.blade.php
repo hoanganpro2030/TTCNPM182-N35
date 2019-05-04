@@ -55,11 +55,12 @@
 					</div>
 					<div class="panel" id="tab-reviews">
 						<form action="" method="post">
-							<textarea class="ckeditor" id="summary-ckeditor" name="summary-ckeditor"></textarea>
+							<textarea class="ckeditor" id="summary-ckeditor" name="comment"></textarea>
 							<script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
 							<script>
 								CKEDITOR.replace('summary-ckeditor');
 							</script>
+							
 							<input type="hidden" name="_token" value="{{csrf_token()}}">
 							<input type="submit" value="Post">
 						</form>

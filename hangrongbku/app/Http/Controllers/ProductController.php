@@ -9,6 +9,7 @@ use App\User;
 use App\Products;
 use App\UserCarts;
 
+use App\Comments;
 class ProductController extends Controller
 {
     public function getIndex(){
@@ -89,5 +90,15 @@ class ProductController extends Controller
      }
 
 	
+    public function postComment(Request $req){
+    	if (!Auth::check()){
+			return redirect()->route('signin.getSignin');
+		}
+		$comment = new Comments();
+		$comment->content = $req->comment;
+		$comment->userID = Auth::User()->id;
+		//$comment->productID = 
+    	return redirect()->route('product');
+    }
 }
 
