@@ -15,14 +15,10 @@
 								<div class="clearfix"></div>
                             </div>
                             
-							<?php $i=0?>
-							@for( ; $i < count($products) ;)
-
-							@if ($i % 3 == 0)
+							
 							<div class="row">
 
-								@for($j=0 ; $j<3; $j++)
-								@if($i < count($products))
+							@foreach($products as $products)
 								<div class="col-sm-4">
 									<div class="single-item">
 										<div class="single-item-header">
@@ -41,9 +37,7 @@
 										</div>
 									</div>
 								</div>
-								<?php $i++?>
-								@endif
-								@endfor
+							@endforeach
 							</div>
 							<div class="space60">&nbsp;</div>
 							@endif

@@ -6,51 +6,51 @@
             <div class="space50">&nbsp;</div>
             <div class="row">
                 <div class="col-sm-8">
-                    <h2>Contact Form</h2>
+                    <h2 style ="color: yellow">Form liên hệ</h2>
                     <div class="space20">&nbsp;</div>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit ani m id est laborum.</p>
+                    <p>Nếu có bất kì thắc mắc hay phản hồi gì, hãy để lại lời nhắn cho chúng tôi biết.</p>
                     <div class="space20">&nbsp;</div>
                     <form action="#" method="post" class="contact-form">	
                         <div class="form-block">
-                            <input name="your-name" type="text" placeholder="Your Name (required)">
+                            <input name="your-name" type="text" placeholder="Họ và ten của bạn (bắt buộc)">
                         </div>
                         <div class="form-block">
-                            <input name="your-email" type="email" placeholder="Your Email (required)">
+                            <input name="your-email" type="email" placeholder="Địa chỉ email (bắt buộc)">
                         </div>
                         <div class="form-block">
-                            <input name="your-subject" type="text" placeholder="Subject">
+                            <input name="your-subject" type="text" placeholder="Tiêu đề">
                         </div>
                         <div class="form-block">
-                            <textarea name="your-message" placeholder="Your Message"></textarea>
+                            <textarea name="your-message" placeholder="Nhập nội dung"></textarea>
                         </div>
                         <div class="form-block">
-                            <button type="submit" class="beta-btn primary">Send Message <i class="fa fa-chevron-right"></i></button>
+                            <button type="submit" class="beta-btn primary" style ="color: black">Gửi tin nhắn <i class="fa fa-chevron-right"></i></button>
                         </div>
                     </form>
                 </div>
                 <div class="col-sm-4">
-                    <h2>Contact Information</h2>
+                    <h2 style ="color: yellow">Thông tin liên hệ</h2>
                     <div class="space20">&nbsp;</div>
 
-                    <h6 class="contact-title">Address</h6>
+                    <h6 class="contact-title" style ="color: yellow">Địa chỉ</h6>
                     <p>
-                        Suite 127 / 267 – 277 Brussel St,<br>
-                        62 Croydon, NYC <br>
-                        Newyork
+                        268 Lý Thường Kiệt, Phường 14, Quận 10, Hồ Chí Minh.<br>
+                        Email: hangrongbku@gmail.com. <br>
+                        Số điện thoại: 19008198
                     </p>
                     <div class="space20">&nbsp;</div>
                     <h6 class="contact-title">Business Enquiries</h6>
                     <p>
-                        Doloremque laudantium, totam rem aperiam, <br>
-                        inventore veritatio beatae. <br>
-                        <a href="mailto:biz@betadesign.com">biz@betadesign.com</a>
+                        Liên lạc với chúng tôi qua địa chỉ email dưới đây<br>
+        
+                        <a href="mailto:biz@betadesign.com" style ="color: yellow">hangrongbku@gmail.com</a>
                     </p>
                     <div class="space20">&nbsp;</div>
                     <h6 class="contact-title">Employment</h6>
                     <p>
-                        We’re always looking for talented persons to <br>
-                        join our team. <br>
-                        <a href="hr@betadesign.com">hr@betadesign.com</a>
+                        Chúng tôi đang tìm kiếm các nhân sự tài tăng <br>
+                        Nộp CV tại đây. <br>
+                        <a href="hr@betadesign.com" style ="color: yellow">hr@betadesign.com</a>
                     </p>
                 </div>
             </div>

@@ -20,6 +20,7 @@
 	<img src= "http://getflycrm.com/wp-content/uploads/2016/11/nguyen-tac-co-ban-cua-ban-hang-ma-dan-sales-can-bi%C3%AAt.jpg" width="100%" height="200px">
 	<div class="header">
 		<div class="container">
+			
 			<a><img src="{{url('assets/dest/images/logo.jpg')}}" alt="" height="120px" width="265px"/></a>	
 			<div class="header-right" style="background-color: #0277b8;">
 					<a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
@@ -59,7 +60,7 @@
 		<div class="shopping-cart">
 			<a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
 			<div class="visible-xs clearfix"></div>
-			<a href="#" style ="font-size: 16px;margin-right:10px;color:red">Giỏ hàng <i class="fa fa-shopping-cart fa-lg"></i></a>
+			<a href="{{route('order.getCart')}}" style ="font-size: 16px;margin-right:10px;color:red">Giỏ hàng <i class="fa fa-shopping-cart fa-lg"></i></a>
 		</div>
 
 	
