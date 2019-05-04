@@ -8,13 +8,14 @@ use Auth;
 use App\Comments;
 class ProductController extends Controller
 {
-    // public function getIndex(){
-    // 	if (!Auth::check()){
-	// 		return redirect()->route('signin.getSignin');
-	// 	}
-    // 	$products = DB::select('select * from products');
-    // 	return view('template.pages.index',compact('products'));
-	// }
+    public function getIndex(){
+    	if (!Auth::check()){
+			return redirect()->route('signin.getSignin');
+		}
+			$categories = DB::select('select * from categories');
+			$products = DB::select('select * from products');
+			return view('template.pages.index',compact('products','categories'));
+	}
 	public function showCheckout(){
 		return view('template.pages.checkout');
 	}
@@ -24,18 +25,19 @@ class ProductController extends Controller
 	public function showAbout(){
 		return view('template.pages.about');
 	}
-	public function getProduct(){
+	public function showProduct(){
 		return view('template.pages.product');
 	}
-    public function getIndex(){
+	public function getProduct($id){
     	if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}
-    	$products = DB::select('select * from products');
-    	$categories = DB::select('select * from categories');
-    	return view('template.pages.index',compact('products','categories'));
-    }
-    public function getCategories($id){
+		$product = DB::table('products')->where('id',$id)->first();
+		$relatedPd = DB::table('products')->where('cateID',$product->cateID)->get();
+		$seller = DB::table('users')->where('id',$product->sellerID)->first();
+		return view('template.pages.product',compact('product','seller','relatedPd'));
+		}
+		public function getCategories($id){
     	if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}
