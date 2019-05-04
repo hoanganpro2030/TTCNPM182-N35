@@ -37,7 +37,7 @@
 						<div class="beta-products-list">
 							<h4>Sản phẩm mới</h4>
 							<div class="beta-products-details">
-								<p class="pull-left">438 styles found</p>
+								
 								<div class="clearfix"></div>
 							</div>
 							<?php $i=0?>
@@ -80,7 +80,7 @@
 						<div class="beta-products-list">
 							<h4>Sản phẩm nổi bật</h4>
 							<div class="beta-products-details">
-								<p class="pull-left">438 styles found</p>
+								<p class="pull-left">10 sản phẩm mới tìm thấy</p>
 								<div class="clearfix"></div>
 							</div>
 							<div class="row">

@@ -26,5 +26,13 @@ class ProductController extends Controller
 	public function showProduct(){
 		return view('template.pages.product');
 	}
+	public function getSearch(Request $req){
+		$product = DB::select('select * from products');
+		$product->where('name','like','%'.$req->key.'%')
+					->orwhere('price', $req->key)
+					->get();
+		return view('template.pages.search', compact('products'));
+	}
+	
 }
 

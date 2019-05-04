@@ -44,7 +44,14 @@ Route::get('/hangrongbku/product',[
 	'as' => 'product',
 	'uses' => 'ProductController@showProduct'
 ]);
-
+Route::get('/hangrongbku/user',[
+	'as' => 'user.inform',
+	'uses' => 'UserController@showUserInform'
+]);
+Route::post('/hangrongbku/user',[
+	'as' => 'editUser',
+	'uses' => 'UserController@editUser'
+]);
 Route::get('/sign-up',[
 	'as' => 'signup.getSignUp',
 	'uses' => 'Auth\RegisterController@getSignUp'
@@ -60,4 +67,8 @@ Route::get('/sign-in',[
 Route::post('/sign-in',[
 	'as' => 'signin.postSignin',
 	'uses' => 'Auth\LoginController@postSignin'
+]);
+Route::post('search',[
+	'as' => 'search',
+	'user' => 'ProductController@getSearch'
 ]);
