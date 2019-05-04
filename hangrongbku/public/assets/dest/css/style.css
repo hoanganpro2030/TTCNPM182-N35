@@ -55,7 +55,6 @@ outline:none
 
 html{overflow-x:hidden;}
 html,body {
-height:100%;
 -webkit-font-smoothing:antialiased;
 
 }
@@ -63,7 +62,7 @@ height:100%;
 body {
 font:13px/20px "Open Sans",sans-serif;
 color:black;
-background:#fff;
+background-color:#5a4f4f;
 font-weight:300;
 
 }
@@ -735,7 +734,8 @@ margin-top:0
 }
 
 h4,.h4 {
-color:#253951;
+font-weight: bold;
+color:#fff;
 font-size:2.30769em;
 line-height:39.78px;
 font-family:"Open Sans",sans-serif;
@@ -1026,7 +1026,7 @@ font-size:15px
 }
 
 a i {
-color:#f90;
+color:#0277b8;
 font-size:10px;
 padding-left:5px;
 padding-right:5px
@@ -1071,14 +1071,15 @@ background-color:#57a7c6
 
 .header {
     overflow: hidden;
-    background-color: #f1f1f1;
+    background-color: #000000;
     padding: 20px 10px;
   }
   
   /* Style the header links */
   .header a {
     float: left;
-    color: black;
+    font-weight: bold;
+    color: #0277b8;
     text-align: center;
     text-decoration: none;
     font-size: 18px; 
@@ -1107,7 +1108,7 @@ background-color:#57a7c6
   .header-right {
     margin-left: 50px;
     float: left;
-    width:550px;
+    width:450px;
   }
   .header-account {
     float: right;
@@ -1222,7 +1223,8 @@ padding:20px 0 0px
 height:60px;
 display:table-cell;
 vertical-align:middle;
-font-weight:400
+font-weight:400;
+border-radius: 5px;
 }
 .main-account {
     
@@ -1634,11 +1636,11 @@ margin-left:7px
 .beta-comp {
     margin-left: 50px;
     float: left;
-    width:550px;
+    width:450px;
     margin-top: 25px;
 }
 .beta-comp input{
-    width: 550px;
+    width: 450px;
 }
 /* ==========================================================================
     6.3 BETA CART
@@ -1795,7 +1797,7 @@ padding-right:25px
 
 #searchsubmit {
 position:absolute;
-left:520px;
+left:420px;
 top:0;
 bottom:0;
 border:none;
@@ -1977,7 +1979,9 @@ margin-bottom:20px
 
 .single-item-title {
 font-size:15px;
-margin-bottom:5px
+margin-bottom:5px;
+color :#fff;
+font-weight: bold;
 }
 
 .single-item-price {
@@ -2747,8 +2751,8 @@ margin-left:240px
 
 .aside-menu {
 list-style:none;
-background:#f8f8f8;
-border:1px solid #e5e4e4;
+background:#0277b8;
+border:1px solid #000;
 padding:25px
 }
 
@@ -2762,7 +2766,8 @@ border-bottom:none
 }
 
 .aside-menu li a {
-color:#3d3d3d
+color:#fff;
+font-weight: bold;
 }
 
 .aside-menu li a:hover {
@@ -3318,7 +3323,7 @@ margin-left:-5px
 }
 
 .beta-btn.primary {
-color:#606366;
+color:#43bcff;
 padding:10px 20px;
 line-height:100%
 }
