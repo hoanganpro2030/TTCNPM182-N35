@@ -1,6 +1,4 @@
 <?php
-use Symfony\Component\Routing\Annotation\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
