@@ -62,7 +62,20 @@ Route::post('/sign-in',[
 	'uses' => 'Auth\LoginController@postSignin'
 ]);
 
-Route::get('hanagrongbku/categories/{id}',[
+Route::get('hangrongbku/categories/{id}',[
 	'as'=>'categories.getCategories',
 	'uses' => 'ProductController@getCategories'
+]);
+
+Route::get('hangrongbku/order',[
+	'as'=> 'order.getCart',
+	'uses' => 'ProductController@getCart'
+]);
+Route::get('hangrongbku/order/{pid}/user/{uid}',[
+	'as'=> 'order.addToCart',
+	'uses' => 'ProductController@addToCart'
+]);
+Route::get('hangrongbku/order/remove/{id}',[
+	'as'=> 'order.removeCart',
+	'uses' => 'ProductController@removeCart'
 ]);

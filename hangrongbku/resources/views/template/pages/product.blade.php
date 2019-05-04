@@ -29,22 +29,6 @@
 
 						<p>Options:</p>
 						<div class="single-item-options">
-							<select class="wc-select" name="size">
-								<option>Size</option>
-								<option value="XS">XS</option>
-								<option value="S">S</option>
-								<option value="M">M</option>
-								<option value="L">L</option>
-								<option value="XL">XL</option>
-							</select>
-							<select class="wc-select" name="color">
-								<option>Color</option>
-								<option value="Red">Red</option>
-								<option value="Green">Green</option>
-								<option value="Yellow">Yellow</option>
-								<option value="Black">Black</option>
-								<option value="White">White</option>
-							</select>
 							<select class="wc-select" name="color">
 								<option>Qty</option>
 								<option value="1">1</option>
@@ -53,7 +37,7 @@
 								<option value="4">4</option>
 								<option value="5">5</option>
 							</select>
-							<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+							<a class="add-to-cart" href="{{route('order.addToCart',[$product->id,Auth::User()->id])}}"><i class="fa fa-shopping-cart"></i></a>
 							<div class="clearfix"></div>
 						</div>
 					</div>
@@ -125,7 +109,8 @@
 					<div class="widget-body">
 						<div class="beta-sales beta-lists">
 							<div class="media beta-sales-item">
-								<a class="pull-left" href="product.html"><img src="assets/dest/images/products/sales/1.png" alt=""></a>
+								<a class="pull-left" href="product.html">
+								<img src="assets/dest/images/products/sales/1.png" alt=""></a>
 								<div class="media-body">
 									Sample Woman Top
 									<span class="beta-sales-price">$34.55</span>
