@@ -8,7 +8,6 @@
 				<form>
 					<h4>Đăng bán sản phẩm</h4>
 					<div class="space20">&nbsp;</div>
-					<div class="space20">&nbsp;</div>
 				  	<div class="form-group">
 					    <label for="exampleInputEmail1">Tên sản phẩm</label>
 					    <input type="text" class="form-control col-sm-5" id="exampleInputPassword1" placeholder="Nguyễn Văn A">
@@ -37,6 +36,13 @@
 					
 				</form>
 			</div> <!-- #content -->
+			<div class=" col-sm-3 offset-2">
+				<div class="space20">&nbsp;</div>
+				<div class="space20">&nbsp;</div>
+				<div class="space20">&nbsp;</div>
+				<button type="submit" class="btn btn-primary">Choose file</button>
+
+			</div>
 		</div>
 	</div>
 	
