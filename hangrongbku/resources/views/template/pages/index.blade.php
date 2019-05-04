@@ -8,29 +8,9 @@
 				<div class="row">
 					<div class="col-sm-3">
 						<ul class="aside-menu">
-							<li><a href="#">Typography</a></li>
-							<li><a href="#">Buttons</a></li>
-							<li><a href="#">Dividers</a></li>
-							<li><a href="#">Columns</a></li>
-							<li><a href="#">Icon box</a></li>
-							<li><a href="#">Notifications</a></li>
-							<li><a href="#">Progress bars and Skill meter</a></li>
-							<li><a href="#">Tabs</a></li>
-							<li><a href="#">Testimonial</a></li>
-							<li><a href="#">Video</a></li>
-							<li><a href="#">Social icons</a></li>
-							<li><a href="#">Carousel sliders</a></li>
-							<li><a href="#">Custom List</a></li>
-							<li><a href="#">Image frames &amp; gallery</a></li>
-							<li><a href="#">Google Maps</a></li>
-							<li><a href="#">Accordion and Toggles</a></li>
-							<li class="is-active"><a href="#">Custom callout box</a></li>
-							<li><a href="#">Page section</a></li>
-							<li><a href="#">Mini callout box</a></li>
-							<li><a href="#">Content box</a></li>
-							<li><a href="#">Computer sliders</a></li>
-							<li><a href="#">Pricing &amp; Data tables</a></li>
-							<li><a href="#">Process Builders</a></li>
+							@foreach ($categories as $cate)
+							<li><a href="{{route('categories.getCategories',$cate->id)}}">{{$cate->name}}</a></li>
+							@endforeach
 						</ul>
 					</div>
 					<div class="col-sm-9">
@@ -51,7 +31,7 @@
 								<div class="col-sm-4">
 									<div class="single-item">
 										<div class="single-item-header">
-											<a href="product.html"><img src="{{url('assets/dest/products/' . $products[$i]->image .'')}}" alt="" height="200pxs" margin-top="10px"></a>
+										<a href="{{route('product',$products[$i]->id)}}"><img src="{{url('assets/dest/products/' . $products[$i]->image .'')}}" alt="" height="200pxs" margin-top="10px"></a>
 										</div>
 										<div class="single-item-body"> 
 											<p class="single-item-title">{{mb_strtoupper($products[$i]->name)}}</b></p>

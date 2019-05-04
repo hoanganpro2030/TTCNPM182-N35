@@ -40,9 +40,9 @@ Route::get('/hangrongbku/contact',[
 	'as' => 'contact',
 	'uses' => 'ProductController@showContact'
 ]);
-Route::get('/hangrongbku/product',[
+Route::get('/hangrongbku/product/{id}',[
 	'as' => 'product',
-	'uses' => 'ProductController@showProduct'
+	'uses' => 'ProductController@getProduct'
 ]);
 
 Route::get('/sign-up',[
@@ -60,4 +60,9 @@ Route::get('/sign-in',[
 Route::post('/sign-in',[
 	'as' => 'signin.postSignin',
 	'uses' => 'Auth\LoginController@postSignin'
+]);
+
+Route::get('hanagrongbku/categories/{id}',[
+	'as'=>'categories.getCategories',
+	'uses' => 'ProductController@getCategories'
 ]);
