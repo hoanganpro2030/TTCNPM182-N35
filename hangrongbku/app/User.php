@@ -20,6 +20,10 @@ class User extends Authenticatable
         'id', 'name', 'email', 'password', 'phone', 'address', 'avatar', 'sex', 'status', 'dateOfBirth', 'remember_token'
     ];
 
+    public function products(){
+        return $this->hasMany('App\Products','sellerID','id');
+    }
+    
     /**
      * The attributes that should be hidden for arrays.
      *

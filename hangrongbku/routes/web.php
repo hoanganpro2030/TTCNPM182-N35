@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,9 +17,10 @@ Route::get('/hangrongbku',[
 	'as'=>'index.getIndex',
 	'uses'=>'ProductController@getIndex'
 ]);
-Route::get('/hangrongbku/products',function(){
-	return view('template.pages.product');
-});
+Route::get('/hangrongbku/products/{id}',[
+	'as' => 'products.getProduct',
+	'uses' => 'ProductController@getProduct'
+]);
 Route::get('/hangrongbku/user',function(){
 	return view('template.pages.user_inform');
 });
@@ -40,9 +40,9 @@ Route::get('/hangrongbku/contact',[
 	'as' => 'contact',
 	'uses' => 'ProductController@showContact'
 ]);
-Route::get('/hangrongbku/product',[
+Route::get('/hangrongbku/product/{id}',[
 	'as' => 'product',
-	'uses' => 'ProductController@showProduct'
+	'uses' => 'ProductController@getProduct'
 ]);
 Route::get('/hangrongbku/user',[
 	'as' => 'user.inform',
@@ -68,7 +68,28 @@ Route::post('/sign-in',[
 	'as' => 'signin.postSignin',
 	'uses' => 'Auth\LoginController@postSignin'
 ]);
+
 Route::post('search',[
 	'as' => 'search',
 	'user' => 'ProductController@getSearch'
 ]);
+
+
+Route::get('hangrongbku/categories/{id}',[
+	'as'=>'categories.getCategories',
+	'uses' => 'ProductController@getCategories'
+]);
+
+Route::get('hangrongbku/order',[
+	'as'=> 'order.getCart',
+	'uses' => 'ProductController@getCart'
+]);
+Route::get('hangrongbku/order/{pid}/user/{uid}',[
+	'as'=> 'order.addToCart',
+	'uses' => 'ProductController@addToCart'
+]);
+Route::get('hangrongbku/order/remove/{id}',[
+	'as'=> 'order.removeCart',
+	'uses' => 'ProductController@removeCart'
+]);
+
