@@ -92,11 +92,11 @@
 					<div class="cart-totals-row"><span>Tổng hóa đơn:</span> <span>$188.00</span></div>
 					<div style="text-align: center;" class="cart-totals-row"><button style="position: inline; color:red; background:yellow" class="editbtn">Submit</button></div>
 
-					<div class="cart-totals-row"><h5 class="cart-total-title">Cart Totals</h5></div>
+					{{-- <div class="cart-totals-row"><h5 class="cart-total-title">Cart Totals</h5></div>
 					<div class="cart-totals-row"><span>Cart Subtotal:</span> <span>$188.00</span></div>
 					<div class="cart-totals-row"><span>Shipping:</span> <span>Free Shipping</span></div>
 					<div class="cart-totals-row"><span>Order Total:</span> <span>$188.00</span></div>
-					<div style="text-align: center; color:black;" class="cart-totals-row"><button style="position: inline;" class="editbtn">Submit</button></div>
+					<div style="text-align: center; color:black;" class="cart-totals-row"><button style="position: inline;" class="editbtn">Submit</button></div> --}}
 
 				</div>
 
