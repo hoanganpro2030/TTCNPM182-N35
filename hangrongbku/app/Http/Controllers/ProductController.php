@@ -66,9 +66,13 @@ class ProductController extends Controller
     	if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}
-        $oldcart = DB::table('usercarts')->where('productID',$pid)->get();
+		$product= DB::table('products')->where('id',$pid)->first();
+		if ($product->quantity <=0){
+			return redirect()->route('product',$pid)->withErrors(['error'=>'Sản phẩm này đã hết']);
+		}
+        $oldcart = DB::table('usercarts')->where('userID',$uid)->where('productID',$pid)->get();
         if (count($oldcart) != 0){
-            DB::table('usercarts')->where('productID',$pid)->increment('quantity',1);
+            DB::table('usercarts')->where('userID',$uid)->where('productID',$pid)->increment('quantity',1);
             DB::table('products')->where('id',$pid)->decrement('quantity',1);
             return redirect()->route('order.getCart');
         }
@@ -96,6 +100,8 @@ class ProductController extends Controller
         if (!Auth::check()){
             return redirect()->route('signin.getSignin');
         }
+        $cart = DB::table('usercarts')->where('id',$id)->first();
+        DB::table('products')->where('id',$cart->productID)->increment('quantity',$cart->quantity);
         DB::table('usercarts')->where('id',$id)->delete();
         return redirect()->route('order.getCart');
      }
