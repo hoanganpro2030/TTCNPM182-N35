@@ -31,7 +31,10 @@
 					    <label for="exampleInputPassword1">Mô tả sản phẩm</label>
                         <input type="text" class="form-control col-sm-5" id="exampleInputPassword1" placeholder="Nguyễn Văn A">				  	</div>
 				  	<div class="space20">&nbsp;</div>
-				  	<button type="submit" class="btn btn-primary">Cập nhật</button>
+					<input type="file"/>
+					<div class="space20">&nbsp;</div>
+				  	<button type="submit" class="btn btn-primary" >Cập nhật</button>
+					
 				</form>
 			</div> <!-- #content -->
 		</div>
