@@ -26,7 +26,15 @@
 								<p>Số điện thoại đặt hàng trực tiếp: <a style="color: blue">{{$seller->phone}}</a></p>
 						</div>
 						<div class="space20">&nbsp;</div>
-
+						@if (count($errors)>0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{$error}}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
 						<p>Options:</p>
 						<div class="single-item-options">
 							<select class="wc-select" name="color">
