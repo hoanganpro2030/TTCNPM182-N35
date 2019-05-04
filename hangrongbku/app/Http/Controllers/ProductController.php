@@ -69,6 +69,7 @@ class ProductController extends Controller
         $oldcart = DB::table('usercarts')->where('productID',$pid)->get();
         if (count($oldcart) != 0){
             DB::table('usercarts')->where('productID',$pid)->increment('quantity',1);
+            DB::table('products')->where('id',$pid)->decrement('quantity',1);
             return redirect()->route('order.getCart');
         }
         $cart = new UserCarts();
