@@ -18,8 +18,8 @@
 <body>
 	<div class="header">
 		<div class="container">
-		<a><img src="{{url('assets/dest/images/pay/master.jpg')}}" alt="" height="120px" width="265px"/></a>	
-		<div class="header-right" style="background-color: #0277b8;">
+			<a><img src="{{url('assets/dest/images/pay/master.jpg')}}" alt="" height="120px" width="265px"/></a>	
+			<div class="header-right" style="background-color: #0277b8;">
 					<a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
 					<div class="visible-xs clearfix"></div>
 					<nav class="main-menu">
@@ -41,8 +41,8 @@
 			<div class="visible-xs clearfix"></div>
 			<nav class="main-account">		
 				<ul class ="l-inline ov">
-						<li><a href="#" style ="font-size: 16px;margin-right:10px">Tài khoản <i class="fa fa-user fa-lg"></i></a> </li>
-						<li><a href="#" style ="font-size: 16px;margin-left:14px"> Đăng xuất<i class="fa fa-sign-out fa-lg"></i></a> </li>			
+						<li><a href="#" style ="font-size: 16px;margin-right:10px">{{Auth::User()->name}} <i class="fa fa-user fa-lg"></i></a> </li>
+						<li><a href="{{route('signout.logout')}}" style ="font-size: 16px;margin-left:14px"> Đăng xuất<i class="fa fa-sign-out fa-lg"></i></a> </li>			
 				</ul>	
 			</nav>
 		</div>
@@ -67,7 +67,7 @@
 	@yield('content')
 
 
-	{{-- <div id="footer" class="color-div">
+	<!-- <div id="footer" class="color-div">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-3">
@@ -128,7 +128,7 @@
 			</p>
 			<div class="clearfix"></div>
 		</div> <!-- .container -->
-	</div> <!-- .copyright --> --}}
+	</div> <!-- .copyright --> -->
 
 
 	<!-- include js files -->
