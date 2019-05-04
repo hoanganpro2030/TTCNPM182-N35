@@ -61,15 +61,15 @@ html,body {
 
 body {
 font:13px/20px "Open Sans",sans-serif;
-color:black;
-background-color:#5a4f4f;
+color:white;
+background-color:black;
 font-weight:300;
-
 }
 
 div,form,fieldset,legend,label {
 margin:0;
-padding:0
+padding:0;
+color:white;
 }
 
 form {
@@ -735,7 +735,7 @@ margin-top:0
 
 h4,.h4 {
 font-weight: bold;
-color:#fff;
+color:white;
 font-size:2.30769em;
 line-height:39.78px;
 font-family:"Open Sans",sans-serif;
@@ -1071,7 +1071,8 @@ background-color:#57a7c6
 
 .header {
     overflow: hidden;
-    background-color: #000000;
+    background-color: #98FB98;
+    /* background-image: url('\assets\dest\images\background.jpg') */
     padding: 20px 10px;
   }
   
@@ -4734,23 +4735,24 @@ float:left!important
 #footer {
 background:#172431;
 color:#7b8fa3;
-padding:40px 0 50px
+height:200px;
+padding-top: 20px
 }
 
 #footer a {
-color:#7b8fa3
+color:#7b8fa3;
 }
-#footer.color-div a {color:gray}
+#footer.color-div a {color:yellow}
 #footer a:hover {
 color:#f90
 }
-.color-div p{color:gray;}
+.color-div p{color:yellow;}
 
-#footer h4.widget-title {
-color:#adbac8;
+#footer h3.widget-title {
+color:yellow;
 margin-bottom:22px
 }
-#footer.color-div h4.widget-title{color:gray;}
+#footer.color-div h3.widget-title{color:yellow}
 
 #footer ul {
 list-style:none
@@ -4893,6 +4895,7 @@ span.about-person-over{width:120px; height:120px;}
 @media (max-width: 1700px) and (min-width: 1000px){
 .isotope-item.col-sm-4{ width:33%;}
 .isotope-item.col-sm-3{ width:24.8%;}
+
 
 }
 @media (max-width: 1700px) and (min-width: 769px){

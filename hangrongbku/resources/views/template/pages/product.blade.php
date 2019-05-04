@@ -7,13 +7,13 @@
 
 				<div class="row">
 					<div class="col-sm-4">
-						<img src="assets/dest/images/products/6.jpg" alt="">
+						<img src="{{url('assets/dest/products/' . $product->image .'')}}" alt="">
 					</div>
 					<div class="col-sm-8">
 						<div class="single-item-body">
-							<p class="single-item-title">Sample Woman Top</p>
+							<p class="single-item-title">{{mb_strtoupper($product->name)}}</p>
 							<p class="single-item-price">
-								<span>$34.55</span>
+								<span class="flash-sale">{{number_format($product->price,0,',','.')}} đ</span>
 							</p>
 						</div>
 
@@ -21,28 +21,14 @@
 						<div class="space20">&nbsp;</div>
 
 						<div class="single-item-desc">
-							<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo ms id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe.</p>
+								<p>Liên hệ người bán: <a href="" style="color: blue">{{$seller->name}}</a></p>
+								<div class="space20">&nbsp;</div>
+								<p>Số điện thoại đặt hàng trực tiếp: <a style="color: blue">{{$seller->phone}}</a></p>
 						</div>
 						<div class="space20">&nbsp;</div>
 
 						<p>Options:</p>
 						<div class="single-item-options">
-							<select class="wc-select" name="size">
-								<option>Size</option>
-								<option value="XS">XS</option>
-								<option value="S">S</option>
-								<option value="M">M</option>
-								<option value="L">L</option>
-								<option value="XL">XL</option>
-							</select>
-							<select class="wc-select" name="color">
-								<option>Color</option>
-								<option value="Red">Red</option>
-								<option value="Green">Green</option>
-								<option value="Yellow">Yellow</option>
-								<option value="Black">Black</option>
-								<option value="White">White</option>
-							</select>
 							<select class="wc-select" name="color">
 								<option>Qty</option>
 								<option value="1">1</option>
@@ -51,7 +37,7 @@
 								<option value="4">4</option>
 								<option value="5">5</option>
 							</select>
-							<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+							<a class="add-to-cart" href="{{route('order.addToCart',[$product->id,Auth::User()->id])}}"><i class="fa fa-shopping-cart"></i></a>
 							<div class="clearfix"></div>
 						</div>
 					</div>
@@ -65,16 +51,16 @@
 					</ul>
 
 					<div class="panel" id="tab-description">
-						<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
-						<p>Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequaturuis autem vel eum iure reprehenderit qui in ea voluptate velit es quam nihil molestiae consequr, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? </p>
+							{{$product->description}}
 					</div>
 					<div class="panel" id="tab-reviews">
 						<form action="" method="post">
-							<textarea class="ckeditor" id="summary-ckeditor" name="summary-ckeditor"></textarea>
+							<textarea class="ckeditor" id="summary-ckeditor" name="comment"></textarea>
 							<script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
 							<script>
 								CKEDITOR.replace('summary-ckeditor');
 							</script>
+							
 							<input type="hidden" name="_token" value="{{csrf_token()}}">
 							<input type="submit" value="Post">
 						</form>
@@ -84,67 +70,38 @@
 				<div class="beta-products-list">
 					<h4>Related Products</h4>
 
-					<div class="row">
-						<div class="col-sm-4">
-							<div class="single-item">
-								<div class="single-item-header">
-									<a href="product.html"><img src="assets/dest/images/products/4.jpg" alt=""></a>
-								</div>
-								<div class="single-item-body">
-									<p class="single-item-title">Sample Woman Top</p>
-									<p class="single-item-price">
-										<span>$34.55</span>
-									</p>
-								</div>
-								<div class="single-item-caption">
-									<a class="add-to-cart pull-left" href="product.html"><i class="fa fa-shopping-cart"></i></a>
-									<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="single-item">
-								<div class="single-item-header">
-									<a href="product.html"><img src="assets/dest/images/products/5.jpg" alt=""></a>
-								</div>
-								<div class="single-item-body">
-									<p class="single-item-title">Sample Woman Top</p>
-									<p class="single-item-price">
-										<span>$34.55</span>
-									</p>
-								</div>
-								<div class="single-item-caption">
-									<a class="add-to-cart pull-left" href="product.html"><i class="fa fa-shopping-cart"></i></a>
-									<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="single-item">
-								<div class="ribbon-wrapper">
-									<div class="ribbon sale">Sale</div>
-								</div>
+					<?php $i=0?>
+							@for( ; $i < count($relatedPd) ;)
+							@if ($i % 3 == 0)
+							<div class="row">
 
-								<div class="single-item-header">
-									<a href="#"><img src="assets/dest/images/products/6.jpg" alt=""></a>
-								</div>
-								<div class="single-item-body">
-									<p class="single-item-title">Sample Woman Top</p>
-									<p class="single-item-price">
-										<span class="flash-del">$34.55</span>
-										<span class="flash-sale">$33.55</span>
-									</p>
-								</div>
-								<div class="single-item-caption">
-									<a class="add-to-cart pull-left" href="#"><i class="fa fa-shopping-cart"></i></a>
-									<a class="beta-btn primary" href="#">Details <i class="fa fa-chevron-right"></i></a>
-									<div class="clearfix"></div>
+								@for($j=0 ; $j<3; $j++)
+								@if($i < count($relatedPd))
+								<div class="col-sm-4">
+									<div class="single-item">
+										<div class="single-item-header">
+											<a href="{{route('products.getProduct',$relatedPd[$i]->id)}}"><img src="{{url('assets/dest/products/' . $relatedPd[$i]->image .'')}}" alt="" height="200pxs" margin-top="10px"></a>
+										</div>
+										<div class="single-item-body"> 
+											<p class="single-item-title">{{mb_strtoupper($relatedPd[$i]->name)}}</b></p>
+											<p class="single-item-price">
+												<span class='flash-sale'>{{number_format($relatedPd[$i]->price,0,',','.')}} đ</span>
+											</p>
+										</div>
+										<div class="single-item-caption">
+											<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+											<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+											<div class="clearfix"></div>
+										</div>
 								</div>
 							</div>
+							<?php $i++?>
+								@endif
+								@endfor
 						</div>
-					</div>
+						<div class="space60">&nbsp;</div>
+						@endif
+						@endfor
 				</div> <!-- .beta-products-list -->
 			</div>
 			<div class="col-sm-3 aside">
@@ -153,7 +110,8 @@
 					<div class="widget-body">
 						<div class="beta-sales beta-lists">
 							<div class="media beta-sales-item">
-								<a class="pull-left" href="product.html"><img src="assets/dest/images/products/sales/1.png" alt=""></a>
+								<a class="pull-left" href="product.html">
+								<img src="assets/dest/images/products/sales/1.png" alt=""></a>
 								<div class="media-body">
 									Sample Woman Top
 									<span class="beta-sales-price">$34.55</span>

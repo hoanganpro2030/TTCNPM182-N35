@@ -6,20 +6,15 @@
 			<div class="main-content">
 				<div class="space60">&nbsp;</div>
 				<div class="row">
-					<div class="col-sm-3">
-						<ul class="aside-menu">
-							@foreach ($categories as $cate)
-							<li><a href="{{route('categories.getCategories',$cate->id)}}">{{$cate->name}}</a></li>
-							@endforeach
-						</ul>
-					</div>
+					
 					<div class="col-sm-9">
 						<div class="beta-products-list">
-							<h4>Sản phẩm mới</h4>
+							<h4>Tìm kiếm</h4>
 							<div class="beta-products-details">
-								
+								<p class ="pull-left"> Tìm thấy {{count($products)}} sản phẩm </p>
 								<div class="clearfix"></div>
-							</div>
+                            </div>
+                            
 							<?php $i=0?>
 							@for( ; $i < count($products) ;)
 
@@ -31,7 +26,7 @@
 								<div class="col-sm-4">
 									<div class="single-item">
 										<div class="single-item-header">
-											<a href="{{route('products.getProduct',$products[$i]->id)}}"><img src="{{url('assets/dest/products/' . $products[$i]->image .'')}}" alt="" height="200pxs" margin-top="10px"></a>
+											<a href="product.html"><img src="{{url('assets/dest/products/' . $products[$i]->image .'')}}" alt="" height="200pxs" margin-top="10px"></a>
 										</div>
 										<div class="single-item-body"> 
 											<p class="single-item-title">{{mb_strtoupper($products[$i]->name)}}</b></p>
@@ -58,7 +53,6 @@
 						<div class="space50">&nbsp;</div>
 
 					
-
 					</div>
 				</div> <!-- end section with sidebar and main content -->
 
