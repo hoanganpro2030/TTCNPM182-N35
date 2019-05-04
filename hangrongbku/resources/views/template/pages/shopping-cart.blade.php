@@ -7,7 +7,7 @@
 				<!-- Shop Products Table -->
 				<table class="shop_table beta-shopping-cart-table" cellspacing="0">
 					<thead>
-						<tr>
+						<tr style="color: black;">
 							<?php
 								$product = DB::table('products')->where('id',$cart->productID)->first();
 							?>
@@ -89,7 +89,7 @@
 					<div class="cart-totals-row"><span>Cart Subtotal:</span> <span>$188.00</span></div>
 					<div class="cart-totals-row"><span>Shipping:</span> <span>Free Shipping</span></div>
 					<div class="cart-totals-row"><span>Order Total:</span> <span>$188.00</span></div>
-					<div style="text-align: center;" class="cart-totals-row"><button style="position: inline;" class="editbtn">Submit</button></div>
+					<div style="text-align: center; color:black;" class="cart-totals-row"><button style="position: inline;" class="editbtn">Submit</button></div>
 				</div>
 
 				<div class="clearfix"></div>
