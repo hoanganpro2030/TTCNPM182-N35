@@ -1,4 +1,5 @@
 <?php
+use Symfony\Component\Routing\Annotation\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,10 @@ Route::get('/hangrongbku',[
 	'as'=>'index.getIndex',
 	'uses'=>'ProductController@getIndex'
 ]);
-Route::get('/hangrongbku/products',function(){
-	return view('template.pages.product');
-});
+Route::get('/hangrongbku/products/{id}',[
+	'as' => 'products.getProduct',
+	'uses' => 'ProductController@getProduct'
+]);
 Route::get('/hangrongbku/user',function(){
 	return view('template.pages.user_inform');
 });
