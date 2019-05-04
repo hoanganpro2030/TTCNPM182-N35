@@ -33,6 +33,16 @@ class ProductController extends Controller
 		return view('template.pages.product');
 	}
 
+	public function getSearch(Request $req){
+		$product = DB::select('select * from products');
+		$product->where('name','like','%'.$req->key.'%')
+					->orwhere('price', $req->key)
+					->get();
+		return view('template.pages.search', compact('products'));
+	}
+	
+
+
 	public function getProduct($id){
     	if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
@@ -100,5 +110,6 @@ class ProductController extends Controller
 		//$comment->productID = 
     	return redirect()->route('product');
     }
+
 }
 

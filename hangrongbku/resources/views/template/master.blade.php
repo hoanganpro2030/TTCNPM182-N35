@@ -15,7 +15,9 @@
 	<link rel="stylesheet" href="{{url('assets/dest/css/animate.css')}}">
 	<link rel="stylesheet" title="style" href="{{url('assets/dest/css/huong-style.css')}}">
 </head>
-<body>
+<body >
+	</p>
+	<img src= "http://getflycrm.com/wp-content/uploads/2016/11/nguyen-tac-co-ban-cua-ban-hang-ma-dan-sales-can-bi%C3%AAt.jpg" width="100%" height="200px">
 	<div class="header">
 		<div class="container">
 			<a><img src="{{url('assets/dest/images/logo.jpg')}}" alt="" height="120px" width="265px"/></a>	
@@ -40,65 +42,74 @@
 			<div class="visible-xs clearfix"></div>
 			<nav class="main-account">		
 				<ul class ="l-inline ov">
-						<li><a href="#" style ="font-size: 16px;margin-right:10px;color:yellow">{{Auth::User()->name}} <i class="fa fa-user fa-lg"></i></a> </li>
-						<li><a href="{{route('signout.logout')}}" style ="font-size: 16px;margin-left:14px; color:yellow"> Đăng xuất<i class="fa fa-sign-out fa-lg"></i></a> </li>			
+						<li><a href="{{route('user.inform')}}" style ="font-size: 16px;margin-right:10px;color:red">{{Auth::User()->name}} <i class="fa fa-user fa-lg"></i></a> </li>
+						<li><a href="{{route('signout.logout')}}" style ="font-size: 16px;margin-left:14px; color:red"> Đăng xuất<i class="fa fa-sign-out fa-lg"></i></a> </li>			
 				</ul>	
 			</nav>
 		</div>
 		<br>
 		<div class="beta-comp">
-				<form role="search" method="get" id="searchform" action="/">
-					<input type="text" value="" name="s" id="s" rows="10" placeholder="Nhập từ khóa..." />
-					<button class="fa fa-search" type="submit" id="searchsubmit" "></button>
+				<form role="search" method="post" id="searchform" action="{{route('search')}}">
+					<input type="hidden" name ="_token" value ="{{csrf_token()}}">
+					<input type="text" value="" name="key" id="s" rows="10" placeholder="Nhập từ khóa..." />
+					<button class="fa fa-search" type="submit" id="searchsubmit" > </button>
 				</form>
 		</div>
 
 		<div class="shopping-cart">
 			<a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
 			<div class="visible-xs clearfix"></div>
-			<a href="#" style ="font-size: 16px;margin-right:10px;color:yellow">Giỏ hàng <i class="fa fa-shopping-cart fa-lg"></i></a>
+			<a href="#" style ="font-size: 16px;margin-right:10px;color:red">Giỏ hàng <i class="fa fa-shopping-cart fa-lg"></i></a>
 		</div>
 
 	
 		</div> <!-- .container -->
 	</div>
-	
+
 	@yield('content')
 
 
-	<!-- <div id="footer" class="color-div">
+	<div id="footer" class="color-div">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-3">
 					<div class="widget">
-						<h4 class="widget-title">Instagram Feed</h4>
-						<div id="beta-instagram-feed"><div></div></div>
+							<h4 class="widget-title">Hỗ trợ</h4>
+							<div>
+								<ul>
+									<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Chính sách đổi - trả - hoàn tiền</a></li>
+									<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Chính sách khách sỉ</a></li>
+									<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Phương thức vận chuyển</a></li>
+									<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Phương thức thanh toán</a></li>
+			
+								</ul>
+							</div>
 					</div>
 				</div>
-				<div class="col-sm-2">
+				<div class="col-sm-3">
 					<div class="widget">
-						<h4 class="widget-title">Information</h4>
+						<h4 class="widget-title">Dịch vụ</h4>
 						<div>
 							<ul>
-								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Web Design</a></li>
-								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Web development</a></li>
-								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Marketing</a></li>
-								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Tips</a></li>
-								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Resources</a></li>
-								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Illustrations</a></li>
+								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Điều khoản sử dụng</a></li>
+								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Chính sách bảo mật</a></li>
+								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Giới thiệu hàng rong BKU</a></li>
+								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Hệ thống trung tâm</a></li>
+		
 							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-sm-3">
 				 <div class="col-sm-10">
 					<div class="widget">
-						<h4 class="widget-title">Contact Us</h4>
+						<h4 class="widget-title">Liên hệ</h4>
 						<div>
 							<div class="contact-info">
 								<i class="fa fa-map-marker"></i>
-								<p>30 South Park Avenue San Francisco, CA 94108 Phone: +78 123 456 78</p>
-								<p>Nemo enim ipsam voluptatem quia voluptas sit asnatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p>
+								<p>Địa Chỉ: 268 Lý Thường Kiệt, Phường 14, Quận 10, Hồ Chí Minh.</p>
+								<p>Email: hangrongbku@gmail.com.</p>
+								<p>Số điện thoại: 19008198 </p>
 							</div>
 						</div>
 					</div>
@@ -106,28 +117,27 @@
 				</div>
 				<div class="col-sm-3">
 					<div class="widget">
-						<h4 class="widget-title">Newsletter Subscribe</h4>
+						<h4 class="widget-title">Theo dõi chúng tôi</h4>
 						<form action="#" method="post">
 							<input type="email" name="your_email">
 							<button class="pull-right" type="submit">Subscribe <i class="fa fa-chevron-right"></i></button>
 						</form>
 					</div>
 				</div>
-			</div> <!-- .row -->
+			</div> 
 		</div> <!-- .container -->
-	</div> <!-- #footer -->
+	</div> 
 	<div class="copyright">
 		<div class="container">
-			<p class="pull-left">Privacy policy. (&copy;) 2014</p>
+			<p class="pull-left">Copyright information (&copy;) 2019</p>
 			<p class="pull-right pay-options">
-				<a href="#"><img src="{{url('assets/dest/images/pay/master.jpg')}}" alt="" /></a>
-				<a href="#"><img src="{{url('assets/dest/images/pay/pay.jpg')}}" alt="" /></a>
-				<a href="#"><img src="{{url('assets/dest/images/pay/visa.jpg')}}" alt="" /></a>
-				<a href="#"><img src="{{url('assets/dest/images/pay/paypal.jpg')}}" alt="" /></a>
+				<a href="#"><img src="{{url('assets/dest/images/pay/master.png')}}" alt="" height="25px" width="40x" /></a>
+				<a href="#"><img src="{{url('assets/dest/images/pay/visa.png')}}" alt="" height="21px" width="34x" /></a>
+				<a href="#"><img src="{{url('assets/dest/images/pay/paypal.png')}}" alt="" height="21px" width="34x" /></a>
 			</p>
 			<div class="clearfix"></div>
 		</div> <!-- .container -->
-	</div> <!-- .copyright --> -->
+	</div> <!-- .copyright -->
 
 
 	<!-- include js files -->
