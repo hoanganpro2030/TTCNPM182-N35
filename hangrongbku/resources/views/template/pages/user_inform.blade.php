@@ -55,6 +55,13 @@
 				</form>
 				<div class="space60">&nbsp;</div>
 			</div> <!-- #content -->
+			<div class=" col-sm-3 offset-2">
+				<div class="space20">&nbsp;</div>
+				<div class="space20">&nbsp;</div>
+				<div class="space20">&nbsp;</div>
+				<button type="submit" class="btn btn-primary">Choose file</button>
+
+			</div>
 		</div>
 	</div>
 	
