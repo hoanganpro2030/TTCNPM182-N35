@@ -77,9 +77,9 @@ Route::post('/sign-in',[
 	'uses' => 'Auth\LoginController@postSignin'
 ]);
 
-Route::post('search',[
+Route::post('hangrongbku/search',[
 	'as' => 'search',
-	'user' => 'ProductController@getSearch'
+	'uses' => 'ProductController@getSearch'
 ]);
 
 
@@ -99,5 +99,10 @@ Route::get('hangrongbku/order/{pid}/user/{uid}',[
 Route::get('hangrongbku/order/remove/{id}',[
 	'as'=> 'order.removeCart',
 	'uses' => 'ProductController@removeCart'
+]);
+
+Route::post('hangrong/bku/product',[
+	'as' => 'product.postComment',
+	'uses' => 'ProductController@postComment'
 ]);
 
