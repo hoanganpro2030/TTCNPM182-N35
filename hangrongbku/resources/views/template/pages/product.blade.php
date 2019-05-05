@@ -58,23 +58,69 @@
 						<li><a href="#tab-reviews">Reviews (0)</a></li>
 					</ul>
 
-					<div class="panel" id="tab-description">
+					<div class="panel comment" id="tab-description">
 							{{$product->description}}
 					</div>
 					<div class="panel" id="tab-reviews">
-						<form action="" method="post">
+
+						<script type="text/javascript">
+							var i = 0;
+						</script>
+						<?php $i = 0; ?>
+						@foreach ($comments as $comment)
+							<?php 
+								$user = DB::table('users')->where('id',$comment->userID)->first();
+							?>
+							<div class="row">
+								<label style="color: blue"><a href="#">{{$user->name}} :</a></label>
+							
+								<div id="{{$i}}" class="comment"></div>
+							</div>
+							<input type="hidden" id="ip{{$i}}" value="{{$comment->content}}">
+							<?php $i++; ?>
+							<script type="text/javascript">
+
+								var a = document.getElementById("ip" +i).value;
+								console.log(i);
+								document.getElementById(""+i+"").innerHTML = a;
+								i+=1;
+							</script>
+							<hr>
+						@endforeach
+						
+						<form action="{{route('product.postComment')}}" method="post">
 							<textarea class="ckeditor" id="summary-ckeditor" name="comment"></textarea>
 							<script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
 							<script>
 								CKEDITOR.replace('summary-ckeditor');
 							</script>
-							
+							<input type="hidden" name="pid" value="{{$product->id}}">
 							<input type="hidden" name="_token" value="{{csrf_token()}}">
-							<input type="submit" value="Post">
+							<input type="submit" class="btn btn-success" value="Comment">
 						</form>
 					</div>
 				</div>
 				<div class="space50">&nbsp;</div>
+
+
+<!-- 				<script type="text/javascript">
+					var i = 0;
+				</script>
+				<?php $i = 0; ?>
+				@foreach ($comments as $comment)
+					<div id="{{$i}}">{{$comment->content}}</div>
+					<input type="hidden" id="ip{{$i}}" value="{{$comment->content}}">
+					<?php $i++; ?>
+					<script type="text/javascript">
+
+						var a = document.getElementById("ip" +i).value;
+						console.log(i);
+						document.getElementById(""+i+"").innerHTML = a;
+						i+=1;
+					</script>
+				@endforeach -->
+
+
 				<div class="beta-products-list">
 					<h4>Related Products</h4>
 

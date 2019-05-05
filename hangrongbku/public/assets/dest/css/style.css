@@ -72,6 +72,18 @@ padding:0;
 color:white;
 }
 
+div.comment  {
+margin:0;
+padding:0;
+color:black;
+}
+
+label.comment  {
+margin:0;
+padding:0;
+color:black;
+}
+
 form {
 display:inline
 }

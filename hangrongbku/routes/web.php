@@ -93,3 +93,8 @@ Route::get('hangrongbku/order/remove/{id}',[
 	'uses' => 'ProductController@removeCart'
 ]);
 
+Route::post('hangrong/bku/product',[
+	'as' => 'product.postComment',
+	'uses' => 'ProductController@postComment'
+]);
+
