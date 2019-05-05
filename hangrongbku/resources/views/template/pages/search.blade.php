@@ -1,6 +1,6 @@
 @extends('template.master')
 @section('content')
-<div class="container">
+ <div class="container"> 
 		<div id="content" class="space-top-none">
 			
 			<div class="main-content">
@@ -15,23 +15,19 @@
 								<div class="clearfix"></div>
                             </div>
                             
-							<?php $i=0?>
-							@for( ; $i < count($products) ;)
-
-							@if ($i % 3 == 0)
+							
 							<div class="row">
 
-								@for($j=0 ; $j<3; $j++)
-								@if($i < count($products))
+							@foreach($products as $new)
 								<div class="col-sm-4">
 									<div class="single-item">
 										<div class="single-item-header">
-											<a href="product.html"><img src="{{url('assets/dest/products/' . $products[$i]->image .'')}}" alt="" height="200pxs" margin-top="10px"></a>
+										<a href="{{route('product',$new->id)}}"><img src="{{url('assets/dest/products/' . $new->image .'')}}" alt="" height="200pxs" margin-top="10px"></a>
 										</div>
 										<div class="single-item-body"> 
-											<p class="single-item-title">{{mb_strtoupper($products[$i]->name)}}</b></p>
+											<p class="single-item-title">{{mb_strtoupper($new->name)}}</b></p>
 											<p class="single-item-price">
-												<span class='flash-sale'>{{number_format($products[$i]->price,0,',','.')}} đ</span>
+												<span class='flash-sale'>{{number_format($new->price,0,',','.')}} đ</span>
 											</p>
 										</div>
 										<div class="single-item-caption">
@@ -41,13 +37,10 @@
 										</div>
 									</div>
 								</div>
-								<?php $i++?>
-								@endif
-								@endfor
+							@endforeach
 							</div>
 							<div class="space60">&nbsp;</div>
-							@endif
-							@endfor
+							
 						</div> <!-- .beta-products-list -->
 
 						<div class="space50">&nbsp;</div>
