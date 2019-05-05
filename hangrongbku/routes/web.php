@@ -68,6 +68,10 @@ Route::get('/sign-in',[
 	'as'=> 'signin.getSignin',
 	'uses' => 'Auth\LoginController@getSignin'
 ]);
+Route::get('hangrongbku/user/productuser',[
+	'as' => 'productuser',
+	'uses' => 'UserController@getProductUser'
+]);
 Route::post('/sign-in',[
 	'as' => 'signin.postSignin',
 	'uses' => 'Auth\LoginController@postSignin'

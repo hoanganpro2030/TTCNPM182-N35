@@ -13,6 +13,12 @@ class UserController extends Controller
         $user = Auth::User();
 		return view('template.pages.user_inform',compact('user'));
     }
+    public function getProductUser(){
+        $user = Auth::User();
+    
+        $products = DB::table('products')->where('sellerID',$user->id)->get();
+        return view('template.pages.productuser',compact('products'));
+    }
     public function editUser(Request $request){
         if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
