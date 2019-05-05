@@ -50,7 +50,8 @@ class ProductController extends Controller
 		$product = DB::table('products')->where('id',$id)->first();
 		$relatedPd = DB::table('products')->where('cateID',$product->cateID)->get();
 		$seller = DB::table('users')->where('id',$product->sellerID)->first();
-		return view('template.pages.product',compact('product','seller','relatedPd'));
+		$comments = DB::table('comments')->where('productID',$product->id)->get();
+		return view('template.pages.product',compact('product','seller','relatedPd','comments'));
 	}
 
 	public function getCategories($id){
@@ -114,8 +115,9 @@ class ProductController extends Controller
 		$comment = new Comments();
 		$comment->content = $req->comment;
 		$comment->userID = Auth::User()->id;
-		//$comment->productID = 
-    	return redirect()->route('product');
+		$comment->productID = $req->pid;
+		$comment->save();
+    	return redirect()->route('product',$req->pid);
     }
 
 }
