@@ -1,4 +1,6 @@
 <?php
+use Carbon\Traits\Rounding;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,10 +54,7 @@ Route::post('/hangrongbku/user',[
 	'as' => 'editUser',
 	'uses' => 'UserController@editUser'
 ]);
-Route::get('hangrongbku/user/update_product',[
-	'as' => 'update.product',
-	'uses' => 'UserController@updateProduct'
-]);
+
 Route::get('/sign-up',[
 	'as' => 'signup.getSignUp',
 	'uses' => 'Auth\RegisterController@getSignUp'
@@ -101,7 +100,7 @@ Route::get('hangrongbku/order/remove/{id}',[
 	'uses' => 'ProductController@removeCart'
 ]);
 
-Route::post('hangrong/bku/product',[
+Route::post('hangrongbku/product',[
 	'as' => 'product.postComment',
 	'uses' => 'ProductController@postComment'
 ]);
@@ -114,4 +113,18 @@ Route::get('hangrongbku/order/create/',[
 Route::get('hangrongbku/user/history/', [
 	'as'=> 'user.getHistory',
 	'uses' => 'UserController@getHistory'
+]);
+
+Route::post('hangrongbku/user/productuser/update',[
+	'as' => 'products.update',
+	'uses' => 'ProductController@updateProduct'
+]);
+Route::get('hangrongbku/user/productuser/update/{id}',[
+	'as' => 'products.show',
+	'uses' => 'ProductController@showProductUser'
+]);
+
+Route::get('hangrongbku/user/productuser/remove/{id}',[
+	'as'=> 'products.remove',
+	'uses' => 'ProductController@removeProduct'
 ]);
