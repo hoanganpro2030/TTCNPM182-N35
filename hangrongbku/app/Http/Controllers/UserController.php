@@ -48,4 +48,13 @@ class UserController extends Controller
         $user->save();
         return redirect()->route('user.inform')->with('message','Thông tin sản phẩm đã được cập nhật!');
     }
+    public function getHistory(){
+        if (!Auth::check()){
+			return redirect()->route('signin.getSignin');
+        }
+        $user = Auth::User();
+        $orders =  DB::table('orders')->where('userID',$user->id)->get();
+
+        return view('template.pages.history', compact('orders'));
+    }
 }

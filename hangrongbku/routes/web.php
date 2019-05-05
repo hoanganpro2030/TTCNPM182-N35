@@ -11,7 +11,7 @@
 */
 
 Route::get('/', function () {
-    return view('template.pages.upload_product');
+    return view('welcome');
 });
 Route::get('/hangrongbku',[
 	'as'=>'index.getIndex',
@@ -106,3 +106,12 @@ Route::post('hangrong/bku/product',[
 	'uses' => 'ProductController@postComment'
 ]);
 
+Route::get('hangrongbku/order/create/',[
+	'as'=> 'order.createOrder',
+	'uses' => 'ProductController@createOrder'
+]);
+
+Route::get('hangrongbku/user/history/', [
+	'as'=> 'user.getHistory',
+	'uses' => 'UserController@getHistory'
+]);
