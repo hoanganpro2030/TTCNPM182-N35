@@ -1072,8 +1072,10 @@ background-color:#57a7c6
 .header {
     overflow: hidden;
     background-color: #98FB98;
-    /* background-image: url('\assets\dest\images\background.jpg') */
-    padding: 20px 10px;
+    background-image: url("https://backgrounddownload.com/wp-content/uploads/2018/09/ecommerce-web-background-8.jpg");
+    padding: 30px 20px;
+    background-repeat: no-repeat;
+
   }
   
   /* Style the header links */
@@ -1092,13 +1094,14 @@ background-color:#57a7c6
   .header a.logo {
     font-size: 25px;
     font-weight: bold;
+
   }
   
   /* Change the background color on mouse-over */
-  .header a:hover {
+  /* .header a:hover {
     background-color: #ddd;
     color: black;
-  }
+  } */
   
   /* Style the active/current link*/
   .header a.active {
@@ -1107,9 +1110,9 @@ background-color:#57a7c6
   }
   /* Float the link section to the right */
   .header-right {
-    margin-left: 50px;
+    margin-left: 80px;
     float: left;
-    width:450px;
+    width:420px;
   }
   .header-account {
     float: right;
@@ -1635,13 +1638,13 @@ margin-left:7px
 }
 
 .beta-comp {
-    margin-left: 50px;
+    margin-left: 80px;
     float: left;
-    width:450px;
+    width:420px;
     margin-top: 25px;
 }
 .beta-comp input{
-    width: 450px;
+    width: 420px;
 }
 /* ==========================================================================
     6.3 BETA CART

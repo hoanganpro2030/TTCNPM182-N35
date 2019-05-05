@@ -52,6 +52,10 @@ Route::post('/hangrongbku/user',[
 	'as' => 'editUser',
 	'uses' => 'UserController@editUser'
 ]);
+Route::get('hangrongbku/user/update_product',[
+	'as' => 'update.product',
+	'uses' => 'UserController@updateProduct'
+]);
 Route::get('/sign-up',[
 	'as' => 'signup.getSignUp',
 	'uses' => 'Auth\RegisterController@getSignUp'
@@ -69,9 +73,9 @@ Route::post('/sign-in',[
 	'uses' => 'Auth\LoginController@postSignin'
 ]);
 
-Route::post('search',[
+Route::post('hangrongbku/search',[
 	'as' => 'search',
-	'user' => 'ProductController@getSearch'
+	'uses' => 'ProductController@getSearch'
 ]);
 
 

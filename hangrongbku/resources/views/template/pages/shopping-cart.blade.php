@@ -5,19 +5,19 @@
 			@foreach($carts as $cart)
 			<div class="table-responsive">
 				<!-- Shop Products Table -->
-				<table class="shop_table beta-shopping-cart-table" cellspacing="0">
+				<table class="shop_table beta-shopping-cart-table" cellspacing="0" style = "color: red">
 					<thead>
-						<tr>
+						<tr style="color: black;">
 							<?php
 								$product = DB::table('products')->where('id',$cart->productID)->first();
 							?>
 							<th class="product">{{$product->name}}</th>
-							<th class="product-name">Description</th>
-							<th class="product-price">Price</th>
-							<th class="product-status">Status</th>
-							<th class="product-quantity">Qty.</th>
-							<th class="product-subtotal">Total</th>
-							<th class="product-remove">Remove</th>
+							<th class="product-name">Mô tả</th>
+							<th class="product-price">Giá cả</th>
+							<th class="product-status">Trạng thái</th>
+							<th class="product-quantity">Số lượng</th>
+							<th class="product-subtotal">Tổng tiền</th>
+							<th class="product-remove">Xóa sản phẩm</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -51,7 +51,7 @@
 							</td>
 
 							<td class="product-remove">
-								<a href="{{route('order.removeCart',$cart->id)}}" class="remove" title="Remove this item"><i class="fa fa-trash-o"></i></a>
+								<a href="{{route('order.removeCart',$cart->id)}}" class="remove" title="Remove this item"><i class="fa fa-trash-o" style= "color:yellow"></i></a>
 							</td>
 						</tr>
 					</tbody>
@@ -85,11 +85,19 @@
 				</form> -->
 
 				<div style=" display: table; margin: 0 auto;" class="cart-totals">
-					<div class="cart-totals-row"><h5 class="cart-total-title">Cart Totals</h5></div>
+
+					<div class="cart-totals-row"><h5 class="cart-total-title">Hóa đơn</h5></div>
+					<div class="cart-totals-row"><span>Thành tiền:</span> <span>$188.00</span></div>
+					<div class="cart-totals-row"><span>Vận chuyển:</span> <span>Miễn phí</span></div>
+					<div class="cart-totals-row"><span>Tổng hóa đơn:</span> <span>$188.00</span></div>
+					<div style="text-align: center;" class="cart-totals-row"><button style="position: inline; color:red; background:yellow" class="editbtn">Submit</button></div>
+
+					{{-- <div class="cart-totals-row"><h5 class="cart-total-title">Cart Totals</h5></div>
 					<div class="cart-totals-row"><span>Cart Subtotal:</span> <span>$188.00</span></div>
 					<div class="cart-totals-row"><span>Shipping:</span> <span>Free Shipping</span></div>
 					<div class="cart-totals-row"><span>Order Total:</span> <span>$188.00</span></div>
-					<div style="text-align: center;" class="cart-totals-row"><button style="position: inline;" class="editbtn">Submit</button></div>
+					<div style="text-align: center; color:black;" class="cart-totals-row"><button style="position: inline;" class="editbtn">Submit</button></div> --}}
+
 				</div>
 
 				<div class="clearfix"></div>
