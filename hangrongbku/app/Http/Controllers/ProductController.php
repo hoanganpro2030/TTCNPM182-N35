@@ -118,7 +118,38 @@ class ProductController extends Controller
 		$comment->productID = $req->pid;
 		$comment->save();
     	return redirect()->route('product',$req->pid);
-    }
+	}
+	
+	public function updateProduct(Request $request){
+        if (!Auth::check()){
+			return redirect()->route('signin.getSignin');
+		}
+		$user = Auth::User();
+		$product=DB::table('products')->where('sellerID',$user->id);
+		$product->update(['name' => $request->name, 'price' => $request->price, 'description' => $request->description, 'cateID' => $request->cateID, 'quantity' => $request->quantity]);
+		// $products->id = $request->id;
+		// $products->name = $request->name;
+        // $products->price = $request->price;
+        // $products->description = $request->description;
+		// $products->cateID = $request->cateID;
+		// $products->quantity = $request->quantity;
+        // $products->update();
+        return redirect()->route('productuser')->with('message','Thông tin sản phẩm đã được cập nhật!');
+	}
+	public function showProductUser($id){
+		$user = Auth::User();
+        $products = DB::table('products')->where('sellerID',$user->id)->where('id',$id)->first();
+		return view('template.pages.update_product',compact('products'));
+	}
 
+	public function removeProduct($id){
+        if (!Auth::check()){
+            return redirect()->route('signin.getSignin');
+        }
+        $products = DB::table('products')->where('id',$id)->delete();
+        // DB::table('products')->where('id',$cart->productID)->increment('quantity',$cart->quantity);
+        // DB::table('usercarts')->where('id',$id)->delete();
+        return redirect()->route('productuser');
+     }
 }
 
