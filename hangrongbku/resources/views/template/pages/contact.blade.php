@@ -12,16 +12,16 @@
                     <div class="space20">&nbsp;</div>
                     <form action="#" method="post" class="contact-form">	
                         <div class="form-block">
-                            <input name="your-name" type="text" placeholder="Họ và ten của bạn (bắt buộc)">
+                            <input name="your-name" type="text" placeholder="Họ và tên của bạn (bắt buộc)" style ="color:black"> 
                         </div>
                         <div class="form-block">
-                            <input name="your-email" type="email" placeholder="Địa chỉ email (bắt buộc)">
+                            <input name="your-email" type="email" placeholder="Địa chỉ email (bắt buộc)" style ="color:black">
                         </div>
                         <div class="form-block">
-                            <input name="your-subject" type="text" placeholder="Tiêu đề">
+                            <input name="your-subject" type="text" placeholder="Tiêu đề" style ="color:black">
                         </div>
                         <div class="form-block">
-                            <textarea name="your-message" placeholder="Nhập nội dung"></textarea>
+                            <textarea name="your-message" placeholder="Nhập nội dung" style ="color:black"></textarea>
                         </div>
                         <div class="form-block">
                             <button type="submit" class="beta-btn primary" style ="color: black">Gửi tin nhắn <i class="fa fa-chevron-right"></i></button>

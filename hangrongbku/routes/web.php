@@ -73,9 +73,9 @@ Route::post('/sign-in',[
 	'uses' => 'Auth\LoginController@postSignin'
 ]);
 
-Route::post('search',[
+Route::post('hangrongbku/search',[
 	'as' => 'search',
-	'user' => 'ProductController@getSearch'
+	'uses' => 'ProductController@getSearch'
 ]);
 
 
