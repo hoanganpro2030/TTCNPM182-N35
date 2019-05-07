@@ -4,27 +4,28 @@
 <div id="content" class="space-top-none">
 	<div class ="main-content">
 		<div class="row">
-			@include('template.user_option')
-			
-			<h1 style="color:white">Lich su dat hang</h1>
-
 			<div class="space60">&nbsp;</div>
 
+			@include('template.user_option')
+			
+		
 			<div class="col-sm-9">
-
+				<h4 style="color:white">Lịch sử đặt hàng</h4>
+				<div class="space20">&nbsp;</div>
 				@foreach ($orders as $order)
 					<?php
 						$order_detail = DB::table('order_detail')->where('oderID',$order->id)->get();
 					?>
-					<p>Ngay dat hang: {{$order->created_at}}</p>
-					<div class="space20">&nbsp;</div>
+					<div class="space10">&nbsp;</div>
 					<table class="table" 
 						style="background-color:white;border-radius:10px;color:black">
+						<p>Ngày đặt hàng: {{$order->created_at}}</p>
 					<thead>
+					<div class="space20">&nbsp;</div>
 					<tr>
-						<th>Ten San Pham</th>
-						<th>So Luong</th>
-						<th>Gia San Pham</th>
+						<th>Tên Mặt Hàng</th>
+						<th>Giá Mặt Hàng</th>
+						<th>Số Lượng</th>
 					</tr>
 					</thead>
 					<tbody>
@@ -32,17 +33,17 @@
 					<?php $product=DB::table('products')->where('id',$detail->productID)->first();?>
 					<tr>
 						<td>{{$product->name}}</td>
-						<td>{{$product->price}}</td>
+						<td>{{number_format($product->price,0,',','.')}} đ</td>
 						<td>{{$detail->quantity}}</td>
 					</tr>
 					@endforeach
 					</tbody>
+					</table>
+					<hr/>
 				@endforeach
-								
 			</div>
-			
 		</div>
 	</div>
 </div>
 </div> <!-- .container -->
-<!-- @endsection -->
+@endsection
