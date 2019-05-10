@@ -67,6 +67,10 @@ class ProductController extends Controller
 			return redirect()->route('signin.getSignin');
 		}
 		$product= DB::table('products')->where('id',$pid)->first();
+		if($product->sellerID == Auth::User()->id){
+			return redirect()->route('product',$product->id)->withErrors(['error'=>'Không thể tự mua sản phẩm của chính mình']);
+
+		}
 		if ($product->quantity <=0){
 			return redirect()->route('product',$pid)->withErrors(['error'=>'Sản phẩm này đã hết']);
 		}
