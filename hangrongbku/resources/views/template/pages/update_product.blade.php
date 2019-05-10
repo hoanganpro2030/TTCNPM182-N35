@@ -6,7 +6,15 @@
 			@include('template.user_option')
 			<div class=" col-sm-9 offset-2">
 
-				<form >
+							@if (count($errors)>0)
+            <div class="alert alert-danger">
+            	<ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+                </ul>
+            </div>
+            @endif
 
 				<form action={{route('products.update')}} method="POST">
 
@@ -36,9 +44,6 @@
                         <input name="description" type="text" class="form-control col-sm-5" id="exampleInputPassword1" placeholder="Nguyễn Văn A" value="{{$products->description}}">				  	</div>
 				  	<div class="space20">&nbsp;</div>
                     <div class="form-group">
-
-                        <button type="submit" class="btn btn-primary" >Cập nhật</button>
-                        <button type="submit" class="btn btn-primary">Xóa</button>
 
 						<input type="hidden" name ="_token" value ="{{csrf_token()}}">
                         <input type="submit" class="btn btn-primary" value="Cập nhật">

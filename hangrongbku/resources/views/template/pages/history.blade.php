@@ -18,7 +18,7 @@
 					?>
 					<div class="space10">&nbsp;</div>
 					<table class="table" 
-						style="background-color:white;border-radius:10px;color:black">
+						style="background-color:white;border-radius:10px 10px 0 0;color:black; box-shadow: 0px 0px 10px 0px	white">
 						<p>Ngày đặt hàng: {{$order->created_at}}</p>
 					<thead>
 					<div class="space20">&nbsp;</div>

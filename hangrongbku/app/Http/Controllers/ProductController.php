@@ -11,6 +11,7 @@ use App\UserCarts;
 use App\Order;
 use App\OrderDetail;
 use App\Comments;
+use App\Http\Requests\ProductRequest;
 
 class ProductController extends Controller
 {
