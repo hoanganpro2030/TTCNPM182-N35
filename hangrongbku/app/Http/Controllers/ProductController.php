@@ -73,6 +73,7 @@ class ProductController extends Controller
 		}
         $oldcart = DB::table('usercarts')->where('userID',$uid)->where('productID',$pid)->get();
         if (count($oldcart) != 0){
+
             DB::table('usercarts')->where('userID',$uid)->where('productID',$pid)->increment('quantity',1);
             DB::table('products')->where('id',$pid)->decrement('quantity',1);
             return redirect()->route('order.getCart');
@@ -87,6 +88,12 @@ class ProductController extends Controller
 		// $carts = DB::table('usercarts')->where('userID',$uid)->get();
         // $seller = Products::find(1)->user;
         // $product = DB::table('usercarts')->where('userID',$uid)->get();
+
+
+
+
+
+
         return redirect()->route('order.getCart');
     }
     public function getCart(){
@@ -107,7 +114,7 @@ class ProductController extends Controller
         return redirect()->route('order.getCart');
      }
 
-	
+		
     public function postComment(Request $req){
     	if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
@@ -118,9 +125,9 @@ class ProductController extends Controller
 		$comment->productID = $req->pid;
 		$comment->save();
     	return redirect()->route('product',$req->pid);
-	}
-	
-	public function updateProduct(Request $request){
+    }
+
+    public function updateProduct(Request $request){
         if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}
@@ -136,12 +143,12 @@ class ProductController extends Controller
         // $products->update();
         return redirect()->route('productuser')->with('message','Thông tin sản phẩm đã được cập nhật!');
 	}
-	public function showProductUser($id){
+
+    public function showProductUser($id){
 		$user = Auth::User();
         $products = DB::table('products')->where('sellerID',$user->id)->where('id',$id)->first();
 		return view('template.pages.update_product',compact('products'));
 	}
-
 	public function removeProduct($id){
         if (!Auth::check()){
             return redirect()->route('signin.getSignin');
@@ -151,5 +158,6 @@ class ProductController extends Controller
         // DB::table('usercarts')->where('id',$id)->delete();
         return redirect()->route('productuser');
      }
+
 }
 
