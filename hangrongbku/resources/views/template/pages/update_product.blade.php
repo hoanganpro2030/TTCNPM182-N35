@@ -17,7 +17,7 @@
             @endif
 
 				<form action={{route('products.update')}} method="POST">
-
+					<input type="hidden" name="pid" value="{{$products->id}}">
 					<h4>Cập nhật sản phẩm</h4>
 					<div class="space20">&nbsp;</div>
 					<div class="space20">&nbsp;</div>
@@ -28,7 +28,20 @@
 				  	<div class="space20">&nbsp;</div>
 				  	<div class="form-group">
 					    <label for="exampleInputPassword1">Loại sản phẩm</label>
-					    <input name="cateID" type="text" class="form-control col-sm-5" id="exampleInputPassword1" placeholder="Nguyễn Văn A" value="{{$products->cateID}}">
+					    <select class="form-control col-sm-5" id="exampleInputPassword1" name="cateID">
+					    	<?php
+					    		$categories = DB::select('select * from categories');
+					    	?>
+					    	@foreach($categories as $cate)
+					    		@if ($products->cateID == $cate->id)
+					    			<option value="{{$cate->id}}" selected="selected">{{$cate->name}}</option>
+					    		@else
+					    			<option value="{{$cate->id}}">{{$cate->name}}</option>
+					    		@endif
+					    	@endforeach
+					    	
+					    </select>
+					    <!-- <input name="cateID" type="text" class="form-control col-sm-5" id="exampleInputPassword1" placeholder="Nguyễn Văn A" value="{{$products->cateID}}"> -->
 				  	</div>
 				  	<div class="space20">&nbsp;</div>
 				  	<div class="form-group">
