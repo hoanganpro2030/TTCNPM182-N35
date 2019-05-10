@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Auth;
@@ -33,7 +31,6 @@ class ProductController extends Controller
 	public function showProduct(){
 		return view('template.pages.product');
 	}
-
 	public function getSearch(Request $req){
 		$products = DB::table('products')->where('name','like','%'.$req->key.'%')
 					->orwhere('price',$req->key)
@@ -52,7 +49,6 @@ class ProductController extends Controller
 		$comments = DB::table('comments')->where('productID',$product->id)->get();
 		return view('template.pages.product',compact('product','seller','relatedPd','comments'));
 	}
-
 	public function getCategories($id){
 		if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
@@ -61,7 +57,6 @@ class ProductController extends Controller
 		$categories = DB::select('select * from categories');
 		return view('template.pages.index',compact('products','categories'));
 	}
-
 	public function addToCart($pid,$uid){
     	if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
@@ -117,7 +112,6 @@ class ProductController extends Controller
         return redirect()->route('order.getCart');
      }
 
-		
     public function postComment(Request $req){
     	if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
@@ -136,26 +130,19 @@ class ProductController extends Controller
 		if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}
-
 		$carts = DB::table('usercarts')->where('userID',Auth::User()->id)->get();
 		$order = new Order();
 		
 		$order->userID = Auth::User()->id;
-
-
 		$total = 0;
-
 		for($i = 0; $i < count($carts); $i++){
 			$cart = $carts[$i];
 			$product = DB::table('products')->where('id',$cart->productID)->first();
 			$total += $product->price*$cart->quantity;
 		}
-
 		$order->total = $total;
 		$order->save();
-
 		$id_order = $order->id;
-
 		for($i = 0; $i < count($carts); $i++){
 			$cart = $carts[$i];
 			$product = DB::table('products')->where('id',$cart->productID)->first();
@@ -167,7 +154,6 @@ class ProductController extends Controller
 			$order_detail->oderID = $id_order;
 			$order_detail->save();
 		}
-
 		return redirect()->route('user.getHistory');
 	}
 	
@@ -203,6 +189,4 @@ class ProductController extends Controller
         // DB::table('usercarts')->where('id',$id)->delete();
         return redirect()->route('productuser');
      }
-
 }
-

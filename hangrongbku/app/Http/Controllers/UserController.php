@@ -35,6 +35,7 @@ class UserController extends Controller
       
     }
 
+
   //   public function updateProduct(Request $request){
   //       if (!Auth::check()){
 		// 	return redirect()->route('signin.getSignin');
@@ -50,6 +51,8 @@ class UserController extends Controller
   //       return redirect()->route('user.inform')->with('message','Thông tin sản phẩm đã được cập nhật!');
   //   }
 
+
+   
     public function updateProduct(Request $request){
         if (!Auth::check()){
 			return redirect()->route('signin.getSignin');

@@ -5,7 +5,11 @@
 		<div class="row">
 			@include('template.user_option')
 			<div class=" col-sm-9 offset-2">
+
+				<form >
+
 				<form action={{route('products.update')}} method="POST">
+
 					<h4>Cập nhật sản phẩm</h4>
 					<div class="space20">&nbsp;</div>
 					<div class="space20">&nbsp;</div>
@@ -32,9 +36,14 @@
                         <input name="description" type="text" class="form-control col-sm-5" id="exampleInputPassword1" placeholder="Nguyễn Văn A" value="{{$products->description}}">				  	</div>
 				  	<div class="space20">&nbsp;</div>
                     <div class="form-group">
+
+                        <button type="submit" class="btn btn-primary" >Cập nhật</button>
+                        <button type="submit" class="btn btn-primary">Xóa</button>
+
 						<input type="hidden" name ="_token" value ="{{csrf_token()}}">
                         <input type="submit" class="btn btn-primary" value="Cập nhật">
 					<a href="{{route('products.remove', $products->id)}}" class="btn btn-primary">Xoá</a>
+
                     </div>
 				</form>
 			</div> <!-- #content -->

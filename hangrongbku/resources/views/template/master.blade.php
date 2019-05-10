@@ -17,11 +17,11 @@
 </head>
 <body >
 	</p>
-	{{-- <img src= "http://getflycrm.com/wp-content/uploads/2016/11/nguyen-tac-co-ban-cua-ban-hang-ma-dan-sales-can-bi%C3%AAt.jpg" width="100%" height="200px"> --}}
+
 	<div class="header">
 		<div class="container">
 			
-			<a><img src="{{url('http://qttb.hcmut.edu.vn/image/catalog/logo.png')}}" alt="" height="120px" width="120px" style="margin-left:70px;"></a>	
+			<a class="logo"><img src="{{url('assets/dest/images/logo.png')}}" alt="" ></a>	
 			<div class="header-right" style="background-color: #0277b8;">
 					<a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
 					<div class="visible-xs clearfix"></div>
