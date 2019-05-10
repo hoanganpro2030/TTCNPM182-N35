@@ -64,7 +64,10 @@
 					</ul>
 
 					<div class="panel comment" id="tab-description">
-							{{$product->description}}
+					<input type="hidden" id="xxx" value="{{$product->description}}">
+						<?php
+							echo htmlspecialchars_decode($product->description);
+						?>
 					</div>
 					<div class="panel" id="tab-reviews">
 

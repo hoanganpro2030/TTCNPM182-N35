@@ -54,8 +54,14 @@
 				  	<div class="space20">&nbsp;</div>
 				  	<div class="form-group">
 					    <label for="exampleInputPassword1">Mô tả sản phẩm</label>
-                        <input name="description" type="text" class="form-control col-sm-5" id="exampleInputPassword1" placeholder="Nguyễn Văn A" value="{{$products->description}}">				  	</div>
-				  	<div class="space20">&nbsp;</div>
+						<textarea class="ckeditor" id="summary-ckeditor" name="description"></textarea>
+							<script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
+							<script>
+								CKEDITOR.replace('summary-ckeditor');
+							</script>
+                        <!-- <input name="description" type="text" class="form-control col-sm-5" id="exampleInputPassword1" placeholder="Nguyễn Văn A" value="{{$products->description}}">				  	</div> -->
+				  	</div>
+					<div class="space20">&nbsp;</div>
                     <div class="form-group">
 
 						<input type="hidden" name ="_token" value ="{{csrf_token()}}">
