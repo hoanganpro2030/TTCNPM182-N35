@@ -21,9 +21,9 @@
 						<div class="space20">&nbsp;</div>
 
 						<div class="single-item-desc">
-								<p>Liên hệ người bán: <a href="" style="color: yellow">{{$seller->name}}</a></p>
+								<p>Liên hệ người bán: <a href="" style="color: blue">{{$seller->name}}</a></p>
 								<div class="space20">&nbsp;</div>
-								<p>Số điện thoại đặt hàng trực tiếp: <a style="color: yellow">{{$seller->phone}}</a></p>
+								<p>Số điện thoại đặt hàng trực tiếp: <a style="color: blue">{{$seller->phone}}</a></p>
 						</div>
 						<div class="space20">&nbsp;</div>
 						@if (count($errors)>0)
@@ -35,9 +35,10 @@
                                 </ul>
                             </div>
                         @endif
-						<p>Số lượng:</p>
+						<p>Options:</p>
 						<div class="single-item-options">
-							<select class="wc-select" name="color" style="color: black">
+							<select class="wc-select" name="color">
+								<option>Qty</option>
 								<option value="1">1</option>
 								<option value="2">2</option>
 								<option value="3">3</option>
@@ -53,8 +54,8 @@
 				<div class="space40">&nbsp;</div>
 				<div class="woocommerce-tabs">
 					<ul class="tabs">
-						<li><a href="#tab-description" style ="font-size: 16px";>Mô tả</a></li>
-						<li><a href="#tab-reviews" style ="font-size: 16px">Đánh giá (0)</a></li>
+						<li><a href="#tab-description">Description</a></li>
+						<li><a href="#tab-reviews">Reviews (0)</a></li>
 					</ul>
 
 					<div class="panel comment" id="tab-description">
@@ -72,7 +73,7 @@
 							?>
 							<div class="row">
 								<label style="color: blue"><a href="#">{{$user->name}} :</a></label>
-							
+								
 								<div id="{{$i}}" class="comment"></div>
 							</div>
 							<input type="hidden" id="ip{{$i}}" value="{{$comment->content}}">
@@ -121,7 +122,7 @@
 
 
 				<div class="beta-products-list">
-					<h4>Sản phẩm liên quan</h4>
+					<h4>Related Products</h4>
 
 					<?php $i=0?>
 							@for( ; $i < count($relatedPd) ;)
@@ -159,7 +160,7 @@
 			</div>
 			<div class="col-sm-3 aside">
 				<div class="widget">
-					<h3 class="widget-title" style ="color: yellow">Mặt hàng bán chạy</h3>
+					<h3 class="widget-title">Best Sellers</h3>
 					<div class="widget-body">
 						<div class="beta-sales beta-lists">
 							<div class="media beta-sales-item">
@@ -195,7 +196,7 @@
 					</div>
 				</div> <!-- best sellers widget -->
 				<div class="widget">
-					<h3 class="widget-title" style ="color: yellow">Sản phẩm mới</h3>
+					<h3 class="widget-title">New Products</h3>
 					<div class="widget-body">
 						<div class="beta-sales beta-lists">
 							<div class="media beta-sales-item">

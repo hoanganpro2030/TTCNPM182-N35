@@ -105,6 +105,16 @@ Route::post('hangrongbku/product',[
 	'uses' => 'ProductController@postComment'
 ]);
 
+Route::get('hangrongbku/order/create/',[
+	'as'=> 'order.createOrder',
+	'uses' => 'ProductController@createOrder'
+]);
+
+Route::get('hangrongbku/user/history/', [
+	'as'=> 'user.getHistory',
+	'uses' => 'UserController@getHistory'
+]);
+
 Route::post('hangrongbku/user/productuser/update',[
 	'as' => 'products.update',
 	'uses' => 'ProductController@updateProduct'

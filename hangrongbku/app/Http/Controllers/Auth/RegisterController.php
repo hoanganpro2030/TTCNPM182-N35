@@ -74,7 +74,7 @@ class RegisterController extends Controller
 
     public function getSignUp(){
         return view('login.sign-up');
-    }
+    }  
 
     public function postSignUp(RegisterRequest $request){
         $user = new User();

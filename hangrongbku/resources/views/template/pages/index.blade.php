@@ -40,7 +40,8 @@
 											</p>
 										</div>
 										<div class="single-item-caption">
-											<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+											<?php $user=Auth::User()->id?>
+											<a class="add-to-cart pull-left" href="{{route('order.addToCart',[$products[$i]->id, $user])}}"><i class="fa fa-shopping-cart"></i></a>
 											<a class="beta-btn primary" href="{{route('products.getProduct',$products[$i]->id)}}">Details <i class="fa fa-chevron-right"></i></a>
 											<div class="clearfix"></div>
 										</div>
@@ -61,8 +62,6 @@
 
 					</div>
 				</div> <!-- end section with sidebar and main content -->
-
-
 			</div> <!-- .main-content -->
 		</div> <!-- #content -->
 	</div> <!-- .container -->

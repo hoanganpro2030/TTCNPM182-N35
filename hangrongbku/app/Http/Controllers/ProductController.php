@@ -8,7 +8,8 @@ use Auth;
 use App\User;
 use App\Products;
 use App\UserCarts;
-
+use App\Order;
+use App\OrderDetail;
 use App\Comments;
 class ProductController extends Controller
 {
@@ -16,8 +17,8 @@ class ProductController extends Controller
     	if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}
-			$products = DB::select('select * from products');
-			$categories = DB::select('select * from categories');
+		$products = DB::select('select * from products');
+		$categories = DB::select('select * from categories');
     	return view('template.pages.index', compact('products', 'categories'));
 	}
 	public function showCheckout(){
@@ -41,8 +42,6 @@ class ProductController extends Controller
 		return view('template.pages.search', compact('products'));
 	}
 	
-
-
 	public function getProduct($id){
     	if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
@@ -125,9 +124,51 @@ class ProductController extends Controller
 		$comment->productID = $req->pid;
 		$comment->save();
     	return redirect()->route('product',$req->pid);
+
     }
 
-    public function updateProduct(Request $request){
+	
+	public function createOrder(){
+		if (!Auth::check()){
+			return redirect()->route('signin.getSignin');
+		}
+
+		$carts = DB::table('usercarts')->where('userID',Auth::User()->id)->get();
+		$order = new Order();
+		
+		$order->userID = Auth::User()->id;
+
+
+		$total = 0;
+
+		for($i = 0; $i < count($carts); $i++){
+			$cart = $carts[$i];
+			$product = DB::table('products')->where('id',$cart->productID)->first();
+			$total += $product->price*$cart->quantity;
+		}
+
+		$order->total = $total;
+		$order->save();
+
+		$id_order = $order->id;
+
+		for($i = 0; $i < count($carts); $i++){
+			$cart = $carts[$i];
+			$product = DB::table('products')->where('id',$cart->productID)->first();
+			
+			$order_detail = new OrderDetail();
+			$order_detail->productID = $product->id;
+			$order_detail->price = $product->price;
+			$order_detail->quantity = $cart->quantity;
+			$order_detail->oderID = $id_order;
+			$order_detail->save();
+		}
+
+		return redirect()->route('user.getHistory');
+	}
+	
+	public function updateProduct(Request $request){
+
         if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}
