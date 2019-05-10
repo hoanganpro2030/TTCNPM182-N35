@@ -95,6 +95,11 @@ Route::get('hangrongbku/order/{pid}/user/{uid}',[
 	'as'=> 'order.addToCart',
 	'uses' => 'ProductController@addToCart'
 ]);
+Route::post('hangrongbku/order/',[
+	'as'=> 'order.postAddToCart',
+	'uses' => 'ProductController@postAddToCart'
+]);
+
 Route::get('hangrongbku/order/remove/{id}',[
 	'as'=> 'order.removeCart',
 	'uses' => 'ProductController@removeCart'

@@ -15,7 +15,6 @@ class UserController extends Controller
     }
     public function getProductUser(){
         $user = Auth::User();
-    
         $products = DB::table('products')->where('sellerID',$user->id)->get();
         return view('template.pages.productuser',compact('products'));
     }

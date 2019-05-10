@@ -35,17 +35,22 @@
                                 </ul>
                             </div>
                         @endif
-						<p>Options:</p>
+						<p>Số lượng:</p>
 						<div class="single-item-options">
-							<select class="wc-select" name="color">
-								<option>Qty</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-							</select>
-							<a class="add-to-cart" href="{{route('order.addToCart',[$product->id,Auth::User()->id])}}"><i class="fa fa-shopping-cart"></i></a>
+							<form action="{{route('order.postAddToCart')}}" method="post">
+								<select class="wc-select" name="quantity" style="color: #000">
+									<!-- <option>Số lượng</option> -->
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+								<input type="hidden" name="pid" value="{{$product->id}}">
+								<input type="hidden" name="_token" value="{{csrf_token()}}">
+								<!-- <a class="add-to-cart" href="{{route('order.addToCart',[$product->id,Auth::User()->id])}}"><i class="fa fa-shopping-cart"></i></a> -->
+								<input type="submit" class="add-to-cart" value="Add">
+							</form>
 							<div class="clearfix"></div>
 						</div>
 					</div>
