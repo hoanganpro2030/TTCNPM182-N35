@@ -52,7 +52,6 @@ class UserController extends Controller
   //   }
 
 
-   
     public function updateProduct(Request $request){
         if (!Auth::check()){
 			return redirect()->route('signin.getSignin');

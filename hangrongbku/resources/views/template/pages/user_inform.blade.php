@@ -6,6 +6,15 @@
 		<div class="row">
 			@include('template.user_option')
 			<div class=" col-sm-9 offset-2">
+			@if (count($errors)>0)
+            <div class="alert alert-danger">
+            	<ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+                </ul>
+            </div>
+            @endif
 				<form action={{route('editUser')}} method= "post">
 					<h4>Thông tin tài khoản</h4>
 					<div class="space20">&nbsp;</div>

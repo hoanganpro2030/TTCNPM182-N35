@@ -24,7 +24,7 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required|string',
+            'name'=>'required|alpha',
             'email'=>'required|email|unique:users,email',
             'pass' =>'min:6|max:20|required',
             're_pass' => 'required|same:pass',
@@ -39,13 +39,13 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name.required'=>'Tên không được bỏ trống',
+            'name.alpha'=>'Tên không hợp lệ vui lòng nhập lại !!',
             'email.required'=>'Email không được bỏ trống',
             'email.unique' => 'Email đã có người sử dụng',
-            'phone.required'=>'Số điện thoại không được bỏ trống',
-            'address.required'=>'Địa chỉ không được bỏ trống',
-            'name.string'=>'Tên không hợp lệ vui lòng nhập lại !!',
             'email.email'=>'Emai không hợp lệ vui lòng nhập lại !!',
+            'phone.required'=>'Số điện thoại không được bỏ trống',
             'phone.numeric'=>'Số điện thoại không hợp lệ vui lòng nhập lại !!',
+            'address.required'=>'Địa chỉ không được bỏ trống',
             'sex.required' => 'Giới tính không được bỏ trống',
             'dateOfBirth.required' => 'Bạn chưa nhập ngày sinh',
             '_token.required' => 'Đã có lỗi xảy ra vui lòng không F12',
