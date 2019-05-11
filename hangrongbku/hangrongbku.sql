@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2019 at 08:07 AM
+-- Generation Time: May 11, 2019 at 01:39 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -62,6 +62,18 @@ CREATE TABLE `comments` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `userID`, `productID`, `content`, `created_at`, `updated_at`) VALUES
+(1, 10, 2, '<p>&aacute;o qu&aacute; đẹp</p>', '2019-05-04 07:20:58', '2019-05-04 07:20:58'),
+(2, 10, 2, '<table border=\"1\" cellpadding=\"1\" cellspacing=\"1\" style=\"width:500px\">\r\n	<tbody>\r\n		<tr>\r\n			<th scope=\"row\">ấc</th>\r\n			<td>dscsd</td>\r\n		</tr>\r\n		<tr>\r\n			<th scope=\"row\">sdscds</th>\r\n			<td>sdc</td>\r\n		</tr>\r\n		<tr>\r\n			<th scope=\"row\">sdc</th>\r\n			<td>sdcs</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>', '2019-05-04 07:22:07', '2019-05-04 07:22:07'),
+(3, 10, 2, '<blockquote>\r\n<h1><em>&Aacute;o rất đẹp Forza Milan</em></h1>\r\n</blockquote>', '2019-05-04 08:47:12', '2019-05-04 08:47:12'),
+(4, 6, 1, '<p><span class=\"marker\">Quần t&agrave;o lao qu&aacute;</span></p>', '2019-05-04 21:12:36', '2019-05-04 21:12:36'),
+(5, 6, 2, '<p>&Aacute;o đẹp m&agrave; rẻ</p>', '2019-05-04 21:15:53', '2019-05-04 21:15:53'),
+(6, 6, 2, '<p><strong>Ao dep qua</strong></p>', '2019-05-08 20:10:55', '2019-05-08 20:10:55');
+
 -- --------------------------------------------------------
 
 --
@@ -103,6 +115,16 @@ CREATE TABLE `orders` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `date`, `userID`, `total`, `created_at`, `updated_at`) VALUES
+(1, '2019-05-10 18:59:45', 6, 21300000, '2019-05-10 11:59:45', '2019-05-10 11:59:45'),
+(2, '2019-05-10 19:15:50', 6, 41300000, '2019-05-10 12:15:50', '2019-05-10 12:15:50'),
+(3, '2019-05-10 22:02:53', 6, 40045000, '2019-05-10 15:02:53', '2019-05-10 15:02:53'),
+(4, '2019-05-10 23:22:23', 6, 80060000, '2019-05-10 16:22:23', '2019-05-10 16:22:23');
+
 -- --------------------------------------------------------
 
 --
@@ -118,6 +140,20 @@ CREATE TABLE `order_detail` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `order_detail`
+--
+
+INSERT INTO `order_detail` (`id`, `productID`, `price`, `quantity`, `oderID`, `created_at`, `updated_at`) VALUES
+(1, 1, 200000, 4, 1, '2019-05-10 11:59:45', '2019-05-10 11:59:45'),
+(3, 2, 500000, 1, 1, '2019-05-10 11:59:45', '2019-05-10 11:59:45'),
+(4, 1, 200000, 4, 2, '2019-05-10 12:15:50', '2019-05-10 12:15:50'),
+(6, 2, 500000, 1, 2, '2019-05-10 12:15:50', '2019-05-10 12:15:50'),
+(7, 7, 15000, 3, 3, '2019-05-10 15:02:53', '2019-05-10 15:02:53'),
+(8, 6, 10000000, 4, 3, '2019-05-10 15:02:53', '2019-05-10 15:02:53'),
+(9, 7, 15000, 4, 4, '2019-05-10 16:22:23', '2019-05-10 16:22:23'),
+(10, 6, 10000000, 8, 4, '2019-05-10 16:22:23', '2019-05-10 16:22:23');
 
 -- --------------------------------------------------------
 
@@ -158,11 +194,10 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `sellerID`, `price`, `description`, `cateID`, `status`, `lastTime`, `quantity`, `numRate`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Quần em bé', 1, 200000, 'Quần chất lượng tốt nhất thế giới, vải siêu bền, chống bụi, chống thấm nước,  chống đạn, giá siêu rẻ', 1, 1, '2019-05-04 04:26:59', 9, NULL, 'quan-thun-be-gai-ngan-concung-g017008.jpg', NULL, NULL),
-(2, 'Áo sân nhà Milan', 2, 500000, 'hello', 1, 1, '2019-05-04 06:06:11', 7, NULL, 'Ao-ac-milan-san-nha-1-300x300.jpg', NULL, NULL),
-(5, 'Iphone X', 1, 20000000, 'hello', 3, 1, '2019-05-04 06:06:15', 8, NULL, 'iphone-x-64gb-1-400x460.png', NULL, NULL),
-(6, 'Đồng hồ Rolex', 2, 10000000, 'hello', 4, 1, '2019-05-04 03:29:26', 10, NULL, 'UploadsNewsoyster-perpetual-118348-day-date-36png_540_660.jpg', NULL, NULL),
-(7, 'Cơm sườn 15k', 1, 15000, 'Cơm sườn chất lượng đảm bảo ngon hơn ktx, tặng kèm canh và cơm thêm nếu muốn.', 7, 1, '2019-05-04 04:02:11', 9, NULL, 'cach-uop-thit-nuong-com-tam.jpg', NULL, NULL);
+(1, 'Quần em bé', 6, 200000, 'áo đẹp', 1, 1, '2019-05-10 23:11:06', 20, NULL, 'quan-thun-be-gai-ngan-concung-g017008.jpg', NULL, NULL),
+(2, 'Áo sân nhà milan', 6, 200000, 'áo đẹp', 1, 1, '2019-05-10 23:14:39', 20, NULL, 'Ao-ac-milan-san-nha-1-300x300.jpg', NULL, NULL),
+(6, 'Đồng hồ Rolex', 2, 10000000, 'hello', 4, 1, '2019-05-10 23:22:17', 1, NULL, 'UploadsNewsoyster-perpetual-118348-day-date-36png_540_660.jpg', NULL, NULL),
+(7, 'Cơm sườn 15k', 1, 15000, 'Cơm sườn chất lượng đảm bảo ngon hơn ktx, tặng kèm canh và cơm thêm nếu muốn.', 7, 1, '2019-05-10 22:14:35', 0, NULL, 'cach-uop-thit-nuong-com-tam.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -185,8 +220,11 @@ CREATE TABLE `usercarts` (
 --
 
 INSERT INTO `usercarts` (`id`, `userID`, `productID`, `quantity`, `status`, `created_at`, `updated_at`) VALUES
-(6, 6, 2, 1, 0, '2019-05-03 23:06:11', '2019-05-03 23:06:11'),
-(7, 6, 5, 1, 0, '2019-05-03 23:06:15', '2019-05-03 23:06:15');
+(21, 10, 7, 1, 0, '2019-05-04 06:05:21', '2019-05-04 06:05:21'),
+(22, 10, 6, 1, 0, '2019-05-04 06:05:53', '2019-05-04 06:05:53'),
+(23, 10, 2, 1, 0, '2019-05-04 06:07:45', '2019-05-04 06:07:45'),
+(27, 6, 7, 4, 0, '2019-05-10 14:49:54', '2019-05-10 14:49:54'),
+(28, 6, 6, 8, 0, '2019-05-10 15:02:33', '2019-05-10 15:02:33');
 
 -- --------------------------------------------------------
 
@@ -217,7 +255,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `address`, `avatar`, `sex`, `status`, `dateOfBirth`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Đặng Hoàng Ân', 'an@gmail.com', '123456', '0123456789', 'Hà Nội', NULL, 1, 1, '1998-11-11 17:00:00', NULL, NULL, NULL),
 (2, 'Chu Chỉ Nhược', 'ccn@gmail.com', '123456', '0123456789', 'Trung Quốc', NULL, 0, 1, '2019-04-16 17:00:00', NULL, NULL, NULL),
-(6, 'Hoang An', '1610132@hcmut.edu.vn', '$2y$10$CCV9rISZJo2ZgmW4E0gz2OYUnsW5USZEBVhaZKvgHqsLOhvcMtdve', '0383998672', 'HCMC', NULL, 1, 1, '2019-05-04 03:15:15', 'qvA6sjqFu92dKCvugKu1VswE96Z3kAKRomdRrQQa0iBXkQtVf6znTz4lpXjC', '2019-04-28 08:52:38', '2019-04-28 08:52:38'),
+(6, 'Hoang An', '1610132@hcmut.edu.vn', '$2y$10$CCV9rISZJo2ZgmW4E0gz2OYUnsW5USZEBVhaZKvgHqsLOhvcMtdve', '0383998672', 'HCMCaaaaaaaaaaaaaaaaaaa', NULL, 1, 1, '2019-05-10 20:55:27', 'qXj5F6eg3ReBbuLuIVsNhNxaH4RaDAtd81jOQR9GUEbb6skAOgT79TexxXQm', '2019-04-28 08:52:38', '2019-05-10 13:55:27'),
 (9, 'Đặng Hoàng Ân', '16101322@hcmut.edu.vn', '$2y$10$laGqrtRqnX2JNT.tLEmK3e5GW7GaLnw15I9qzTnzLv/SgLqsKN/52', '0383998672', 'HCMC', NULL, 1, 1, '2019-04-16 17:00:00', 'Zu5sDlevuWpEU0qfXjEFWbtPQ6RUdpkdcTSJCb3y', '2019-04-28 09:20:38', '2019-04-28 09:20:38'),
 (10, 'Huỳnh Yến Nhi', 'nhihuynh@gmail.com', '$2y$10$xnL635mT9tfE0wb./6GiL..8w8ZDOy19yhF1kKhQxAv2MFTB4dl06', '0987654321', 'Nha Trang', NULL, 0, 1, '2019-04-28 17:22:24', 't4zEuFn9LvVb5D25EadYQ2DHkeuZ9e6PLIeiNrEIPM9WQfZrTdC2ESsq7dnE', '2019-04-28 09:22:11', '2019-04-28 09:22:11');
 
@@ -303,7 +341,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -315,13 +353,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -333,7 +371,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `usercarts`
 --
 ALTER TABLE `usercarts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `users`

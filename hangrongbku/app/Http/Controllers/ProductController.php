@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Auth;
@@ -10,6 +11,7 @@ use App\UserCarts;
 use App\Order;
 use App\OrderDetail;
 use App\Comments;
+use App\Http\Requests\ProductRequest;
 
 class ProductController extends Controller
 {
@@ -73,32 +75,83 @@ class ProductController extends Controller
 		$categories = DB::select('select * from categories');
 		return view('template.pages.index',compact('products','categories'));
 	}
-	public function addToCart($pid,$uid){
+	// public function addToCart($pid,$uid){
+ //    	if (!Auth::check()){
+	// 		return redirect()->route('signin.getSignin');
+	// 	}
+	// 	$product= DB::table('products')->where('id',$pid)->first();
+	// 	if($product->sellerID == Auth::User()->id){
+	// 		return redirect()->route('product',$product->id)->withErrors(['error'=>'Không thể tự mua sản phẩm của chính mình']);
+
+	// 	}
+	// 	if ($product->quantity <=0){
+	// 		return redirect()->route('product',$pid)->withErrors(['error'=>'Sản phẩm này đã hết']);
+	// 	}
+ //        $oldcart = DB::table('usercarts')->where('userID',$uid)->where('productID',$pid)->get();
+ //        if (count($oldcart) != 0){
+
+ //            DB::table('usercarts')->where('userID',$uid)->where('productID',$pid)->increment('quantity',1);
+ //            DB::table('products')->where('id',$pid)->decrement('quantity',1);
+ //            return redirect()->route('order.getCart');
+ //        }
+ //        $cart = new UserCarts();
+ //        $cart->userID = $uid;
+ //        $cart->productID = $pid;
+ //        $cart->quantity = 1;
+ //        $cart->status = 0;
+ //        $cart->save();
+ //        DB::table('products')->where('id',$pid)->decrement('quantity',1);
+	// 	// $carts = DB::table('usercarts')->where('userID',$uid)->get();
+ //        // $seller = Products::find(1)->user;
+ //        // $product = DB::table('usercarts')->where('userID',$uid)->get();
+
+
+
+
+
+
+ //        return redirect()->route('order.getCart');
+ //    }
+
+    public function postAddToCart(Request $request){
     	if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}
+		$uid = Auth::User()->id;
+		$pid = $request->pid;
+
 		$product= DB::table('products')->where('id',$pid)->first();
+		if($product->sellerID == Auth::User()->id){
+			return redirect()->route('product',$product->id)->withErrors(['error'=>'Không thể tự mua sản phẩm của chính mình']);
+
+		}
 		if ($product->quantity <=0){
 			return redirect()->route('product',$pid)->withErrors(['error'=>'Sản phẩm này đã hết']);
 		}
+		if ($product->quantity < $request->quantity){
+			return redirect()->route('product',$pid)->withErrors(['error'=>'Số lượng hàng còn lại không đủ theo yêu cầu']);
+		}
+
         $oldcart = DB::table('usercarts')->where('userID',$uid)->where('productID',$pid)->get();
         if (count($oldcart) != 0){
-            DB::table('usercarts')->where('userID',$uid)->where('productID',$pid)->increment('quantity',1);
-            DB::table('products')->where('id',$pid)->decrement('quantity',1);
+
+            DB::table('usercarts')->where('userID',$uid)->where('productID',$pid)->increment('quantity',$request->quantity);
+            DB::table('products')->where('id',$pid)->decrement('quantity',$request->quantity);
             return redirect()->route('order.getCart');
         }
         $cart = new UserCarts();
         $cart->userID = $uid;
         $cart->productID = $pid;
-        $cart->quantity = 1;
+        $cart->quantity = $request->quantity;
         $cart->status = 0;
         $cart->save();
-        DB::table('products')->where('id',$pid)->decrement('quantity',1);
+        DB::table('products')->where('id',$pid)->decrement('quantity',$request->quantity);
 		// $carts = DB::table('usercarts')->where('userID',$uid)->get();
         // $seller = Products::find(1)->user;
         // $product = DB::table('usercarts')->where('userID',$uid)->get();
         return redirect()->route('order.getCart');
     }
+
     public function getCart(){
         if (!Auth::check()){
             return redirect()->route('signin.getSignin');
@@ -116,7 +169,7 @@ class ProductController extends Controller
         DB::table('usercarts')->where('id',$id)->delete();
         return redirect()->route('order.getCart');
      }
-	
+
     public function postComment(Request $req){
     	if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
@@ -127,7 +180,9 @@ class ProductController extends Controller
 		$comment->productID = $req->pid;
 		$comment->save();
     	return redirect()->route('product',$req->pid);
-	}
+
+    }
+
 	
 	public function createOrder(){
 		if (!Auth::check()){
@@ -157,15 +212,22 @@ class ProductController extends Controller
 			$order_detail->oderID = $id_order;
 			$order_detail->save();
 		}
+		$products = DB::table('usercarts')->delete();
+
 		return redirect()->route('user.getHistory');
 	}
 	
+
+
+
+
 	public function updateProduct(ProductRequest $request){
+
         if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}
 		$user = Auth::User();
-		$product=DB::table('products')->where('sellerID',$user->id);
+		$product=DB::table('products')->where('sellerID',$user->id)->where('id',$request->pid);
 		$product->update(['name' => $request->name, 'price' => $request->price, 'description' => $request->description, 'cateID' => $request->cateID, 'quantity' => $request->quantity]);
 		// $products->id = $request->id;
 		// $products->name = $request->name;
@@ -176,7 +238,8 @@ class ProductController extends Controller
         // $products->update();
         return redirect()->route('productuser')->with('message','Thông tin sản phẩm đã được cập nhật!');
 	}
-	public function showProductUser($id){
+
+    public function showProductUser($id){
 		$user = Auth::User();
         $products = DB::table('products')->where('sellerID',$user->id)->where('id',$id)->first();
 		return view('template.pages.update_product',compact('products'));

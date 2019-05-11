@@ -29,7 +29,7 @@
 									<div class="single-item">
 										<div class="single-item-header">
 
-											<a href="{{route('products.U',$products[$i]->id)}}"><img src="{{url('assets/dest/products/' . $products[$i]->image .'')}}" alt="" height="200pxs" margin-top="10px"></a>
+											
 											<a href="{{route('products.show',$products[$i]->id)}}"><img src="{{url('assets/dest/products/' . $products[$i]->image .'')}}" alt="" height="200pxs" margin-top="10px"></a>
 
 										</div>

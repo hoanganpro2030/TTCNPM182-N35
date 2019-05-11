@@ -54,6 +54,15 @@ Route::post('/hangrongbku/user',[
 	'as' => 'editUser',
 	'uses' => 'UserController@editUser'
 ]);
+Route::get('/hangrongbku/user/uploadproduct',[
+	'as' => 'uploadProduct',
+	'uses' => 'UserController@uploadProduct'
+]);
+
+Route::post('/hangrongbku/user/uploadproduct',[
+	'as' => 'uploadProductSave',
+	'uses' => 'UserController@uploadProductSave'
+]);
 
 Route::get('/sign-up',[
 	'as' => 'signup.getSignUp',
@@ -98,6 +107,11 @@ Route::get('hangrongbku/order/{pid}/user/{uid}',[
 	'as'=> 'order.addToCart',
 	'uses' => 'ProductController@addToCart'
 ]);
+Route::post('hangrongbku/order/',[
+	'as'=> 'order.postAddToCart',
+	'uses' => 'ProductController@postAddToCart'
+]);
+
 Route::get('hangrongbku/order/remove/{id}',[
 	'as'=> 'order.removeCart',
 	'uses' => 'ProductController@removeCart'
@@ -116,6 +130,11 @@ Route::get('hangrongbku/order/create/',[
 Route::get('hangrongbku/user/history/', [
 	'as'=> 'user.getHistory',
 	'uses' => 'UserController@getHistory'
+]);
+
+Route::get('hangrongbku/user/sellhistory/', [
+	'as'=> 'user.getSellHistory',
+	'uses' => 'UserController@getSellHistory'
 ]);
 
 Route::post('hangrongbku/user/productuser/update',[
