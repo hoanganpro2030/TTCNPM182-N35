@@ -11,10 +11,13 @@
 						<div class="beta-products-list">
 							<h4>Tìm kiếm</h4>
 							<div class="beta-products-details">
-								<p class ="pull-left"> Tìm thấy {{count($products)}} sản phẩm </p>
+								<p class ="pull-left"> Tìm thấy {{count($products)}} sản phẩm liên quan đến từ khóa " {{$name}}"</p>
+								
 								<div class="clearfix"></div>
-                            </div>
-                            
+							</div>
+
+				
+
 							
 							<div class="row">
 
@@ -47,10 +50,34 @@
 
 					
 					</div>
+					<div class="col-sm-3 aside">
+							<h3 class="widget-title" style ="color: yellow">Bộ lọc tìm kiếm</h3>
+							<div class="price-get">
+								<h5 style="color:white"> Khoảng giá </h5>
+									
+									<form role="search" method="post" id="searchform"  action="{{route('search-price')}}">
+									<input type ="hidden" name ="name" value="{{$name}}">
+									Từ :
+									<input type="hidden" name ="_token" value ="{{csrf_token()}}">
+									<input type="text" name="from" value="" style="color:black">
+									
+									Đến:
+									<input type="text" name="to" value="" style="color:black">
+									<br>
+									<button class="submit-price" type="submit" id="pricesubmit" > Áp dụng </button>
+									</form> 
+								
+									
+							
+
+							</div> <!-- best sellers widget -->
+							
+					</div>
 				</div> <!-- end section with sidebar and main content -->
-
-
+				
 			</div> <!-- .main-content -->
+		
 		</div> <!-- #content -->
+	
 	</div> <!-- .container -->
 @endsection

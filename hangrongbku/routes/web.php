@@ -80,7 +80,10 @@ Route::post('hangrongbku/search',[
 	'as' => 'search',
 	'uses' => 'ProductController@getSearch'
 ]);
-
+Route::post('hangrongbku/search/price',[
+	'as' => 'search-price',
+	'uses' => 'ProductController@getSearchPrice'
+]);
 
 Route::get('hangrongbku/categories/{id}',[
 	'as'=>'categories.getCategories',
