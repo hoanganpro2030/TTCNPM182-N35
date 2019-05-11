@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\UserRequest;
 use App\Products;
+
 class UserController extends Controller
 {
     public function showUserInform(){
@@ -20,7 +21,7 @@ class UserController extends Controller
         $products = DB::table('products')->where('sellerID',$user->id)->get();
         return view('template.pages.productuser',compact('products'));
     }
-    public function editUser(UserRequest $request){
+    public function editUser(Request $request){
         if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}
