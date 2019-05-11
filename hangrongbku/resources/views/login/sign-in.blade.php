@@ -22,7 +22,7 @@
                 
                 <div class="signin-content">
                     <div class="signin-image">
-                        <figure><img src="{{url('login/images/logo-hcmut.png')}}" alt="sing up image"></figure>
+                        <figure><img src="{{url('login/images/logo.png')}}" alt="sing up image"></figure>
                         <a href="{{route('signup.postSignUp')}}" class="signup-image-link">Create an account</a>
                     </div>
 
