@@ -1,11 +1,10 @@
 <?php
 namespace App\Http\Controllers;
-<<<<<<< HEAD
+
 namespace App\Http\Http;
 
 
-=======
->>>>>>> 3f0830e28282d02fe0c062f3ec0294bcb68dac86
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Auth;
