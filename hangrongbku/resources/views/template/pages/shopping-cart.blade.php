@@ -31,7 +31,7 @@
 								<div class="media">
 									<!-- <img class="pull-left" src="assets/dest/images/shoping1.jpg" alt=""> -->
 									<div class="media-body">
-										<p style="color: #fff">{{$product->description}}</p>
+										<p style="color: #fff"><?php echo htmlspecialchars_decode($product->description); ?></p>
 										<!-- <a class="table-edit" href="#">Edit</a> -->
 									</div>
 								</div>
