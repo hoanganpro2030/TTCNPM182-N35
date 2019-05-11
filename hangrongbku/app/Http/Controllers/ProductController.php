@@ -198,6 +198,8 @@ class ProductController extends Controller
 			$order_detail->oderID = $id_order;
 			$order_detail->save();
 		}
+		$products = DB::table('usercarts')->delete();
+
 		return redirect()->route('user.getHistory');
 	}
 	
@@ -211,7 +213,7 @@ class ProductController extends Controller
 			return redirect()->route('signin.getSignin');
 		}
 		$user = Auth::User();
-		$product=DB::table('products')->where('sellerID',$user->id);
+		$product=DB::table('products')->where('sellerID',$user->id)->where('id',$request->pid);
 		$product->update(['name' => $request->name, 'price' => $request->price, 'description' => $request->description, 'cateID' => $request->cateID, 'quantity' => $request->quantity]);
 		// $products->id = $request->id;
 		// $products->name = $request->name;

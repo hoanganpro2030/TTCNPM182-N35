@@ -36,7 +36,7 @@ class ProductRequest extends FormRequest
         return [
             'name.alpha'=>'Tên không hợp lệ vui lòng nhập lại !!',
             'name.required'=>'Tên không được bỏ trống',
-            'cateID.required' => 'Bạn chưa nhập ngày sinh',
+            'cateID.required' => 'Bạn chưa nhập loại sản phẩm',
             'cateID.integer'=>'Loại hàng không hợp lệ vui lòng nhập lại !!',
             'price.required' => 'Bạn chưa nhập giá',
             'price.integer'=>'Giá không hợp lệ vui lòng nhập lại !!',
