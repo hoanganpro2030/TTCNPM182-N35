@@ -62,7 +62,8 @@ html,body {
 body {
 font:13px/20px "Open Sans",sans-serif;
 color:white;
-background-color:black;
+background-image: url('../images/2.jpg');
+background-repeat: no-repeat;
 font-weight:300;
 }
 
@@ -1083,9 +1084,9 @@ background-color:#57a7c6
 
 .header {
     overflow: hidden;
-    background-color: #98FB98;
+    /* background-color: #98FB98; */
     background-image: url("https://backgrounddownload.com/wp-content/uploads/2018/09/ecommerce-web-background-8.jpg");
-    padding: 30px 20px;
+    padding:10px 10px;
     background-repeat: no-repeat;
 
   }
@@ -1104,14 +1105,15 @@ background-color:#57a7c6
   
   /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
   .header a.logo {
-    font-size: 25px;
-    font-weight: bold;
-
+    height: 200px;
+    width: 200px;
+    margin-left:20px;
+    
   }
   
   /* Change the background color on mouse-over */
   /* .header a:hover {
-    background-color: #ddd;
+    background-color:white;
     color: black;
   } */
   
@@ -1122,11 +1124,13 @@ background-color:#57a7c6
   }
   /* Float the link section to the right */
   .header-right {
+    margin-top:30px;
     margin-left: 80px;
     float: left;
     width:420px;
   }
   .header-account {
+    margin-top:10px;
     float: right;
     text-align: center;
     margin-right:8px;

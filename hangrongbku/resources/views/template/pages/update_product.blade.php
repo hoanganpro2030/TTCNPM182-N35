@@ -5,7 +5,7 @@
 		<div class="row">
 			@include('template.user_option')
 			<div class=" col-sm-9 offset-2">
-				<form>
+				<form >
 					<h4>Cập nhật sản phẩm</h4>
 					<div class="space20">&nbsp;</div>
 					<div class="space20">&nbsp;</div>
@@ -32,7 +32,7 @@
                         <input type="text" class="form-control col-sm-5" id="exampleInputPassword1" placeholder="Nguyễn Văn A">				  	</div>
 				  	<div class="space20">&nbsp;</div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Cập nhật</button>
+                        <button type="submit" class="btn btn-primary" >Cập nhật</button>
                         <button type="submit" class="btn btn-primary">Xóa</button>
                     </div>
 				</form>

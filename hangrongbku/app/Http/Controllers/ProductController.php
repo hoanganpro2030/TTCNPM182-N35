@@ -120,5 +120,20 @@ class ProductController extends Controller
     	return redirect()->route('product',$req->pid);
     }
 
+	public function updateProduct(Request $request){
+        if (!Auth::check()){
+			return redirect()->route('signin.getSignin');
+        }
+        $products = DB::table('products')->where('sellerID',$user->id)->get();
+        $user = Auth::User();
+        $user->name = $request->name;
+        $user->price = $request->price;
+        $user->description = $request->description;
+        $user->cateID = $request->cateID;
+        $user->sex = $request->sex;
+        $user->dateOfBirth = $request->dateOfBirth;
+        $user->save();
+        return redirect()->route('user.inform')->with('message','Thông tin sản phẩm đã được cập nhật!');
+    }
 }
 
