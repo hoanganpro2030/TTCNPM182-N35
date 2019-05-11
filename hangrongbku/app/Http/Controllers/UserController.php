@@ -5,6 +5,8 @@ use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\UserRequest;
+use App\Products;
+
 class UserController extends Controller
 {
     public function showUserInform(){
@@ -19,7 +21,7 @@ class UserController extends Controller
         $products = DB::table('products')->where('sellerID',$user->id)->get();
         return view('template.pages.productuser',compact('products'));
     }
-    public function editUser(UserRequest $request){
+    public function editUser(Request $request){
         if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}
@@ -35,21 +37,42 @@ class UserController extends Controller
       
     }
 
+    public function uploadProduct(){
+        if (!Auth::check()){
+			return redirect()->route('signin.getSignin');
+		}
+        $user = Auth::User();
+        return view('template.pages.upload_product');
+    }
 
-  //   public function updateProduct(Request $request){
-  //       if (!Auth::check()){
-		// 	return redirect()->route('signin.getSignin');
-		// }
-  //       $user = Auth::User();
-  //       $user->name = $request->name;
-  //       $user->price = $request->price;
-  //       $user->description = $request->description;
-  //       $user->address = $request->address;
-  //       $user->sex = $request->sex;
-  //       $user->dateOfBirth = $request->dateOfBirth;
-  //       $user->save();
-  //       return redirect()->route('user.inform')->with('message','Thông tin sản phẩm đã được cập nhật!');
-  //   }
+    public function uploadProductSave(Request $request){
+    
+    
+        request()->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $imageName = time().'.'.request()->image->getClientOriginalExtension();
+        request()->image->move(public_path('assets/dest/products'), $imageName);
+
+        $uid = Auth::User()->id;
+        
+        $product = new Products();
+        $product->name = $request->name;
+        $product->sellerID = $uid;
+        $product->price = $request->price;
+        $product->description = $request->description;
+        $product->cateID = $request->cateID;
+        $product->status = 1;
+        $product->quantity = $request->quantity;
+        $product->numRate = 0;
+        $product->image = $imageName;
+
+        $product->save();
+        return redirect()->route('productuser')->with('message','Thông tin sản phẩm đã được cập nhật!');
+
+    }
+
 
 
     public function updateProduct(Request $request){

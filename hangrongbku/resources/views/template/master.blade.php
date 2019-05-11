@@ -49,15 +49,19 @@
 			</nav>
 		</div>
 		<br>
+		
 		<div class="beta-comp">
+	
 				<form role="search" method="post" id="searchform" action="{{route('search')}}">
 					<input type="hidden" name ="_token" value ="{{csrf_token()}}">
 					<input type="text" value="" name="key" id="s" rows="10" placeholder="Nhập từ khóa..." style="color:black"> 
-					
+					<input type ="hidden" name ="from" value="0">
+					<input type ="hidden" name ="to" value="0">
 					<button class="fa fa-search" type="submit" id="searchsubmit" style="color:black"> </button>
 				</form>
+				
 		</div>
-
+		
 		<div class="shopping-cart">
 			<a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
 			<div class="visible-xs clearfix"></div>

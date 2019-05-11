@@ -36,11 +36,25 @@ class ProductController extends Controller
 		return view('template.pages.product');
 	}
 	public function getSearch(Request $req){
+		$from = $req->from;
+		$to = $req->to;
+		$name = $req->key;
 		$products = DB::table('products')->where('name','like','%'.$req->key.'%')
 					->orwhere('price',$req->key)
 					->get();
+
+		return view('template.pages.search', compact('products'), compact('name'),compact('from'), compact('to'));
+	}
+	public function getSearchPrice(Request $req){
+		$from = $req->input('from');
+
+		$to = $req->input('to');
+		$name = $req->name;
+		$products = DB::table('products')->where('name','like','%'.$name.'%')
+		->whereBetween('price',[$req->input('from'),$req->input('to')])
+					->get();
 		
-		return view('template.pages.search', compact('products'));
+		return view('template.pages.search', compact('products'), compact('name'), compact('from'), compact('to'));
 	}
 	
 	public function getProduct($id){
