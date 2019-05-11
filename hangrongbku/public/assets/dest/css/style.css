@@ -63,8 +63,9 @@ body {
 font:13px/20px "Open Sans",sans-serif;
 color:white;
 background-image: url('../images/2.jpg');
-background-repeat: no-repeat;
+/*background-repeat: no-repeat;*/
 font-weight:300;
+background-repeat: repeat-y;
 }
 
 div,form,fieldset,legend,label {
