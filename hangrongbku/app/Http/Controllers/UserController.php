@@ -71,7 +71,7 @@ class UserController extends Controller
 			return redirect()->route('signin.getSignin');
         }
         $user = Auth::User();
-        $orders =  DB::table('orders')->where('userID',$user->id)->get();
+        $orders =  DB::table('orders')->where('userID',$user->id)->orderBy('date', 'desc')->get();
 
         return view('template.pages.history', compact('orders'));
     }
