@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+namespace App\Http\Http;
+
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -11,6 +13,7 @@ use App\UserCarts;
 use App\Order;
 use App\OrderDetail;
 use App\Comments;
+
 class ProductController extends Controller
 {
     public function getIndex(){
@@ -158,7 +161,7 @@ class ProductController extends Controller
 		return redirect()->route('user.getHistory');
 	}
 	
-	public function updateProduct(Request $request){
+	public function updateProduct(ProductRequest $request){
         if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}

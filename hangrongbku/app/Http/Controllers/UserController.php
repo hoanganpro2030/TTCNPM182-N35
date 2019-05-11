@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\DB;
+
+namespace App\Http\Controllers;
+
 class UserController extends Controller
 {
     public function showUserInform(){
@@ -19,7 +22,7 @@ class UserController extends Controller
         $products = DB::table('products')->where('sellerID',$user->id)->get();
         return view('template.pages.productuser',compact('products'));
     }
-    public function editUser(Request $request){
+    public function editUser(UserRequest $request){
         if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}
