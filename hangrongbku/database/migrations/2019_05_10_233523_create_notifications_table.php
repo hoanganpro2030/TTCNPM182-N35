@@ -15,6 +15,10 @@ class CreateNotificationsTable extends Migration
     {
         Schema::create('notifications', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('orderID')->unsigned();
+            $table->foreign('orderID')->references('id')->on('orders')->onDelete('cascade');
+            $table->boolean('isNew');
+            $table->boolean('isDone');
             $table->timestamps();
         });
     }

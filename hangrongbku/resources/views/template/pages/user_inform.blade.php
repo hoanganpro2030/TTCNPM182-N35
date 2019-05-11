@@ -37,7 +37,7 @@
 				  	<div class="space20">&nbsp;</div>
 				  	<div class="form-group">
 					    <label for="exampleInputPassword1">Ngày sinh</label>
-					    <input type="date" name="dayOfBirth"class="form-control col-sm-5" id="exampleInputPassword1" placeholder="Nguyễn Văn A" value={{$user->dateOfBirth}}>
+					    <input type="date" name="dayOfBirth"class="form-control col-sm-5" id="exampleInputPassword1" placeholder="Nguyễn Văn A" value="{{$user->dateOfBirth}}">
 				  	</div>
 				  	<div class="space20">&nbsp;</div>
 				  	<div class="form-group">

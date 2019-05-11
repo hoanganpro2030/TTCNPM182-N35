@@ -17,7 +17,7 @@
 							<th class="product">{{$product->name}}</th>
 							<th class="product-name">Mô tả</th>
 							<th class="product-price">Giá cả</th>
-							<th class="product-status">Trạng thái</th>
+							<th class="product-user">Người bán</th>
 							<th class="product-quantity">Số lượng</th>
 							<th class="product-subtotal">Tổng tiền</th>
 							<th class="product-remove">Xóa sản phẩm</th>
@@ -31,7 +31,7 @@
 								<div class="media">
 									<!-- <img class="pull-left" src="assets/dest/images/shoping1.jpg" alt=""> -->
 									<div class="media-body">
-										<p style="color: #fff"><?php echo htmlspecialchars_decode($product->description); ?></p>
+										<span><?php echo htmlspecialchars_decode($product->description); ?></span>
 										<!-- <a class="table-edit" href="#">Edit</a> -->
 									</div>
 								</div>
@@ -41,8 +41,11 @@
 								<span class="amount" style="color:#ffc826;font-size: 20px">{{number_format($product->price,0,',','.')}} đ</span>
 							</td>
 
-							<td class="product-status">
-								In Stock
+							<td class="product-user">
+								<?php
+									$user = DB::table('users')->where('id', $product->sellerID)->first();
+								?>
+								<span style="color:#ffc826;font-size: 20px">{{$user->name}}</span>
 							</td>
 
 							<td class="product-quantity">

@@ -198,6 +198,8 @@ class ProductController extends Controller
 			$order_detail->oderID = $id_order;
 			$order_detail->save();
 		}
+		$products = DB::table('usercarts')->delete();
+
 		return redirect()->route('user.getHistory');
 	}
 	
