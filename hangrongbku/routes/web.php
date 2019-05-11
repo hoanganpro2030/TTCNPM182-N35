@@ -120,6 +120,11 @@ Route::get('hangrongbku/user/history/', [
 	'uses' => 'UserController@getHistory'
 ]);
 
+Route::get('hangrongbku/user/sellhistory/', [
+	'as'=> 'user.getSellHistory',
+	'uses' => 'UserController@getSellHistory'
+]);
+
 Route::post('hangrongbku/user/productuser/update',[
 	'as' => 'products.update',
 	'uses' => 'ProductController@updateProduct'

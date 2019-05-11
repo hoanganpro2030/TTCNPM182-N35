@@ -19,7 +19,7 @@ class UserController extends Controller
         $products = DB::table('products')->where('sellerID',$user->id)->get();
         return view('template.pages.productuser',compact('products'));
     }
-    public function editUser(Request $request){
+    public function editUser(UserRequest $request){
         if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}
@@ -72,6 +72,16 @@ class UserController extends Controller
         }
         $user = Auth::User();
         $orders =  DB::table('orders')->where('userID',$user->id)->orderBy('date', 'desc')->get();
+
+        return view('template.pages.history', compact('orders'));
+    }
+
+    public function getSellHistory(){
+        if (!Auth::check()){
+			return redirect()->route('signin.getSignin');
+        }
+        $user = Auth::User();
+        $orders =  DB::table('orders')->where('userID',$user->id)->get();
 
         return view('template.pages.history', compact('orders'));
     }

@@ -25,7 +25,7 @@ class UserRequest extends FormRequest
     {
         return [
             'email'=>'required|email',
-            'name'=>'required|alpha',
+            'name'=>'required|regex:/[a-zA-Z- ]+/',
             'dateOfBirth'=>'required',
             'sex'=>'required',            
             'phone'=>'required|numeric',
@@ -38,7 +38,7 @@ class UserRequest extends FormRequest
             'email.required'=>'Email không được bỏ trống',
             'email.email'=>'Emai không hợp lệ vui lòng nhập lại !!',
             // 'email.unique' => 'Email đã có người sử dụng',
-            'name.alpha'=>'Tên không hợp lệ vui lòng nhập lại !!',
+            'name.regex'=>'Tên không hợp lệ vui lòng nhập lại !!',
             'name.required'=>'Tên không được bỏ trống',
             'dateOfBirth.required' => 'Bạn chưa nhập ngày sinh',
             'sex.required' => 'Giới tính không được bỏ trống',
