@@ -28,7 +28,10 @@
 								<div class="col-sm-4">
 									<div class="single-item">
 										<div class="single-item-header">
+
 											<a href="{{route('products.U',$products[$i]->id)}}"><img src="{{url('assets/dest/products/' . $products[$i]->image .'')}}" alt="" height="200pxs" margin-top="10px"></a>
+											<a href="{{route('products.show',$products[$i]->id)}}"><img src="{{url('assets/dest/products/' . $products[$i]->image .'')}}" alt="" height="200pxs" margin-top="10px"></a>
+
 										</div>
 										<div class="single-item-body"> 
 											<p class="single-item-title">{{mb_strtoupper($products[$i]->name)}}</b></p>
