@@ -1,0 +1,243 @@
+Looking for git in: git
+Using git 2.17.1 from git
+> git rev-parse --show-toplevel
+> git config --get commit.template
+Open repository: /opt/lampp/htdocs/TTCNPM182-N35
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :hangrongbku/routes/web.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :hangrongbku/app/Http/Controllers/ProductController.php
+> git check-ignore -z --stdin
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/resources/views/template/user_option.blade.php
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/user_option.blade.php
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/app/Http/Middleware/TrimStrings.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/resources/views/template/user_option.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git check-ignore -z --stdin
+> git show :hangrongbku/public/js/script.js
+> git ls-files --stage -- hangrongbku/public/js/
+> git check-ignore -z --stdin
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/public/js/app.js
+> git check-ignore -z --stdin
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/user_option.blade.php
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/resources/views/template/user_option.blade.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/user_option.blade.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/routes/web.php
+> git check-ignore -z --stdin
+> git show :hangrongbku/resources/views/login/sign-up.blade.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/user_option.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/resources/views/template/pages/update_product.blade.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/resources/views/template/pages/update_product.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/resources/views/template/user_option.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/app/Http/Controllers/ImageUploadController.php
+> git ls-files --stage -- hangrongbku/app/Http/Controllers/
+> git check-ignore -z --stdin
+> git show :hangrongbku/resources/views/template/pages/404.blade.php
+> git show :hangrongbku/resources/views/imageUploadPage.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git check-ignore -z --stdin
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/resources/views/imageUploadPage.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git show :hangrongbku/app/Http/Controllers/ImageUploadController.php
+> git ls-files --stage -- hangrongbku/app/Http/Controllers/
+> git show :hangrongbku/resources/views/imageUploadPage.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git show :hangrongbku/resources/views/imageUpload.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git check-ignore -z --stdin
+> git show :hangrongbku/resources/views/template/pages/404.blade.php
+> git show :hangrongbku/resources/views/imageUpload.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git show :hangrongbku/resources/views/template/user_option.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/app/Http/Controllers/ImageUploadController.php
+> git ls-files --stage -- hangrongbku/app/Http/Controllers/
+> git show :hangrongbku/resources/views/template/user_option.blade.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/app/Http/Controllers/ImageUploadController.php
+> git ls-files --stage -- hangrongbku/app/Http/Controllers/
+> git show :hangrongbku/resources/views/imageUpload.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git show :hangrongbku/resources/views/template/user_option.blade.php
+> git show :hangrongbku/resources/views/imageUpload.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git show :hangrongbku/resources/views/template/user_option.blade.php
+> git show :hangrongbku/resources/views/imageUpload.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git show :hangrongbku/app/Http/Controllers/ImageUploadController.php
+> git ls-files --stage -- hangrongbku/app/Http/Controllers/
+> git show :hangrongbku/resources/views/imageUpload.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/imageUpload.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/imageUpload.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/user_option.blade.php
+> git show :hangrongbku/resources/views/imageUpload.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git show :hangrongbku/resources/views/template/user_option.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/resources/views/imageUpload.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/resources/views/imageUpload.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git show :hangrongbku/app/Http/Controllers/ImageUploadController.php
+> git ls-files --stage -- hangrongbku/app/Http/Controllers/
+> git show :hangrongbku/resources/views/imageUpload.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git show :hangrongbku/app/Http/Controllers/ImageUploadController.php
+> git ls-files --stage -- hangrongbku/app/Http/Controllers/
+> git show :hangrongbku/resources/views/imageUpload.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/resources/views/imageUpload.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git show :hangrongbku/resources/views/template/user_option.blade.php
+> git show :hangrongbku/resources/views/imageUpload.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git show :hangrongbku/app/Http/Controllers/ImageUploadController.php
+> git ls-files --stage -- hangrongbku/app/Http/Controllers/
+> git show :hangrongbku/resources/views/imageUpload.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git show :hangrongbku/resources/views/template/user_option.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/imageUpload.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git check-ignore -z --stdin
+> git show :hangrongbku/app/Http/Controllers/ImageUploadController.php
+> git ls-files --stage -- hangrongbku/app/Http/Controllers/
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/app/Http/Controllers/ProductController.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/app/Http/Controllers/ProductController.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/resources/views/template/user_option.blade.php
+> git show :hangrongbku/app/Http/Controllers/ProductController.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/pages/index.blade.php
+> git show :hangrongbku/resources/views/template/user_option.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :hangrongbku/app/Http/Controllers/ImageUploadController.php
+> git ls-files --stage -- hangrongbku/app/Http/Controllers/
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/resources/views/imageUpload.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/resources/views/imageUpload.blade.php
+> git ls-files --stage -- hangrongbku/resources/views/
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/resources/views/template/user_option.blade.php
+> git show :hangrongbku/resources/views/template/pages/upload_product.blade.php
+> git show :hangrongbku/resources/views/template/user_option.blade.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/routes/web.php
+> git show :hangrongbku/app/Http/Controllers/UserController.php
+> git show :hangrongbku/app/Http/Controllers/Controller.php

@@ -54,6 +54,15 @@ Route::post('/hangrongbku/user',[
 	'as' => 'editUser',
 	'uses' => 'UserController@editUser'
 ]);
+Route::get('/hangrongbku/user/uploadproduct',[
+	'as' => 'uploadProduct',
+	'uses' => 'UserController@uploadProduct'
+]);
+
+Route::post('/hangrongbku/user/uploadproduct',[
+	'as' => 'uploadProductSave',
+	'uses' => 'UserController@uploadProductSave'
+]);
 
 Route::get('/sign-up',[
 	'as' => 'signup.getSignUp',
