@@ -39,14 +39,14 @@
                         Số điện thoại: 19008198
                     </p>
                     <div class="space20">&nbsp;</div>
-                    <h6 class="contact-title">Business Enquiries</h6>
+                    <h6 class="contact-title" style ="color: yellow">Liên lạc</h6>
                     <p>
                         Liên lạc với chúng tôi qua địa chỉ email dưới đây<br>
         
                         <a href="mailto:biz@betadesign.com" style ="color: yellow">hangrongbku@gmail.com</a>
                     </p>
                     <div class="space20">&nbsp;</div>
-                    <h6 class="contact-title">Employment</h6>
+                    <h6 class="contact-title" style ="color: yellow">Tuyển dụng</h6>
                     <p>
                         Chúng tôi đang tìm kiếm các nhân sự tài tăng <br>
                         Nộp CV tại đây. <br>
