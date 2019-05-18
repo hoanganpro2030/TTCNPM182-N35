@@ -202,6 +202,9 @@ class ProductController extends Controller
 
 		//tao order vs order_detail
 		$carts = DB::table('usercarts')->where('userID',Auth::User()->id)->get();
+		if (count($carts)==0){
+			return redirect()->route('order.getCart')->withErrors(['error'=>'Bạn không có sản phẩm trong giỏ hàng']);
+		}
 		$order = new Order();
 		
 		$order->userID = Auth::User()->id;
