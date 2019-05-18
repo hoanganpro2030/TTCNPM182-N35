@@ -21,9 +21,9 @@
 						<div class="space20">&nbsp;</div>
 
 						<div class="single-item-desc">
-								<p>Liên hệ người bán: <a href="" style="color: blue">{{$seller->name}}</a></p>
+								<p>Liên hệ người bán: <a href="" style="color: yellow">{{$seller->name}}</a></p>
 								<div class="space20">&nbsp;</div>
-								<p>Số điện thoại đặt hàng trực tiếp: <a style="color: blue">{{$seller->phone}}</a></p>
+								<p>Số điện thoại đặt hàng trực tiếp: <a style="color: yellow">{{$seller->phone}}</a></p>
 						</div>
 						<div class="space20">&nbsp;</div>
 						@if (count($errors)>0)

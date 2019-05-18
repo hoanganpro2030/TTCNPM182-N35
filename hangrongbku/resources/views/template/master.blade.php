@@ -52,7 +52,6 @@
 </style>
 </head>
 <body >
-	</p>
 
 	<div class="header">
 		<div class="container">
@@ -223,7 +222,7 @@
 						<h4 class="widget-title">Theo dõi chúng tôi</h4>
 						<form action="#" method="post">
 							<input type="email" name="your_email">
-							<button class="pull-right" type="submit">Subscribe <i class="fa fa-chevron-right"></i></button>
+							<button class="pull-right" type="submit">Đăng ký <i class="fa fa-chevron-right"></i></button>
 						</form>
 					</div>
 				</div>
