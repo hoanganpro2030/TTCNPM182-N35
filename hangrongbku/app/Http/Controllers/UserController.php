@@ -30,10 +30,19 @@ class UserController extends Controller
         request()->validate([
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-
-        $imageName = time().'.'.request()->image->getClientOriginalExtension();
-        request()->image->move(public_path('assets/dest/products'), $imageName);
         $user = Auth::User();
+        if(!$request->image){
+            $imageName = $user->avatar;
+        }
+        else{
+            $imageName = time().'.'.request()->image->getClientOriginalExtension();
+            request()->image->move(public_path('assets/dest/products'), $imageName);
+        }
+        
+
+
+        
+
         $user->name = $request->name;
         $user->email = $request->email;
         $user->avatar = $imageName;
@@ -73,7 +82,7 @@ class UserController extends Controller
         $product->name = $request->name;
         $product->sellerID = $uid;
         $product->price = $request->price;
-        $product->description = $request->description;
+        $product->deion = $request->deion;
         $product->cateID = $request->cateID;
         $product->status = 1;
         $product->quantity = $request->quantity;
@@ -94,7 +103,7 @@ class UserController extends Controller
         $user = Auth::User();
         $user->name = $request->name;
         $user->price = $request->price;
-        $user->description = $request->description;
+        $user->deion = $request->deion;
         $user->address = $request->address;
         $user->sex = $request->sex;
         $user->dateOfBirth = $request->dateOfBirth;
