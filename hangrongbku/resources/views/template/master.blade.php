@@ -14,6 +14,42 @@
 	<link rel="stylesheet" title="style" href="{{url('assets/dest/css/style.css')}}">
 	<link rel="stylesheet" href="{{url('assets/dest/css/animate.css')}}">
 	<link rel="stylesheet" title="style" href="{{url('assets/dest/css/huong-style.css')}}">
+	<style>
+.dropbtn {
+  cursor: pointer;
+}
+
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropli :hover{
+	background-color: #ddd;
+}
+
+.myDropdown li a:hover {background-color: #ddd;}
+
+.show {display: block;}
+</style>
 </head>
 <body >
 
@@ -61,9 +97,60 @@
 				
 		</div>
 		
+		<?php
+			$notes = DB::table('notifications')->where('userID',Auth::User()->id)->where('isNew',1)->get();
+		?>
+
 		<div class="shopping-cart">
 			<a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
 			<div class="visible-xs clearfix"></div>
+
+			@if (count($notes)!=0)
+			<a style ="font-size: 16px;margin-right:28px;color:blue" onclick="myFunction()" class="dropbtn">
+				Thông báo 
+				<span class="fa-stack" >
+				    <!-- The icon that will wrap the number -->
+				    <span class="fa fa-bell fa-stack-2x" style="color: #ffcc00" ></span>
+				    <!-- a strongs element with the custom content, in this case a number -->
+				    <strong class="fa-stack-1x" style="color: #fff; font-size: 12px;text-shadow: 0px 0px 5px 5px red;">
+				        {{count($notes)}}
+				    </strong>
+				</span>
+			</a>
+			<div id="myDropdown" class="dropdown-content">
+				<ul style="list-style: none;">
+					@foreach($notes as $note)
+					<?php
+						$user = DB::table('users')->where('id',$note->customerID)->first();
+					?>
+					<li class="dropli"><a href="{{route('notification.getNotification',$note->id)}}">Bạn có một đơn hàng mới từ <span style="color: blue">{{$user->name}}</span></a></li>
+					<span style="color: #000;margin-left: 15px">{{$note->created_at}}</span>
+			    	@endforeach
+				</ul>
+			    
+			</div>
+			@else
+			<a style ="font-size: 16px;margin-right:28px;color:red" onclick="myFunction()" class="dropbtn">
+				Thông báo 
+				<span class="fa-stack">
+				    <!-- The icon that will wrap the number -->
+				    <span class="fa fa-bell fa-stack-2x" style="color: #0277b8"></span>
+				    <!-- a strongs element with the custom content, in this case a number -->
+				    <strong class="fa-stack-1x" style="color: #fff; font-size: 12px">
+				        {{count($notes)}}
+				    </strong>
+				</span>
+			</a>
+			<div id="myDropdown" class="dropdown-content">
+				<ul style="list-style: none;">
+
+					<li class="dropli"><a href="#home">Không có thông báo mới</span></a></li>
+
+				</ul>
+		    
+			</div>
+			@endif
+
 			<a href="{{route('order.getCart')}}" style ="font-size: 16px;margin-right:10px;color:red">Giỏ hàng <i class="fa fa-shopping-cart fa-lg"></i></a>
 		</div>
 
@@ -174,5 +261,26 @@
 	    <script>
         $("div.alert").delay(3000).slideUp();
     </script>
+    <script>
+		/* When the user clicks on the button, 
+		toggle between hiding and showing the dropdown content */
+		function myFunction() {
+		  document.getElementById("myDropdown").classList.toggle("show");
+		}
+
+		// Close the dropdown if the user clicks outside of it
+		window.onclick = function(event) {
+		  if (!event.target.matches('.dropbtn')) {
+		    var dropdowns = document.getElementsByClassName("dropdown-content");
+		    var i;
+		    for (i = 0; i < dropdowns.length; i++) {
+		      var openDropdown = dropdowns[i];
+		      if (openDropdown.classList.contains('show')) {
+		        openDropdown.classList.remove('show');
+		      }
+		    }
+		  }
+		}
+	</script>
 </body>
 </html>

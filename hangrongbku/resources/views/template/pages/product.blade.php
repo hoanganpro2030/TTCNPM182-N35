@@ -38,14 +38,15 @@
 						<p>Số lượng:</p>
 						<div class="single-item-options">
 							<form action="{{route('order.postAddToCart')}}" method="post">
-								<select class="wc-select" name="quantity" style="color: #000">
-									<!-- <option>Số lượng</option> -->
+								<!-- <select class="wc-select" name="quantity" style="color: #000">
+									
 									<option value="1">1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
 									<option value="4">4</option>
 									<option value="5">5</option>
-								</select>
+								</select> -->
+								<input class="wc-select" name="quantity" style="color: #000" type="number">
 								<input type="hidden" name="pid" value="{{$product->id}}">
 								<input type="hidden" name="_token" value="{{csrf_token()}}">
 								<!-- <a class="add-to-cart" href="{{route('order.addToCart',[$product->id,Auth::User()->id])}}"><i class="fa fa-shopping-cart"></i></a> -->
