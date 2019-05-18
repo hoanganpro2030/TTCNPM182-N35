@@ -265,11 +265,12 @@ class ProductController extends Controller
 		]);
 		$user = Auth::User();
 		$product=DB::table('products')->where('sellerID',$user->id)->where('id',$request->pid)->first();
-		if(!$request->image){
-            $imageName = $product->image;
-        }
+		
         if(!$request->description){
             $request->description = $product->description;
+        }
+        if(!$request->image){
+            $imageName = $product->image;
         }
         else{
         	$imageName = time().'.'.request()->image->getClientOriginalExtension();

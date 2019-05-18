@@ -16,7 +16,6 @@
 				@endif
 				@if (count($errors) > 0)
 					<div class="alert alert-danger">
-						<strong>Ôi khong!</strong> Có vấn đề xảy ra với hình ảnh của bạn.
 						<ul>
 							@foreach ($errors->all() as $error)
 								<li>{{ $error }}</li>
@@ -70,7 +69,7 @@
 				  	<div class="space20">&nbsp;</div>
 				  	<div class="form-group">
 					    <label for="exampleInputPassword1">Mô tả sản phẩm</label>
-						<textarea class="ckeditor" id="summary-ckeditor" name="description"></textarea>
+						<textarea class="ckeditor" id="summary-ckeditor" name="description" value="{{$products->description}}"></textarea>
 							<script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
 							<script>
 								CKEDITOR.replace('summary-ckeditor');
