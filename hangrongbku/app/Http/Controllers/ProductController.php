@@ -268,8 +268,8 @@ class ProductController extends Controller
 		if(!$request->image){
             $imageName = $product->image;
         }
-        if(!$request->deion){
-            $request->deion = $product->deion;
+        if(!$request->description){
+            $request->description = $product->description;
         }
         else{
         	$imageName = time().'.'.request()->image->getClientOriginalExtension();
@@ -279,11 +279,11 @@ class ProductController extends Controller
 		$product=DB::table('products')->where('sellerID',$user->id)->where('id',$request->pid);
 		
 		
-		$product->update(['image'=>$imageName,'name' => $request->name, 'price' => $request->price, 'deion' => $request->deion, 'cateID' => $request->cateID, 'quantity' => $request->quantity]);
+		$product->update(['image'=>$imageName,'name' => $request->name, 'price' => $request->price, 'description' => $request->description, 'cateID' => $request->cateID, 'quantity' => $request->quantity]);
 		// $products->id = $request->id;
 		// $products->name = $request->name;
         // $products->price = $request->price;
-        // $products->deion = $request->deion;
+        // $products->description = $request->description;
 		// $products->cateID = $request->cateID;
 		// $products->quantity = $request->quantity;
         // $products->update();
