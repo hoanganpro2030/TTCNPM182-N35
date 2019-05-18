@@ -11,9 +11,11 @@ use App\UserCarts;
 use App\Order;
 use App\OrderDetail;
 use App\Comments;
+use App\Notifications;
 use App\Http\Requests\ProductRequest;
 use App\Http\Requests\SearchRequest;
 use App\Http\Requests\PriceSearchRequest;
+
 
 
 
@@ -130,6 +132,9 @@ class ProductController extends Controller
 			return redirect()->route('product',$product->id)->withErrors(['error'=>'Không thể tự mua sản phẩm của chính mình']);
 
 		}
+		if ($request->quantity <=0){
+			return redirect()->route('product',$pid)->withErrors(['error'=>'Số lượng không hợp lệ']);
+		}
 		if ($product->quantity <=0){
 			return redirect()->route('product',$pid)->withErrors(['error'=>'Sản phẩm này đã hết']);
 		}
@@ -193,6 +198,10 @@ class ProductController extends Controller
 		if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}
+		
+		$uid =[];
+
+		//tao order vs order_detail
 		$carts = DB::table('usercarts')->where('userID',Auth::User()->id)->get();
 		$order = new Order();
 		
@@ -202,6 +211,7 @@ class ProductController extends Controller
 			$cart = $carts[$i];
 			$product = DB::table('products')->where('id',$cart->productID)->first();
 			$total += $product->price*$cart->quantity;
+			$uid[$i]=$product->sellerID;
 		}
 		$order->total = $total;
 		$order->save();
@@ -216,8 +226,28 @@ class ProductController extends Controller
 			$order_detail->quantity = $cart->quantity;
 			$order_detail->oderID = $id_order;
 			$order_detail->save();
+
 		}
-		$products = DB::table('usercarts')->delete();
+
+		//tao thong bao
+		
+		for($i = 0; $i < count($carts); $i++){
+			$cart = $carts[$i];
+			$product = DB::table('products')->where('id',$cart->productID)->first();
+			$notification = new Notifications();
+			$notification->userID = $product->sellerID;
+			$notification->customerID = Auth::User()->id;
+			$notification->orderID = $order->id;
+			$notification->isNew = 1;
+			$notification->isDone = 0;
+			$notification->save();
+			break;
+		}
+		
+
+		//xoa san pham vua mua trong gio hang
+		//$product = DB::table('products')->where('id',$carts[0]->productID)->first();
+		DB::table('usercarts')->where('userID',Auth::User()->id)->delete();
 
 		return redirect()->route('user.getHistory');
 	}
@@ -231,9 +261,15 @@ class ProductController extends Controller
         if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}
+		request()->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+		]);
+		$imageName = time().'.'.request()->image->getClientOriginalExtension();
+		request()->image->move(public_path('assets/dest/products'), $imageName);
+		
 		$user = Auth::User();
 		$product=DB::table('products')->where('sellerID',$user->id)->where('id',$request->pid);
-		$product->update(['name' => $request->name, 'price' => $request->price, 'description' => $request->description, 'cateID' => $request->cateID, 'quantity' => $request->quantity]);
+		$product->update(['image'=>$imageName,'name' => $request->name, 'price' => $request->price, 'description' => $request->description, 'cateID' => $request->cateID, 'quantity' => $request->quantity]);
 		// $products->id = $request->id;
 		// $products->name = $request->name;
         // $products->price = $request->price;
@@ -257,5 +293,12 @@ class ProductController extends Controller
         // DB::table('products')->where('id',$cart->productID)->increment('quantity',$cart->quantity);
         // DB::table('usercarts')->where('id',$id)->delete();
         return redirect()->route('productuser');
-     }
+    }
+    public function getRemoveOrder($id){
+    	if (!Auth::check()){
+            return redirect()->route('signin.getSignin');
+        }
+        DB::table('orders')->where('id',$id)->delete();
+        return redirect()->route('user.getHistory')->with('message','Xóa đơn hàng thành công');	
+    }
 }

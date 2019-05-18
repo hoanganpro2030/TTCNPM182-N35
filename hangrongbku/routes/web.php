@@ -133,8 +133,8 @@ Route::get('hangrongbku/user/history/', [
 ]);
 
 Route::get('hangrongbku/user/sellhistory/', [
-	'as'=> 'user.getSellHistory',
-	'uses' => 'UserController@getSellHistory'
+	'as'=> 'sellhistory.getAllNotifications',
+	'uses' => 'NotificationCotroller@getAllNotifications'
 ]);
 
 Route::post('hangrongbku/user/productuser/update',[
@@ -149,4 +149,22 @@ Route::get('hangrongbku/user/productuser/update/{id}',[
 Route::get('hangrongbku/user/productuser/remove/{id}',[
 	'as'=> 'products.remove',
 	'uses' => 'ProductController@removeProduct'
+]);
+
+Route::get('hangrongbku/user/notification/{id}',[
+	'as'=> 'notification.getNotification',
+	'uses' => 'NotificationCotroller@getNotification'
+]);
+
+Route::get('hangrongbku/user/notification/comfirm/{id}',[
+	'as'=> 'notification.getComfirm',
+	'uses' => 'NotificationCotroller@getComfirm'
+]);
+Route::get('hangrongbku/user/notification/remove/{id}',[
+	'as'=> 'notification.getRemoveNote',
+	'uses' => 'NotificationCotroller@getRemoveNote'
+]);
+Route::get('hangrongbku/user/history/remove/{id}',[
+	'as'=> 'history.getRemoveOrder',
+	'uses' => 'ProductController@getRemoveOrder'
 ]);
