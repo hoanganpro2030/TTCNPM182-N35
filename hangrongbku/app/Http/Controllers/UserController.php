@@ -25,13 +25,21 @@ class UserController extends Controller
         if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}
+        request()->validate([
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $imageName = time().'.'.request()->image->getClientOriginalExtension();
+        request()->image->move(public_path('assets/dest/products'), $imageName);
         $user = Auth::User();
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->avatar = $imageName;
         $user->phone = $request->phone;
         $user->address = $request->address;
         $user->sex = $request->sex;
         $user->dateOfBirth = $request->dateOfBirth;
+
         $user->save();
         return redirect()->route('user.inform')->with('message','Thông tin người dùng đã được cập nhật!');
       
@@ -46,7 +54,9 @@ class UserController extends Controller
     }
 
     public function uploadProductSave(Request $request){
-    
+        if (!Auth::check()){
+            return redirect()->route('signin.getSignin');
+        }
     
         request()->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',

@@ -20,6 +20,9 @@
 								
 								<div class="clearfix"></div>
 							</div>
+							@if(Session::has('message'))
+			                    <div class="alert alert-success">{{Session::get('message')}}</div>
+			                @endif
 							<?php $i=0?>
 							@for( ; $i < count($products) ;)
 

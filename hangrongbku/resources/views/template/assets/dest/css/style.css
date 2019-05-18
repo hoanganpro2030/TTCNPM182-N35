@@ -1766,7 +1766,7 @@ height:auto
 }
 
 .beta-sales-price {
-font-size:20px;
+font-size: 10px;
 color:#f90
 }
 
@@ -2210,7 +2210,7 @@ display:block;
 font-size:22px;
 font-weight:400;
 }
-.media-body p a{font-weight:400;}
+.media-body p a{font-weight:500;}
 .color-blg-title {color:#008ed0;}
 
 .beta-blog-title {

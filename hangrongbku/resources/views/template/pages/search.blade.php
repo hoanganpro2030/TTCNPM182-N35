@@ -54,6 +54,7 @@
 					</div>
 					<div class="col-sm-3 aside">
 							<h3 class="widget-title" style ="color: yellow">Bộ lọc tìm kiếm</h3>
+
 							<div class="price-get">
 								<h5 style="color:white"> Khoảng giá </h5>
 									
@@ -61,12 +62,12 @@
 									<input type ="hidden" name ="name" value="{{$name}}">
 									Từ :
 									<input type="hidden" name ="_token" value ="{{csrf_token()}}">
-									<input type="text" name="from" value="" style="color:black">
+									<input type="text" name="from" value="" style="color:black"required = "required">
 									
 									Đến:
-									<input type="text" name="to" value="" style="color:black">
+									<input type="text" name="to" value="" style="color:black" required = "required">
 									<br>
-									<button class="submit-price" type="submit" id="pricesubmit" > Áp dụng </button>
+									<input class="submit-price" type="submit" id="pricesubmit" value="Áp dụng" >
 									</form> 
 								
 									

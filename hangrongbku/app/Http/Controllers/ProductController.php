@@ -13,6 +13,10 @@ use App\OrderDetail;
 use App\Comments;
 use App\Notifications;
 use App\Http\Requests\ProductRequest;
+use App\Http\Requests\SearchRequest;
+use App\Http\Requests\PriceSearchRequest;
+
+
 
 
 class ProductController extends Controller
@@ -37,7 +41,7 @@ class ProductController extends Controller
 	public function showProduct(){
 		return view('template.pages.product');
 	}
-	public function getSearch(Request $req){
+	public function getSearch(SearchRequest $req){
 		$from = $req->from;
 		$to = $req->to;
 		$name = $req->key;
@@ -47,9 +51,9 @@ class ProductController extends Controller
 
 		return view('template.pages.search', compact('products'), compact('name'),compact('from'), compact('to'));
 	}
-	public function getSearchPrice(Request $req){
-		$from = $req->input('from');
 
+	public function getSearchPrice(PriceSearchRequest $req){
+		$from = $req->input('from');
 		$to = $req->input('to');
 		$name = $req->name;
 		$products = DB::table('products')->where('name','like','%'.$name.'%')
@@ -142,7 +146,7 @@ class ProductController extends Controller
 
             DB::table('usercarts')->where('userID',$uid)->where('productID',$pid)->increment('quantity',$request->quantity);
             DB::table('products')->where('id',$pid)->decrement('quantity',$request->quantity);
-            return redirect()->route('order.getCart');
+            return redirect()->route('index.getIndex')->with('message','Sản phẩm đã được thêm vào giỏ hàng');
         }
         $cart = new UserCarts();
         $cart->userID = $uid;
@@ -154,7 +158,7 @@ class ProductController extends Controller
 		// $carts = DB::table('usercarts')->where('userID',$uid)->get();
         // $seller = Products::find(1)->user;
         // $product = DB::table('usercarts')->where('userID',$uid)->get();
-        return redirect()->route('order.getCart');
+        return redirect()->route('index.getIndex')->with('message','Sản phẩm đã được thêm vào giỏ hàng');
     }
 
     public function getCart(){
