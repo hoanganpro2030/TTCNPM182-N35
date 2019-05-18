@@ -78,8 +78,8 @@
 			<div class="visible-xs clearfix"></div>
 			<nav class="main-account">		
 				<ul class ="l-inline ov">
-						<li><a href="{{route('user.inform')}}" style ="font-size: 16px;margin-right:10px;color:red">{{Auth::User()->name}} <i class="fa fa-user fa-lg"></i></a> </li>
-						<li><a href="{{route('signout.logout')}}" style ="font-size: 16px;margin-left:14px; color:red"> Đăng xuất<i class="fa fa-sign-out fa-lg"></i></a> </li>			
+						<li><a href="{{route('user.inform')}}" style ="font-size: 16px;margin-right:10px;color:blue">{{Auth::User()->name}} <i class="fa fa-user fa-lg" style="color:ba"></i></a> </li>
+						<li><a href="{{route('signout.logout')}}" style ="font-size: 16px;margin-left:14px; color:blue"> Đăng xuất<i class="fa fa-sign-out fa-lg"></i></a> </li>			
 				</ul>	
 			</nav>
 		</div>
@@ -106,7 +106,7 @@
 			<div class="visible-xs clearfix"></div>
 
 			@if (count($notes)!=0)
-			<a style ="font-size: 16px;margin-right:28px;color:blue" onclick="myFunction()" class="dropbtn">
+			<a style ="font-size: 16px;margin-right:28px;color:blue;" onclick="myFunction()" class="dropbtn">
 				Thông báo 
 				<span class="fa-stack" >
 				    <!-- The icon that will wrap the number -->
@@ -123,18 +123,18 @@
 					<?php
 						$user = DB::table('users')->where('id',$note->customerID)->first();
 					?>
-					<li class="dropli"><a href="{{route('notification.getNotification',$note->id)}}">Bạn có một đơn hàng mới từ <span style="color: blue">{{$user->name}}</span></a></li>
+					<li class="dropli"><a href="{{route('notification.getNotification',$note->id)}}">Bạn có một đơn hàng mới từ <span style="color: black">{{$user->name}}</span></a></li>
 					<span style="color: #000;margin-left: 15px">{{$note->created_at}}</span>
 			    	@endforeach
 				</ul>
 			    
 			</div>
 			@else
-			<a style ="font-size: 16px;margin-right:28px;color:red" onclick="myFunction()" class="dropbtn">
+			<a style ="font-size: 16px;margin-right:28px;color:blue" onclick="myFunction()" class="dropbtn">
 				Thông báo 
 				<span class="fa-stack">
 				    <!-- The icon that will wrap the number -->
-				    <span class="fa fa-bell fa-stack-2x" style="color: #0277b8"></span>
+				    <span class="fa fa-bell fa-lg" style="color: #0277b8"></span>
 				    <!-- a strongs element with the custom content, in this case a number -->
 				    <strong class="fa-stack-1x" style="color: #fff; font-size: 12px">
 				        {{count($notes)}}
@@ -150,8 +150,9 @@
 		    
 			</div>
 			@endif
-
-			<a href="{{route('order.getCart')}}" style ="font-size: 16px;margin-right:10px;color:red">Giỏ hàng <i class="fa fa-shopping-cart fa-lg"></i></a>
+	
+			<a href="{{route('order.getCart')}}" style ="font-size: 16px;margin-right:10px;color:blue">Giỏ hàng <i class="fa fa-shopping-cart fa-lg"></i></a>
+			
 		</div>
 
 	
