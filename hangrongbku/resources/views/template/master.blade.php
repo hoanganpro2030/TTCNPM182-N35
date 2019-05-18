@@ -57,6 +57,16 @@
 					<input type="text" value="" name="key" id="s" rows="10" placeholder="Nhập từ khóa..." style="color:black"> 
 					<input type ="hidden" name ="from" value="0">
 					<input type ="hidden" name ="to" value="0">
+					@if (count($errors)>0)
+            <div class="alert alert-danger">
+            	<ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+                </ul>
+            </div>
+            @endif
+			
 					<button class="fa fa-search" type="submit" id="searchsubmit" style="color:black"> </button>
 				</form>
 				

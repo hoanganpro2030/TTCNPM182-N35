@@ -12,6 +12,10 @@ use App\Order;
 use App\OrderDetail;
 use App\Comments;
 use App\Http\Requests\ProductRequest;
+use App\Http\Requests\SearchRequest;
+use App\Http\Requests\PriceSearchRequest;
+
+
 
 class ProductController extends Controller
 {
@@ -35,7 +39,7 @@ class ProductController extends Controller
 	public function showProduct(){
 		return view('template.pages.product');
 	}
-	public function getSearch(Request $req){
+	public function getSearch(SearchRequest $req){
 		$from = $req->from;
 		$to = $req->to;
 		$name = $req->key;
@@ -45,7 +49,8 @@ class ProductController extends Controller
 
 		return view('template.pages.search', compact('products'), compact('name'),compact('from'), compact('to'));
 	}
-	public function getSearchPrice(Request $req){
+
+	public function getSearchPrice(PriceSearchRequest $req){
 		$from = $req->input('from');
 
 		$to = $req->input('to');

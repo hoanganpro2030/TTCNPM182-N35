@@ -10,7 +10,7 @@
 			
 		
 			<div class="col-sm-9">
-				<h4 style="color:white">Lịch sử đặt hàng</h4>
+				<h4 style="color:white">Lịch sử  giao dịch</h4>
 				<div class="space20">&nbsp;</div>
 				@foreach ($orders as $order)
 					<?php
