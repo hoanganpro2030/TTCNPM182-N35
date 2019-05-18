@@ -50,6 +50,8 @@
 								<input type="hidden" name="_token" value="{{csrf_token()}}">
 								<!-- <a class="add-to-cart" href="{{route('order.addToCart',[$product->id,Auth::User()->id])}}"><i class="fa fa-shopping-cart"></i></a> -->
 								<input type="submit" class="add-to-cart" value="Add">
+
+								
 							</form>
 							<div class="clearfix"></div>
 						</div>

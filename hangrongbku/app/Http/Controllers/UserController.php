@@ -28,10 +28,19 @@ class UserController extends Controller
         request()->validate([
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-
-        $imageName = time().'.'.request()->image->getClientOriginalExtension();
-        request()->image->move(public_path('assets/dest/products'), $imageName);
         $user = Auth::User();
+        if(!$request->image){
+            $imageName = $user->avatar;
+        }
+        else{
+            $imageName = time().'.'.request()->image->getClientOriginalExtension();
+            request()->image->move(public_path('assets/dest/products'), $imageName);
+        }
+        
+
+
+        
+
         $user->name = $request->name;
         $user->email = $request->email;
         $user->avatar = $imageName;

@@ -89,7 +89,7 @@
 	
 				<form role="search" method="post" id="searchform" action="{{route('search')}}">
 					<input type="hidden" name ="_token" value ="{{csrf_token()}}">
-					<input type="text" value="" name="key" id="s" rows="10" placeholder="Nhập từ khóa..." style="color:black"> 
+					<input type="text" value="" name="key" id="s" rows="10" placeholder="Nhập từ khóa..." style="color:black" required="required"> 
 					<input type ="hidden" name ="from" value="0">
 					<input type ="hidden" name ="to" value="0">
 					@if (count($errors)>0)
