@@ -169,7 +169,8 @@
 			<div class="col-sm-3 aside">
 				<div class="widget">
 					<h3 class="widget-title">Thông tin người bán</h3>
-					<img style="max-width:70%; max-height:70%; margin-left: auto; margin-right: auto;" src="{{url('assets/dest/images/logo.png')}}" alt=""></a>
+
+					<img style="max-width:50%; max-height:50%; margin-left: 40px; margin-right:auto; margin-top: 20px;" src="{{url('assets/dest/products/' . $seller->avatar .'')}}" alt=""></a>
 					<div class="widget-body">
 						<div class="beta-sales beta-lists">
 							<div class="media beta-sales-item">

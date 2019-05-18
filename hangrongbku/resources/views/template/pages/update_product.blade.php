@@ -30,6 +30,7 @@
 					@csrf
 					<h4>Cập nhật sản phẩm</h4>
 					<div class="space20">&nbsp;</div>
+					<img src="{{url('assets/dest/products/' . $products->image .'')}}" alt="" height="200px" width="auto" style=" margin-left: auto;">
 					<div class="form-group">
 						<label for="exampleInputEmail1">Chọn hình ảnh</label>
 						<input type="file" name="image" class="form-control" onchange="readURL(this);">

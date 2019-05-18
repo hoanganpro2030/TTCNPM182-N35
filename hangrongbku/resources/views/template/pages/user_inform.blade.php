@@ -89,7 +89,7 @@
 					<div class="space60">&nbsp;</div>
 					
 					<div class="space60">&nbsp;</div>
-						<img src="{{url('assets/dest/products/' . Auth::User()->avatar .'')}}" alt="" height="300px" width="300" style="border-radius: 200px; margin-left: 50px; box-shadow: 0px 0px 10px 5px #fff">
+						<img src="{{url('assets/dest/products/' . Auth::User()->avatar .'')}}" alt="" height="250px" width="250px" style="border-radius: 50%; margin-left: 50px; box-shadow: 0px 0px 10px 5px #fff">
 					</div>
 				<div class="space60">&nbsp;</div>
 			</div>
