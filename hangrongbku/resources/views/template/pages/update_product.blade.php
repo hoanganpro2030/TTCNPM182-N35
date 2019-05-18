@@ -2,9 +2,11 @@
 @section('content')
 <div class="container">
 	<div class ="main-content">
+		<div class="space60">&nbsp;</div>
 		<div class="row">
-		@include('template.user_option')
+			@include('template.user_option')
 			<div class=" col-sm-9 offset-2">
+			
 			@if ($message = Session::get('success'))
 				<div class="alert alert-success alert-block">
 					<button type="button" class="close" data-dismiss="alert">×</button>
@@ -14,7 +16,7 @@
 				@endif
 				@if (count($errors) > 0)
 					<div class="alert alert-danger">
-						<strong>Whoops!</strong> There were some problems with your input.
+						<strong>Ôi khong!</strong> Có vấn đề xảy ra với hình ảnh của bạn.
 						<ul>
 							@foreach ($errors->all() as $error)
 								<li>{{ $error }}</li>
@@ -27,8 +29,9 @@
 					<input type="hidden" name="pid" value="{{$products->id}}">
 					@csrf
 					<h4>Cập nhật sản phẩm</h4>
+					<div class="space20">&nbsp;</div>
 					<div class="form-group">
-						<label for="exampleInputEmail1">Chon hinh anh</label>
+						<label for="exampleInputEmail1">Chọn hình ảnh</label>
 						<input type="file" name="image" class="form-control" onchange="readURL(this);">
 						<img id="mImage" src="" width="500px" heigh="500px">
 						<script type="text/javascript" src="{{ URL::asset('js/script.js') }}"></script>
