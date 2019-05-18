@@ -28,21 +28,23 @@ class ProductRequest extends FormRequest
             'cateID'=>'required|integer',
             'price'=>'required|integer|min:0',            
             'quantity'=>'required|integer|min:1',   
+            'description'=>'required',                 
         ];
     }
     public function messages()
     {
         return [
-            'name.alpha'=>'Tên không hợp lệ vui lòng nhập lại !!',
-            'name.required'=>'Tên không được bỏ trống',
+            'name.alpha'=>'Tên sản phẩm không hợp lệ vui lòng nhập lại !!',
+            'name.required'=>'Tên sản phẩm không được bỏ trống',
             'cateID.required' => 'Bạn chưa nhập loại sản phẩm',
-            'cateID.integer'=>'Loại hàng không hợp lệ vui lòng nhập lại !!',
-            'price.required' => 'Bạn chưa nhập giá',
-            'price.integer'=>'Giá không hợp lệ vui lòng nhập lại !!',
-            'price.min'=>'Giá không nhỏ hơn 0',
-            'quantity.required'=>'Bạn chưa nhập số lượng',
-            'quantity.integer'=>'Số lượng không hợp lệ vui lòng nhập lại !!',
-            'quantity.min'=>'Số lượng lớn hơn 0',            
+            'cateID.integer'=>'Loại sản phẩm không hợp lệ vui lòng nhập lại !!',
+            'price.required' => 'Bạn chưa nhập giá sản phẩm',
+            'price.integer'=>'Giá sản phẩm không hợp lệ vui lòng nhập lại !!',
+            'price.min'=>'Giá sản phẩm không nhỏ hơn 0',
+            'quantity.required'=>'Bạn chưa nhập số lượng sản phẩm',
+            'quantity.integer'=>'Số lượng sản phẩm không hợp lệ vui lòng nhập lại !!',
+            'quantity.min'=>'Số lượng sản phẩm lớn hơn 0',
+            'description.required'=>'Mô tả sản phẩm không được bỏ trống',
         ];
     }
 }

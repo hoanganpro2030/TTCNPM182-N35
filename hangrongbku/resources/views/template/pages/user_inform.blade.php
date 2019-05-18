@@ -37,7 +37,7 @@
 				  	<div class="space20">&nbsp;</div>
 				  	<div class="form-group">
 					    <label for="exampleInputEmail1">Email address</label>
-					    <input type="email" name="email" class="form-control col-sm-5" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="vana@gmail.com" value="{{$user->email}}">
+					    <input disable="disable" type="email" name="email" class="form-control col-sm-5" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="vana@gmail.com" value="{{$user->email}}">
 					
 				  	</div>
 				  	<div class="space20">&nbsp;</div>
