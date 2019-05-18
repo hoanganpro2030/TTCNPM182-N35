@@ -15,7 +15,10 @@
                 </ul>
             </div>
             @endif
-				<form action={{route('editUser')}} method= "post">
+            
+            <div class="row">
+
+				<form class="col-md-7" action={{route('editUser')}} method= "post" enctype="multipart/form-data">
 					<h4>Thông tin tài khoản</h4>
 					<div class="space20">&nbsp;</div>
 					@if(Session::has('message'))
@@ -24,17 +27,28 @@
 					</p>
 					@endif
 					<div class="space20">&nbsp;</div>
+
+					<div class="form-group">
+					    <label for="exampleInputPassword1">Họ và tên</label>
+					  <input type="text" name="name" class="form-control col-sm-5" id="exampleInputPassword1" placeholder="Nguyễn Văn A" value="{{$user->name}}">
+				  	</div>
+
+				  	
+				  	<div class="space20">&nbsp;</div>
 				  	<div class="form-group">
 					    <label for="exampleInputEmail1">Email address</label>
 					    <input type="email" name="email" class="form-control col-sm-5" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="vana@gmail.com" value="{{$user->email}}">
 					
 				  	</div>
 				  	<div class="space20">&nbsp;</div>
+				  	
 				  	<div class="form-group">
-					    <label for="exampleInputPassword1">Họ và tên</label>
-					  <input type="text" name="name" class="form-control col-sm-5" id="exampleInputPassword1" placeholder="Nguyễn Văn A" value="{{$user->name}}">
-				  	</div>
-				  	<div class="space20">&nbsp;</div>
+						<label for="exampleInputEmail1">Cập nhật ảnh đại diện</label>
+						<input type="file" name="image" class="form-control" onchange="readURL(this);">
+						<img id="mImage" src="" width="500px" heigh="500px">
+						<script type="text/javascript" src="{{ URL::asset('js/script.js') }}"></script>
+					</div>
+					<div class="space20">&nbsp;</div>
 				  	<div class="form-group">
 					    <label for="exampleInputPassword1">Ngày sinh</label>
 					    <input type="date" name="dayOfBirth"class="form-control col-sm-5" id="exampleInputPassword1" placeholder="Nguyễn Văn A" value="{{$user->dateOfBirth}}">
@@ -67,15 +81,20 @@
 				<input type="hidden" name ="_token" value ="{{csrf_token()}}">
 				  	<button type="submit" class="btn btn-primary">Cập nhật</button>
 				</form>
+				
+				
+				<div class="col-md-5">
+					<h4></h4>
+					<div class="space60">&nbsp;</div>
+					<div class="space60">&nbsp;</div>
+					
+					<div class="space60">&nbsp;</div>
+						<img src="{{url('assets/dest/products/' . Auth::User()->avatar .'')}}" alt="" height="300px" width="300" style="border-radius: 200px; margin-left: 50px; box-shadow: 0px 0px 10px 5px #fff">
+					</div>
 				<div class="space60">&nbsp;</div>
-			</div> <!-- #content -->
-			<div class=" col-sm-3 offset-2">
-				<div class="space20">&nbsp;</div>
-				<div class="space20">&nbsp;</div>
-				<div class="space20">&nbsp;</div>
-				<button type="submit" class="btn btn-primary">Choose file</button>
-
 			</div>
+			</div> <!-- #content -->
+			
 		</div>
 	</div>
 	

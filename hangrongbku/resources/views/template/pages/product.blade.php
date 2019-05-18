@@ -4,7 +4,6 @@
 	<div id="content">
 		<div class="row">
 			<div class="col-sm-9">
-
 				<div class="row">
 					<div class="col-sm-4">
 						<img src="{{url('assets/dest/products/' . $product->image .'')}}" alt="">

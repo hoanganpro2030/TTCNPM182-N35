@@ -49,7 +49,6 @@ class ProductController extends Controller
 	}
 	public function getSearchPrice(Request $req){
 		$from = $req->input('from');
-
 		$to = $req->input('to');
 		$name = $req->name;
 		$products = DB::table('products')->where('name','like','%'.$name.'%')
@@ -142,7 +141,7 @@ class ProductController extends Controller
 
             DB::table('usercarts')->where('userID',$uid)->where('productID',$pid)->increment('quantity',$request->quantity);
             DB::table('products')->where('id',$pid)->decrement('quantity',$request->quantity);
-            return redirect()->route('order.getCart');
+            return redirect()->route('index.getIndex')->with('message','Sản phẩm đã được thêm vào giỏ hàng');
         }
         $cart = new UserCarts();
         $cart->userID = $uid;
@@ -154,7 +153,7 @@ class ProductController extends Controller
 		// $carts = DB::table('usercarts')->where('userID',$uid)->get();
         // $seller = Products::find(1)->user;
         // $product = DB::table('usercarts')->where('userID',$uid)->get();
-        return redirect()->route('order.getCart');
+        return redirect()->route('index.getIndex')->with('message','Sản phẩm đã được thêm vào giỏ hàng');
     }
 
     public function getCart(){
