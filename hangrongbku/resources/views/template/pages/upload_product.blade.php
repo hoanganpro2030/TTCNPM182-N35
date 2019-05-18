@@ -32,7 +32,7 @@
 					<div class="form-group">
 						<label for="exampleInputEmail1">Chọn hình ảnh</label>
 						<input type="file" name="image" class="form-control" onchange="readURL(this);">
-						<img id="mImage" src="" width="500px" heigh="500px">
+						<img id="mImage" src="" width="250px" heigh="250px">
 						<script type="text/javascript" src="{{ URL::asset('js/script.js') }}"></script>
 					</div>
 					
