@@ -256,9 +256,15 @@ class ProductController extends Controller
         if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}
+		request()->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+		]);
+		$imageName = time().'.'.request()->image->getClientOriginalExtension();
+		request()->image->move(public_path('assets/dest/products'), $imageName);
+		
 		$user = Auth::User();
 		$product=DB::table('products')->where('sellerID',$user->id)->where('id',$request->pid);
-		$product->update(['name' => $request->name, 'price' => $request->price, 'description' => $request->description, 'cateID' => $request->cateID, 'quantity' => $request->quantity]);
+		$product->update(['image'=>$imageName,'name' => $request->name, 'price' => $request->price, 'description' => $request->description, 'cateID' => $request->cateID, 'quantity' => $request->quantity]);
 		// $products->id = $request->id;
 		// $products->name = $request->name;
         // $products->price = $request->price;
