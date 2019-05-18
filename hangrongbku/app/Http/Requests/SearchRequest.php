@@ -31,7 +31,6 @@ class SearchRequest extends FormRequest
     {
         return [
             'key.required'=>'Vui lòng nhập từ khóa tìm kiếm',
-            
         ];
     }
 }

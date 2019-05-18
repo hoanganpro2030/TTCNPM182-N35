@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\UserRequest;
 use App\Products;
+use App\Http\Requests\ProductRequest;
+
 
 class UserController extends Controller
 {
@@ -62,7 +64,7 @@ class UserController extends Controller
         return view('template.pages.upload_product');
     }
 
-    public function uploadProductSave(Request $request){
+    public function uploadProductSave(ProductRequest $request){
         if (!Auth::check()){
             return redirect()->route('signin.getSignin');
         }

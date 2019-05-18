@@ -45,7 +45,7 @@
 										<div class="single-item-caption">
 											<?php $user=Auth::User()->id?>
 											<a class="add-to-cart pull-left" href="{{route('products.getProduct',$products[$i]->id)}}"><i class="fa fa-shopping-cart"></i></a>
-											<a class="beta-btn primary" href="{{route('products.getProduct',$products[$i]->id)}}">Details <i class="fa fa-chevron-right"></i></a>
+											<a class="beta-btn primary" href="{{route('products.getProduct',$products[$i]->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
 											<div class="clearfix"></div>
 										</div>
 									</div>
