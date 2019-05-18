@@ -82,7 +82,7 @@ class UserController extends Controller
         $product->name = $request->name;
         $product->sellerID = $uid;
         $product->price = $request->price;
-        $product->deion = $request->deion;
+        $product->description = $request->description;
         $product->cateID = $request->cateID;
         $product->status = 1;
         $product->quantity = $request->quantity;
@@ -103,7 +103,7 @@ class UserController extends Controller
         $user = Auth::User();
         $user->name = $request->name;
         $user->price = $request->price;
-        $user->deion = $request->deion;
+        $user->description = $request->description;
         $user->address = $request->address;
         $user->sex = $request->sex;
         $user->dateOfBirth = $request->dateOfBirth;
