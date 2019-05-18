@@ -864,18 +864,18 @@ top:-4px;
 font-size:10px
 }
 
-.beta-select {
-position:relative
-}
+/*.beta-select {
+position:left;
+}*/
 
-.beta-select select {
+/*.beta-select select {
 position:absolute;
 top:0;
 left:0;
 width:100%;
 opacity:0
 }
-
+*/
 .beta-select span {
 display:inline-block
 }

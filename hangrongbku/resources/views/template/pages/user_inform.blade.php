@@ -44,8 +44,13 @@
 					    <label for="exampleInputPassword1">Giới tính</label>
 					    
 					    <select  class="form-control col-sm-5" name="sex" value="{{$user->sex}}">
-						  <option value="1">Nam</option>
+					    	@if(Auth::User()->sex==1)
+						  <option selected="selected" value="1">Nam</option>
 						  <option value="0">Nữ</option>
+						  @else
+						  <option value="1">Nam</option>
+						  <option selected="selected" value="0">Nữ</option>
+						  @endif
 						</select>
 				  	</div>
 				  	<div class="space20">&nbsp;</div>

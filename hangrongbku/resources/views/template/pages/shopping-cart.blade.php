@@ -97,7 +97,7 @@
 					<div class="cart-totals-row"><span>Thành tiền:</span> <span>{{number_format($total,0,',','.')}} đ</span></div>
 					<div class="cart-totals-row"><span>Vận chuyển:</span> <span>Miễn phí</span></div>
 					<div class="cart-totals-row"><span>Tổng hóa đơn:</span> <span>{{number_format($total,0,',','.')}} đ</span></div>
-					<div style="text-align: center;" class="cart-totals-row"><a style="position: inline;" class="btn btn-success" href="{{route('order.createOrder')}}">Submit</a></div>
+					<div style="text-align: center;" class="cart-totals-row"><a style="position: inline;" class="btn btn-success" href="{{route('order.createOrder')}}" onclick="return confirm('Xác nhận mua ?')">Submit</a></div>
 
 		
 				</div>

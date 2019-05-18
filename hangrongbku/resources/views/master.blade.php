@@ -62,6 +62,7 @@
 		<div class="shopping-cart">
 			<a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
 			<div class="visible-xs clearfix"></div>
+			
 			<a href="#" style ="font-size: 16px;margin-right:10px">Giỏ hàng <i class="fa fa-shopping-cart fa-lg"></i></a>
 		</div>
 	</div>
