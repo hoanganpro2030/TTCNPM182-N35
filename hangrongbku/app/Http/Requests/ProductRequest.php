@@ -28,6 +28,7 @@ class ProductRequest extends FormRequest
             'cateID'=>'required|integer',
             'price'=>'required|integer|min:0',            
             'quantity'=>'required|integer|min:1',   
+            'description'=>'required',                 
         ];
     }
     public function messages()
@@ -42,7 +43,8 @@ class ProductRequest extends FormRequest
             'price.min'=>'Giá không nhỏ hơn 0',
             'quantity.required'=>'Bạn chưa nhập số lượng',
             'quantity.integer'=>'Số lượng không hợp lệ vui lòng nhập lại !!',
-            'quantity.min'=>'Số lượng lớn hơn 0',            
+            'quantity.min'=>'Số lượng lớn hơn 0',
+            'description.required'=>'Địa chỉ không được bỏ trống',
         ];
     }
 }
