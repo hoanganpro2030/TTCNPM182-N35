@@ -52,7 +52,6 @@
 </style>
 </head>
 <body >
-	</p>
 
 	<div class="header">
 		<div class="container">
@@ -93,6 +92,16 @@
 					<input type="text" value="" name="key" id="s" rows="10" placeholder="Nhập từ khóa..." style="color:black"> 
 					<input type ="hidden" name ="from" value="0">
 					<input type ="hidden" name ="to" value="0">
+					@if (count($errors)>0)
+            <div class="alert alert-danger">
+            	<ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+                </ul>
+            </div>
+            @endif
+			
 					<button class="fa fa-search" type="submit" id="searchsubmit" style="color:black"> </button>
 				</form>
 				
@@ -213,7 +222,7 @@
 						<h4 class="widget-title">Theo dõi chúng tôi</h4>
 						<form action="#" method="post">
 							<input type="email" name="your_email">
-							<button class="pull-right" type="submit">Subscribe <i class="fa fa-chevron-right"></i></button>
+							<button class="pull-right" type="submit">Đăng ký <i class="fa fa-chevron-right"></i></button>
 						</form>
 					</div>
 				</div>

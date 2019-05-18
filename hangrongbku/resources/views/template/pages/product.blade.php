@@ -20,9 +20,9 @@
 						<div class="space20">&nbsp;</div>
 
 						<div class="single-item-desc">
-								<p>Liên hệ người bán: <a href="" style="color: blue">{{$seller->name}}</a></p>
+								<p>Liên hệ người bán: <a href="" style="color: yellow">{{$seller->name}}</a></p>
 								<div class="space20">&nbsp;</div>
-								<p>Số điện thoại đặt hàng trực tiếp: <a style="color: blue">{{$seller->phone}}</a></p>
+								<p>Số điện thoại đặt hàng trực tiếp: <a style="color: yellow">{{$seller->phone}}</a></p>
 						</div>
 						<div class="space20">&nbsp;</div>
 						@if (count($errors)>0)
@@ -168,42 +168,36 @@
 			</div>
 			<div class="col-sm-3 aside">
 				<div class="widget">
-					<h3 class="widget-title">Best Sellers</h3>
+					<h3 class="widget-title">Thông tin người bán</h3>
+					<img style="max-width:70%; max-height:70%; margin-left: auto; margin-right: auto;" src="{{url('assets/dest/images/logo.png')}}" alt=""></a>
 					<div class="widget-body">
 						<div class="beta-sales beta-lists">
 							<div class="media beta-sales-item">
 								<a class="pull-left" href="product.html">
 								<img src="assets/dest/images/products/sales/1.png" alt=""></a>
 								<div class="media-body">
-									Sample Woman Top
-									<span class="beta-sales-price">$34.55</span>
+									Tên:   
+									<span class="beta-sales-price" style="font-size: 15px">{{$seller->name}}</span>
 								</div>
 							</div>
 							<div class="media beta-sales-item">
 								<a class="pull-left" href="product.html"><img src="assets/dest/images/products/sales/2.png" alt=""></a>
 								<div class="media-body">
-									Sample Woman Top
-									<span class="beta-sales-price">$34.55</span>
+									Địa chỉ:  
+									<span class="beta-sales-price" style="font-size: 15px">{{$seller->address}}</span>
 								</div>
 							</div>
 							<div class="media beta-sales-item">
 								<a class="pull-left" href="product.html"><img src="assets/dest/images/products/sales/3.png" alt=""></a>
 								<div class="media-body">
-									Sample Woman Top
-									<span class="beta-sales-price">$34.55</span>
-								</div>
-							</div>
-							<div class="media beta-sales-item">
-								<a class="pull-left" href="product.html"><img src="assets/dest/images/products/sales/4.png" alt=""></a>
-								<div class="media-body">
-									Sample Woman Top
-									<span class="beta-sales-price">$34.55</span>
+									SĐT:  
+									<span class="beta-sales-price" style="font-size: 15px">{{$seller->phone}}</span>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div> <!-- best sellers widget -->
-				<div class="widget">
+				<!-- <div class="widget">
 					<h3 class="widget-title">New Products</h3>
 					<div class="widget-body">
 						<div class="beta-sales beta-lists">
@@ -237,7 +231,7 @@
 							</div>
 						</div>
 					</div>
-				</div> <!-- best sellers widget -->
+				</div> -->
 			</div>
 		</div>
 	</div> <!-- #content -->

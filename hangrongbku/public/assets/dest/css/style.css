@@ -1113,10 +1113,11 @@ background-color:#57a7c6
   }
   
   /* Change the background color on mouse-over */
-  /* .header a:hover {
+  .header li:hover {
     background-color:white;
     color: black;
-  } */
+    border-radius: 5px;
+  }
   
   /* Style the active/current link*/
   .header a.active {

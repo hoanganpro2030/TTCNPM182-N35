@@ -23,23 +23,23 @@
                 <div class="signin-content">
                     <div class="signin-image">
                         <figure><img src="{{url('login/images/logo.png')}}" alt="sing up image"></figure>
-                        <a href="{{route('signup.postSignUp')}}" class="signup-image-link">Create an account</a>
+                        <a href="{{route('signup.postSignUp')}}" class="signup-image-link">Tạo một tài khoản</a>
                     </div>
 
                     <div class="signin-form">
-                        <h2 class="form-title">Sign in</h2>
+                        <h2 class="form-title" style= "font-family: serif">Đăng nhập</h2>
                         <form method="POST" action="{{route('signin.postSignin')}}" class="register-form" id="login-form">
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Your Email"/>
+                                <input type="email" name="email" id="email" placeholder="Email"/>
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Password"/>
+                                <input type="password" name="pass" id="pass" placeholder="Mật khẩu"/>
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
-                                <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                                <label for="remember-me" class="label-agree-term"><span><span></span></span>Ghi nhớ đăng nhập</label>
                             </div>
                             <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" required="required"/>
                             @if(Session::has('signup'))
@@ -49,12 +49,12 @@
                             <div class="alert alert-danger">{{Session::get('error')}}</div>
                             @endif
                             <div class="form-group form-button">
-                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="Đăng nhập"/>
                             </div>
 
                         </form>
                         <div class="social-login">
-                            <span class="social-label">Or login with</span>
+                            <span class="social-label">Đăng nhập bằng</span>
                             <ul class="socials">
                                 <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
                                 <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
