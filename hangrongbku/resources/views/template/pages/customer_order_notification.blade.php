@@ -34,13 +34,14 @@
 					<tbody>
 					@foreach ($n_order_details as $detail)
 					<?php $product=DB::table('products')->where('id',$detail->productID)->first();?>
+					@if($product->sellerID == Auth::User()->id)
 					<tr>
 						<?php $sumMoney += $product->price*$detail->quantity; ?>
 						<td>{{$product->name}}</td>
 						<td>{{number_format($product->price,0,',','.')}} đ</td>
 						<td>{{$detail->quantity}}</td>
 					</tr>
-						
+					@endif
 					@endforeach
 					</tbody>
 						

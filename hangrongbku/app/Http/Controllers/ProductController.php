@@ -234,16 +234,24 @@ class ProductController extends Controller
 		//tao thong bao
 		
 		for($i = 0; $i < count($carts); $i++){
-			$cart = $carts[$i];
-			$product = DB::table('products')->where('id',$cart->productID)->first();
-			$notification = new Notifications();
-			$notification->userID = $product->sellerID;
-			$notification->customerID = Auth::User()->id;
-			$notification->orderID = $order->id;
-			$notification->isNew = 1;
-			$notification->isDone = 0;
-			$notification->save();
-			break;
+			for($j =$i-1;$j>=0;$j--){
+				
+				$product1 = DB::table('products')->where('id',$carts[$i]->productID)->first();
+				$product2 = DB::table('products')->where('id',$carts[$j]->productID)->first();
+				if($product1->sellerID!=$product2->sellerID){
+					$cart = $carts[$i];
+					$product = DB::table('products')->where('id',$cart->productID)->first();
+					$notification = new Notifications();
+					$notification->userID = $product->sellerID;
+					$notification->customerID = Auth::User()->id;
+					$notification->orderID = $order->id;
+					$notification->isNew = 1;
+					$notification->isDone = 0;
+					$notification->save();
+				}
+				
+			}
+			
 		}
 		
 
