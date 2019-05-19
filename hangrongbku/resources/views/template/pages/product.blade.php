@@ -9,6 +9,7 @@
 						<img src="{{url('assets/dest/products/' . $product->image .'')}}" alt="">
 					</div>
 					<div class="col-sm-8">
+
 						
 						<div class="single-item-body">
 							<p class="single-item-title">{{mb_strtoupper($product->name)}}</p>
@@ -17,26 +18,26 @@
 							</p>
 							<?php
 								$averageRating = 0;
-								if($product->numRate != 0){
+								if($product->numStar != 0){
 									$averageRating = ($product->numStar)/($product->numRate);
 								}
 							?>
-							<p style="margin-top: -20px"><input class="rating rating-loading" data-min="0" data-max="5" data-step="0.1" value={{$averageRating}} data-size="xs" disabled=""></p> 
+							<p ><input class="rating rating-loading" data-min="0" data-max="5" data-step="0.1" value={{$averageRating}} data-size="xs" disabled=""></p> 
 							<p >So luot danh gia: {{$product->numRate}}</p>
 							
 						</div>
 
-						<!-- <div class="clearfix"></div> -->
-						<!-- <div class="space20">&nbsp;</div> -->
+						<div class="clearfix"></div>
+						<div class="space20">&nbsp;</div>
 					
 						<div class="single-item-desc">
 								<p>Liên hệ người bán: <a href="" style="color: yellow">{{$seller->name}}</a></p>
-								<!-- <div class="space20">&nbsp;</div> -->
+								<div class="space20">&nbsp;</div>
 								<p>Số điện thoại đặt hàng trực tiếp: <a style="color: yellow">{{$seller->phone}}</a></p>
 								
 
 						</div>
-						<!-- <div class="space20">&nbsp;</div> -->
+						<div class="space20">&nbsp;</div>
 						@if (count($errors)>0)
                             <div class="alert alert-danger">
                                 <ul>
@@ -44,7 +45,7 @@
                                         <li>{{$error}}</li>
                                     @endforeach
                                 </ul>
-                            </div>
+                            </div> 
                         @endif
 						<p>Số lượng:</p>
 						<div class="single-item-options">
