@@ -35,6 +35,24 @@ class ProductController extends Controller
 	public function showContact(){
 		return view('template.pages.contact');
 	}
+	public function postRating(Request $req){
+    	if (!Auth::check()){
+			return redirect()->route('signin.getSignin');
+		}
+		
+		request()->validate(['rate' => 'required']);
+
+		$rating = $req->rate;
+
+		$product = DB::table('products')->where('id',$req->pid)->first();
+
+		
+		DB::table('products')->where('id',$req->pid)->increment('numRate',1);
+		DB::table('products')->where('id',$req->pid)->increment('numStar',$rating);
+		
+    	return redirect()->route('product',$req->pid);
+	}
+
 	public function showAbout(){
 		return view('template.pages.about');
 	}

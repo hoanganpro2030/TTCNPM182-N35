@@ -46,6 +46,12 @@ Route::get('/hangrongbku/product/{id}',[
 	'as' => 'product',
 	'uses' => 'ProductController@getProduct'
 ]);
+
+Route::post('/hangrongbku/product/{id}/',[
+	'as' => 'products.postRating',
+	'uses' => 'ProductController@postRating'
+]);
+
 Route::get('/hangrongbku/user',[
 	'as' => 'user.inform',
 	'uses' => 'UserController@showUserInform'
@@ -168,3 +174,9 @@ Route::get('hangrongbku/user/history/remove/{id}',[
 	'as'=> 'history.getRemoveOrder',
 	'uses' => 'ProductController@getRemoveOrder'
 ]);
+
+Route::get('posts', 'HomeController@posts')->name('posts');
+
+Route::post('posts', 'HomeController@postPost')->name('posts.post');
+
+Route::get('posts/{id}', 'HomeController@show')->name('posts.show');
