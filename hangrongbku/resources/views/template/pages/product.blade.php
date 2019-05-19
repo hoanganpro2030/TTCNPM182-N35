@@ -9,20 +9,33 @@
 						<img src="{{url('assets/dest/products/' . $product->image .'')}}" alt="">
 					</div>
 					<div class="col-sm-8">
+
+						
 						<div class="single-item-body">
 							<p class="single-item-title">{{mb_strtoupper($product->name)}}</p>
 							<p class="single-item-price">
 								<span class="flash-sale">{{number_format($product->price,0,',','.')}} đ</span>
 							</p>
+							<?php
+								$averageRating = 0;
+								if($product->numStar != 0){
+									$averageRating = ($product->numStar)/($product->numRate);
+								}
+							?>
+							<p ><input class="rating rating-loading" data-min="0" data-max="5" data-step="0.1" value={{$averageRating}} data-size="xs" disabled=""></p> 
+							<p >So luot danh gia: {{$product->numRate}}</p>
+							
 						</div>
 
 						<div class="clearfix"></div>
 						<div class="space20">&nbsp;</div>
-
+					
 						<div class="single-item-desc">
 								<p>Liên hệ người bán: <a href="" style="color: yellow">{{$seller->name}}</a></p>
 								<div class="space20">&nbsp;</div>
 								<p>Số điện thoại đặt hàng trực tiếp: <a style="color: yellow">{{$seller->phone}}</a></p>
+								
+
 						</div>
 						<div class="space20">&nbsp;</div>
 						@if (count($errors)>0)
@@ -32,7 +45,7 @@
                                         <li>{{$error}}</li>
                                     @endforeach
                                 </ul>
-                            </div>
+                            </div> 
                         @endif
 						<p>Số lượng:</p>
 						<div class="single-item-options">
@@ -45,13 +58,12 @@
 									<option value="4">4</option>
 									<option value="5">5</option>
 								</select> -->
+
 								<input class="wc-select" name="quantity" style="color: #000" type="number">
 								<input type="hidden" name="pid" value="{{$product->id}}">
 								<input type="hidden" name="_token" value="{{csrf_token()}}">
 								<!-- <a class="add-to-cart" href="{{route('order.addToCart',[$product->id,Auth::User()->id])}}"><i class="fa fa-shopping-cart"></i></a> -->
-								<input type="submit" class="add-to-cart" value="Add">
-
-								
+								<input type="submit" class="add-to-cart" value="Add">								
 							</form>
 							<div class="clearfix"></div>
 						</div>
@@ -62,17 +74,25 @@
 				<div class="woocommerce-tabs">
 					<ul class="tabs">
 						<li><a href="#tab-description">Description</a></li>
-						<li><a href="#tab-reviews">Reviews (0)</a></li>
+						<li><a href="#tab-reviews">Reviews</a></li>
+						<li> <a href="#tab-rating">Rating</a></li>
 					</ul>
-
+					<div class="panel" id="tab-rating">
+						<form action="{{route('products.postRating',$product->id)}}" method="POST" >
+							<input type="hidden" id="input-1" name="rate" class="rating rating-loading" data-min="0" data-max="5" data-step="1" >
+							<input type="hidden" name="pid" value="{{$product->id}}">
+							<input type="hidden" name="_token" value="{{csrf_token()}}">
+							<input type="submit" class="add-to-cart" value="Rate">
+						</form>
+					</div>
 					<div class="panel comment" id="tab-description">
-					<input type="hidden" id="xxx" value="{{$product->description}}">
-						<?php
-							echo htmlspecialchars_decode($product->description);
-						?>
+						<input type="hidden" id="xxx" value="{{$product->description}}">
+							<?php
+								echo htmlspecialchars_decode($product->description);
+							?>
+						
 					</div>
 					<div class="panel" id="tab-reviews">
-
 						<script type="text/javascript">
 							var i = 0;
 						</script>

@@ -60,7 +60,7 @@
                             <div class="form-group">
                                 <select style="height: 30px;border-radius: 5px; padding: 5px" name ="sex">
                                     <option value="1">Giới tính</option>
-                                    <option value="1">Name</option>
+                                    <option value="1">Nam</option>
                                     <option value="0">Nữ</option>
                                 </select>
                             </div>
