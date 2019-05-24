@@ -25,7 +25,7 @@ class ProductController extends Controller
     	if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}
-		$products = DB::select('select * from products');
+		$products = DB::table('products')->where('status',1)->get();
 		$categories = DB::select('select * from categories');
     	return view('template.pages.index', compact('products', 'categories'));
 	}
@@ -39,6 +39,9 @@ class ProductController extends Controller
     	if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}
+		
+
+
 		
 		request()->validate(['rate' => 'required']);
 
@@ -63,7 +66,7 @@ class ProductController extends Controller
 		$from = $req->from;
 		$to = $req->to;
 		$name = $req->key;
-		$products = DB::table('products')->where('name','like','%'.$req->key.'%')
+		$products = DB::table('products')->where('status',1)->where('name','like','%'.$req->key.'%')
 					->orwhere('price',$req->key)
 					->get();
 
@@ -75,9 +78,8 @@ class ProductController extends Controller
 		$to = $req->input('to');
 		$name = $req->name;
 		$products = DB::table('products')->where('name','like','%'.$name.'%')
-		->whereBetween('price',[$req->input('from'),$req->input('to')])
+		->whereBetween('price',[$req->input('from'),$req->input('to')])->where('status',1)
 					->get();
-		
 		return view('template.pages.search', compact('products'), compact('name'), compact('from'), compact('to'));
 	}
 	
@@ -86,7 +88,7 @@ class ProductController extends Controller
 			return redirect()->route('signin.getSignin');
 		}
 		$product = DB::table('products')->where('id',$id)->first();
-		$relatedPd = DB::table('products')->where('cateID',$product->cateID)->get();
+		$relatedPd = DB::table('products')->where('cateID',$product->cateID)->where('status',1)->get();
 		$seller = DB::table('users')->where('id',$product->sellerID)->first();
 		$comments = DB::table('comments')->where('productID',$product->id)->get();
 		return view('template.pages.product',compact('product','seller','relatedPd','comments'));
@@ -95,7 +97,7 @@ class ProductController extends Controller
 		if (!Auth::check()){
 			return redirect()->route('signin.getSignin');
 		}
-		$products = DB::table('products')->where('cateID',$id)->get();
+		$products = DB::table('products')->where('cateID',$id)->where('status',1)->get();
 		$categories = DB::select('select * from categories');
 		return view('template.pages.index',compact('products','categories'));
 	}

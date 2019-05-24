@@ -180,3 +180,26 @@ Route::get('posts', 'HomeController@posts')->name('posts');
 Route::post('posts', 'HomeController@postPost')->name('posts.post');
 
 Route::get('posts/{id}', 'HomeController@show')->name('posts.show');
+
+
+// this source for admin
+Route::post('hrbku/admin/login',[
+	'as'=>'admin.login.postAdminLogin',
+	'uses'=>'AdminController@postAdminLogin'
+]);
+Route::get('hrbku/admin/logout',[
+	'as'=>'admin.getAdminLogout',
+	'uses'=>'AdminController@getAdminLogout'
+]);
+Route::get('hrbku/admin/index',[
+	'as'=>'admin.index.getIndex',
+	'uses'=>'AdminController@getIndex'
+]);
+Route::get('hrbku/admin/login',[
+	'as'=>'admin.index.getLogin',
+	'uses'=>'AdminController@getLogin'
+]);
+Route::get('hrbku/admin/lock/{id}',[
+	'as'=>'admin.index.getLock',
+	'uses'=>'AdminController@getLock'
+]);

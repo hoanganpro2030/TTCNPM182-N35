@@ -12,7 +12,6 @@
 							<h4>Tìm kiếm</h4>
 							<div class="beta-products-details">
 								<p class ="pull-left"> Tìm thấy {{count($products)}} sản phẩm liên quan đến từ khóa " {{$name}}"</p>
-								
 								<div class="clearfix"></div>
 							</div>
 

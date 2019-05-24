@@ -37,3 +37,4 @@
 		</div> <!-- #content -->
 	</div> <!-- .container -->
 </section>
+@endsecion
