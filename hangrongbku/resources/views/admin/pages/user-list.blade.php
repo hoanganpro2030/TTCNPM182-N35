@@ -30,7 +30,7 @@
                     <tr>
                         <th scope="row">{{$user->id}}</th>
 
-                        <td>{{$user->name}}</td>
+                        <td><a href="{{route('admin.index.getDetail',$user->id)}}">{{$user->name}}</a></td>
                         <td>{{$user->dateOfBirth}}</td>
                         <td>{{$user->address}}</td>
                         <td>{{$user->sex}}</td>
@@ -38,7 +38,7 @@
                         <td>{{$user->email}}</td>
 
                         <td>
-                                <a href="{{route('admin.index.getLock',$user->id)}}">
+                                <a href="{{route('admin.index.getLock',$user->id)}}" onclick="return confirm('Bạn có chắc muốn thực hiện thao tác này ?')">
                                     @if ($user->status == 1)
                                         <i class="fa fa-unlock"></i></a>
                                     @else

@@ -2,10 +2,10 @@
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: localhost
--- Thời gian đã tạo: Th5 19, 2019 lúc 02:46 PM
--- Phiên bản máy phục vụ: 10.1.38-MariaDB
--- Phiên bản PHP: 7.3.4
+-- Host: 127.0.0.1
+-- Generation Time: May 25, 2019 at 10:12 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `hangrongbku`
+-- Database: `hangrongbku`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `categories`
+-- Table structure for table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -36,7 +36,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `categories`
+-- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -57,12 +57,13 @@ INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (16, 'Ti vi', NULL, NULL),
 (17, 'Máy lạnh', NULL, NULL),
 (18, 'Tủ lạnh', NULL, NULL),
-(19, 'Lò vi sóng', NULL, NULL);
+(19, 'Lò vi sóng', NULL, NULL),
+(20, 'Sách truyện', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `comments`
+-- Table structure for table `comments`
 --
 
 CREATE TABLE `comments` (
@@ -75,7 +76,7 @@ CREATE TABLE `comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `comments`
+-- Dumping data for table `comments`
 --
 
 INSERT INTO `comments` (`id`, `userID`, `productID`, `content`, `created_at`, `updated_at`) VALUES
@@ -84,12 +85,14 @@ INSERT INTO `comments` (`id`, `userID`, `productID`, `content`, `created_at`, `u
 (3, 10, 2, '<blockquote>\r\n<h1><em>&Aacute;o rất đẹp Forza Milan</em></h1>\r\n</blockquote>', '2019-05-04 08:47:12', '2019-05-04 08:47:12'),
 (4, 6, 1, '<p><span class=\"marker\">Quần t&agrave;o lao qu&aacute;</span></p>', '2019-05-04 21:12:36', '2019-05-04 21:12:36'),
 (5, 6, 2, '<p>&Aacute;o đẹp m&agrave; rẻ</p>', '2019-05-04 21:15:53', '2019-05-04 21:15:53'),
-(6, 6, 2, '<p><strong>Ao dep qua</strong></p>', '2019-05-08 20:10:55', '2019-05-08 20:10:55');
+(6, 6, 2, '<p><strong>Ao dep qua</strong></p>', '2019-05-08 20:10:55', '2019-05-08 20:10:55'),
+(7, 10, 9, '<p>C&aacute;i n&agrave;y g&aacute;i x&agrave;i được ko</p>', '2019-05-16 02:57:27', '2019-05-16 02:57:27'),
+(8, 10, 1, '<p>C&oacute; m&agrave;u trắng kh&ocirc;ng ad ?</p>', '2019-05-16 08:31:31', '2019-05-16 08:31:31');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -99,7 +102,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -111,12 +114,13 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (13, '2019_04_13_153235_create_order_detail_table', 2),
 (14, '2019_04_13_154043_create_comments_table', 2),
 (15, '2019_04_13_150439_create_usercarts_table', 3),
-(19, '2019_05_10_233523_create_notifications_table', 4);
+(19, '2019_05_10_233523_create_notifications_table', 4),
+(20, '2019_05_19_102820_create_ratings_table', 5);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `notifications`
+-- Table structure for table `notifications`
 --
 
 CREATE TABLE `notifications` (
@@ -131,20 +135,27 @@ CREATE TABLE `notifications` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `notifications`
+-- Dumping data for table `notifications`
 --
 
 INSERT INTO `notifications` (`id`, `userID`, `customerID`, `orderID`, `isNew`, `isDone`, `created_at`, `updated_at`) VALUES
-(1, 6, 10, 40, 1, 0, '2019-05-13 08:11:48', '2019-05-13 08:11:48'),
-(2, 6, 11, 41, 1, 0, '2019-05-13 08:13:35', '2019-05-13 08:13:35'),
+(2, 6, 11, 41, 0, 0, '2019-05-13 08:13:35', '2019-05-13 08:13:35'),
 (3, 1, 11, 42, 1, 0, '2019-05-13 10:20:40', '2019-05-13 10:20:40'),
-(4, 6, 12, 43, 1, 0, '2019-05-19 05:32:58', '2019-05-19 05:32:58'),
-(5, 12, 13, 44, 0, 1, '2019-05-19 05:35:53', '2019-05-19 05:35:53');
+(4, 10, 6, 50, 0, 0, '2019-05-18 06:32:18', '2019-05-18 06:32:18'),
+(5, 10, 11, 51, 0, 0, '2019-05-18 06:43:22', '2019-05-18 06:43:22'),
+(6, 6, 11, 52, 0, 0, '2019-05-18 07:03:04', '2019-05-18 07:03:04'),
+(7, 6, 11, 54, 0, 0, '2019-05-18 07:35:13', '2019-05-18 07:35:13'),
+(8, 1, 11, 54, 1, 0, '2019-05-18 07:35:13', '2019-05-18 07:35:13'),
+(9, 1, 11, 54, 1, 0, '2019-05-18 07:35:13', '2019-05-18 07:35:13'),
+(10, 6, 11, 54, 0, 0, '2019-05-18 07:35:13', '2019-05-18 07:35:13'),
+(11, 6, 11, 54, 0, 0, '2019-05-18 07:35:13', '2019-05-18 07:35:13'),
+(12, 6, 11, 54, 0, 0, '2019-05-18 07:35:13', '2019-05-18 07:35:13'),
+(13, 6, 11, 54, 0, 1, '2019-05-18 07:35:13', '2019-05-18 07:35:13');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `orders`
+-- Table structure for table `orders`
 --
 
 CREATE TABLE `orders` (
@@ -157,38 +168,27 @@ CREATE TABLE `orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `orders`
+-- Dumping data for table `orders`
 --
 
 INSERT INTO `orders` (`id`, `date`, `userID`, `total`, `created_at`, `updated_at`) VALUES
-(1, '2019-05-10 18:59:45', 6, 21300000, '2019-05-10 11:59:45', '2019-05-10 11:59:45'),
-(2, '2019-05-10 19:15:50', 6, 41300000, '2019-05-10 12:15:50', '2019-05-10 12:15:50'),
-(3, '2019-05-10 22:02:53', 6, 40045000, '2019-05-10 15:02:53', '2019-05-10 15:02:53'),
-(4, '2019-05-10 23:22:23', 6, 80060000, '2019-05-10 16:22:23', '2019-05-10 16:22:23'),
-(5, '2019-05-11 00:31:41', 6, 60000, '2019-05-10 17:31:41', '2019-05-10 17:31:41'),
-(6, '2019-05-11 00:31:57', 6, 60000, '2019-05-10 17:31:57', '2019-05-10 17:31:57'),
-(7, '2019-05-11 00:44:41', 6, 10000000, '2019-05-10 17:44:41', '2019-05-10 17:44:41'),
-(8, '2019-05-11 01:34:32', 6, 10000000, '2019-05-10 18:34:32', '2019-05-10 18:34:32'),
-(9, '2019-05-11 01:44:08', 10, 80000, '2019-05-10 18:44:08', '2019-05-10 18:44:08'),
-(10, '2019-05-13 11:46:15', 10, 200000, '2019-05-13 04:46:15', '2019-05-13 04:46:15'),
 (11, '2019-05-13 11:48:27', 6, 20000000, '2019-05-13 04:48:27', '2019-05-13 04:48:27'),
-(12, '2019-05-13 11:49:24', 10, 140000, '2019-05-13 04:49:24', '2019-05-13 04:49:24'),
 (13, '2019-05-13 11:50:53', 6, 10000000, '2019-05-13 04:50:53', '2019-05-13 04:50:53'),
 (14, '2019-05-13 11:52:44', 6, 10000000, '2019-05-13 04:52:44', '2019-05-13 04:52:44'),
-(15, '2019-05-13 11:59:06', 10, 30640000, '2019-05-13 04:59:06', '2019-05-13 04:59:06'),
-(16, '2019-05-13 11:59:41', 10, 200000, '2019-05-13 04:59:41', '2019-05-13 04:59:41'),
-(38, '2019-05-13 12:43:16', 10, 200000, '2019-05-13 05:43:16', '2019-05-13 05:43:16'),
-(39, '2019-05-13 12:45:59', 10, 200000, '2019-05-13 05:45:59', '2019-05-13 05:45:59'),
-(40, '2019-05-13 15:11:48', 10, 40000, '2019-05-13 08:11:48', '2019-05-13 08:11:48'),
 (41, '2019-05-13 15:13:35', 11, 1000000, '2019-05-13 08:13:35', '2019-05-13 08:13:35'),
 (42, '2019-05-13 17:20:40', 11, 40045000, '2019-05-13 10:20:40', '2019-05-13 10:20:40'),
-(43, '2019-05-19 12:32:58', 12, 600000, '2019-05-19 05:32:58', '2019-05-19 05:32:58'),
-(44, '2019-05-19 12:35:53', 13, 10, '2019-05-19 05:35:53', '2019-05-19 05:35:53');
+(48, '2019-05-15 17:56:47', 11, 700000, '2019-05-15 10:56:47', '2019-05-15 10:56:47'),
+(49, '2019-05-16 07:32:12', 6, 360000, '2019-05-16 00:32:12', '2019-05-16 00:32:12'),
+(50, '2019-05-18 13:32:18', 6, 10240000, '2019-05-18 06:32:18', '2019-05-18 06:32:18'),
+(51, '2019-05-18 13:43:22', 11, 480000, '2019-05-18 06:43:22', '2019-05-18 06:43:22'),
+(52, '2019-05-18 14:03:04', 11, 560000, '2019-05-18 07:03:04', '2019-05-18 07:03:04'),
+(53, '2019-05-18 14:09:15', 10, 480000, '2019-05-18 07:09:15', '2019-05-18 07:09:15'),
+(54, '2019-05-18 14:35:12', 11, 1965000, '2019-05-18 07:35:12', '2019-05-18 07:35:12');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `order_detail`
+-- Table structure for table `order_detail`
 --
 
 CREATE TABLE `order_detail` (
@@ -202,46 +202,37 @@ CREATE TABLE `order_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `order_detail`
+-- Dumping data for table `order_detail`
 --
 
 INSERT INTO `order_detail` (`id`, `productID`, `price`, `quantity`, `oderID`, `created_at`, `updated_at`) VALUES
-(1, 1, 200000, 4, 1, '2019-05-10 11:59:45', '2019-05-10 11:59:45'),
-(3, 2, 500000, 1, 1, '2019-05-10 11:59:45', '2019-05-10 11:59:45'),
-(4, 1, 200000, 4, 2, '2019-05-10 12:15:50', '2019-05-10 12:15:50'),
-(6, 2, 500000, 1, 2, '2019-05-10 12:15:50', '2019-05-10 12:15:50'),
-(7, 7, 15000, 3, 3, '2019-05-10 15:02:53', '2019-05-10 15:02:53'),
-(8, 6, 10000000, 4, 3, '2019-05-10 15:02:53', '2019-05-10 15:02:53'),
-(9, 7, 15000, 4, 4, '2019-05-10 16:22:23', '2019-05-10 16:22:23'),
-(10, 6, 10000000, 8, 4, '2019-05-10 16:22:23', '2019-05-10 16:22:23'),
-(11, 7, 15000, 4, 5, '2019-05-10 17:31:42', '2019-05-10 17:31:42'),
-(12, 7, 15000, 4, 6, '2019-05-10 17:31:57', '2019-05-10 17:31:57'),
-(13, 6, 10000000, 1, 7, '2019-05-10 17:44:41', '2019-05-10 17:44:41'),
-(14, 6, 10000000, 1, 8, '2019-05-10 18:34:32', '2019-05-10 18:34:32'),
-(15, 8, 20000, 4, 9, '2019-05-10 18:44:08', '2019-05-10 18:44:08'),
-(16, 9, 40000, 5, 10, '2019-05-13 04:46:16', '2019-05-13 04:46:16'),
 (17, 6, 10000000, 2, 11, '2019-05-13 04:48:27', '2019-05-13 04:48:27'),
-(18, 9, 40000, 2, 12, '2019-05-13 04:49:24', '2019-05-13 04:49:24'),
-(19, 8, 20000, 3, 12, '2019-05-13 04:49:25', '2019-05-13 04:49:25'),
 (20, 6, 10000000, 1, 13, '2019-05-13 04:50:53', '2019-05-13 04:50:53'),
 (21, 6, 10000000, 1, 14, '2019-05-13 04:52:44', '2019-05-13 04:52:44'),
-(22, 6, 10000000, 3, 15, '2019-05-13 04:59:06', '2019-05-13 04:59:06'),
-(23, 9, 40000, 1, 15, '2019-05-13 04:59:06', '2019-05-13 04:59:06'),
-(24, 2, 200000, 3, 15, '2019-05-13 04:59:06', '2019-05-13 04:59:06'),
-(25, 2, 200000, 1, 16, '2019-05-13 04:59:41', '2019-05-13 04:59:41'),
-(26, 2, 200000, 1, 38, '2019-05-13 05:43:16', '2019-05-13 05:43:16'),
-(27, 2, 200000, 1, 39, '2019-05-13 05:45:59', '2019-05-13 05:45:59'),
-(28, 9, 40000, 1, 40, '2019-05-13 08:11:48', '2019-05-13 08:11:48'),
 (29, 1, 200000, 5, 41, '2019-05-13 08:13:35', '2019-05-13 08:13:35'),
 (30, 7, 15000, 3, 42, '2019-05-13 10:20:40', '2019-05-13 10:20:40'),
 (31, 6, 10000000, 4, 42, '2019-05-13 10:20:40', '2019-05-13 10:20:40'),
-(32, 2, 200000, 3, 43, '2019-05-19 05:32:58', '2019-05-19 05:32:58'),
-(33, 10, 10, 1, 44, '2019-05-19 05:35:53', '2019-05-19 05:35:53');
+(39, 8, 20000, 5, 48, '2019-05-15 10:56:47', '2019-05-15 10:56:47'),
+(40, 2, 200000, 3, 48, '2019-05-15 10:56:48', '2019-05-15 10:56:48'),
+(41, 10, 120000, 3, 49, '2019-05-16 00:32:13', '2019-05-16 00:32:13'),
+(42, 10, 120000, 2, 50, '2019-05-18 06:32:18', '2019-05-18 06:32:18'),
+(43, 6, 10000000, 1, 50, '2019-05-18 06:32:18', '2019-05-18 06:32:18'),
+(44, 10, 120000, 3, 51, '2019-05-18 06:43:22', '2019-05-18 06:43:22'),
+(45, 9, 40000, 3, 51, '2019-05-18 06:43:22', '2019-05-18 06:43:22'),
+(46, 10, 120000, 4, 52, '2019-05-18 07:03:04', '2019-05-18 07:03:04'),
+(47, 8, 20000, 4, 52, '2019-05-18 07:03:04', '2019-05-18 07:03:04'),
+(48, 9, 40000, 2, 53, '2019-05-18 07:09:15', '2019-05-18 07:09:15'),
+(49, 2, 200000, 2, 53, '2019-05-18 07:09:15', '2019-05-18 07:09:15'),
+(50, 10, 120000, 4, 54, '2019-05-18 07:35:12', '2019-05-18 07:35:12'),
+(51, 1, 200000, 4, 54, '2019-05-18 07:35:12', '2019-05-18 07:35:12'),
+(52, 7, 15000, 3, 54, '2019-05-18 07:35:13', '2019-05-18 07:35:13'),
+(53, 2, 200000, 3, 54, '2019-05-18 07:35:13', '2019-05-18 07:35:13'),
+(54, 8, 20000, 2, 54, '2019-05-18 07:35:13', '2019-05-18 07:35:13');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -253,7 +244,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -270,26 +261,46 @@ CREATE TABLE `products` (
   `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `numStar` float DEFAULT '0'
+  `numStar` float NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `products`
+-- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`id`, `name`, `sellerID`, `price`, `description`, `cateID`, `status`, `lastTime`, `quantity`, `numRate`, `image`, `created_at`, `updated_at`, `numStar`) VALUES
-(1, 'Quần em bé', 6, 200000, '<p><strong>aaaaaaaaaaaaaaaaaaaaaa</strong></p>', 1, 1, '2019-05-19 12:40:56', 15, 0, 'quan-thun-be-gai-ngan-concung-g017008.jpg', NULL, NULL, 0),
-(2, 'Áo sân nhà milan', 6, 200000, 'áo đẹp', 1, 1, '2019-05-19 12:42:15', 164, 3, 'Ao-ac-milan-san-nha-1-300x300.jpg', NULL, NULL, 13),
-(6, 'Đồng hồ Rolex', 2, 10000000, 'hello', 4, 1, '2019-05-19 12:41:02', 1095, 0, 'UploadsNewsoyster-perpetual-118348-day-date-36png_540_660.jpg', NULL, NULL, 0),
-(7, 'Cơm sườn 15k', 1, 15000, 'Cơm sườn chất lượng đảm bảo ngon hơn ktx, tặng kèm canh và cơm thêm nếu muốn.', 7, 1, '2019-05-19 12:41:04', 97, 0, 'cach-uop-thit-nuong-com-tam.jpg', NULL, NULL, 0),
-(8, 'LOGO', 6, 20000, '<p>Logo ac</p>', 1, 1, '2019-05-19 12:41:08', 50, 0, '1557539007.jpg', '2019-05-10 18:43:27', '2019-05-10 18:43:27', 0),
-(9, 'Dầu gội X-men', 6, 40000, '<h2>Dầu gội hương nước hoa X-Men Active 180g lấy cảm hứng từ oải hương v&agrave; gỗ tuyết t&ugrave;ng cho bạn cảm gi&aacute;c m&aacute;t lạnh, sảng kho&aacute;i v&agrave; đầy c&aacute; t&iacute;nh , c&ocirc;ng thức độc đ&aacute;o từ dầu gội sẽ mang đến cho bạn m&aacute;i t&oacute;c khỏe mạnh v&agrave; sạch da đầu.</h2>', 12, 1, '2019-05-19 12:41:10', 21, 0, '1557745507.jpg', '2019-05-13 04:05:07', '2019-05-13 04:05:07', 0),
-(10, 'Code', 12, 10, '<p>Ko co gi de mo ta</p>', 1, 1, '2019-05-19 12:44:10', 0, 2, '1558269282.png', '2019-05-19 05:34:42', '2019-05-19 05:34:42', 10);
+(1, 'Quần em bé', 6, 200000, '<p><strong>aaaaaaaaaaaaaaaaaaaaaa</strong></p>', 1, 1, '2019-05-24 13:04:43', 11, 4, 'quan-thun-be-gai-ngan-concung-g017008.jpg', NULL, NULL, 16),
+(2, 'Áo sân nhà milan', 6, 200000, 'áo đẹp', 1, 1, '2019-05-24 13:04:43', 152, 0, 'Ao-ac-milan-san-nha-1-300x300.jpg', NULL, NULL, 0),
+(6, 'Đồng hồ Rolex', 2, 10000000, 'hello', 4, 1, '2019-05-24 13:07:35', 1094, 0, 'UploadsNewsoyster-perpetual-118348-day-date-36png_540_660.jpg', NULL, NULL, 0),
+(7, 'Cơm sườn 15k', 1, 15000, 'Cơm sườn chất lượng đảm bảo ngon hơn ktx, tặng kèm canh và cơm thêm nếu muốn.', 7, 1, '2019-05-24 13:07:38', 93, 2, 'cach-uop-thit-nuong-com-tam.jpg', NULL, NULL, 9),
+(8, 'LOGO', 6, 20000, '<p>asac</p>', 1, 1, '2019-05-24 13:04:43', 33, 0, '1557539007.jpg', '2019-05-10 18:43:27', '2019-05-10 18:43:27', 0),
+(9, 'Dầu gội X-men', 6, 40000, '<h2>Dầu gội hương nước hoa X-Men Active 180g lấy cảm hứng từ oải hương v&agrave; gỗ tuyết t&ugrave;ng cho bạn cảm gi&aacute;c m&aacute;t lạnh, sảng kho&aacute;i v&agrave; đầy c&aacute; t&iacute;nh , c&ocirc;ng thức độc đ&aacute;o từ dầu gội sẽ mang đến cho bạn m&aacute;i t&oacute;c khỏe mạnh v&agrave; sạch da đầu.</h2>', 12, 1, '2019-05-24 13:04:43', 9, 0, '1557745507.jpg', '2019-05-13 04:05:07', '2019-05-13 04:05:07', 0),
+(10, 'Attack on Titan tập 1', 10, 120000, '<p>Truyện c&ograve;n mới, h&igrave;nh vẽ đẹp, ai mua m&igrave;nh pass lại</p>', 20, 1, '2019-05-18 14:34:30', 34, 0, '1557991818.jpg', '2019-05-16 00:30:18', '2019-05-16 00:30:18', 0),
+(11, 'Fiction', 6, 400000, '<p>Rượu face</p>', 15, 1, '2019-05-24 13:04:43', 20, 3, '1558154408.jpg', '2019-05-17 21:40:08', '2019-05-17 21:40:08', 11),
+(12, 'FreeWings Coat', 11, 400000, '<p>Đ&ocirc;i c&aacute;nh tự do Attack on Titan</p>\r\n\r\n<p>&nbsp;</p>', 1, 1, '2019-05-18 14:34:13', 200, 0, '1558190053.jpg', '2019-05-18 07:34:13', '2019-05-18 07:34:13', 0);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `usercarts`
+-- Table structure for table `ratings`
+--
+
+CREATE TABLE `ratings` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `rating` int(11) NOT NULL,
+  `rating_item` int(11) NOT NULL,
+  `review` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rateable_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rateable_id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usercarts`
 --
 
 CREATE TABLE `usercarts` (
@@ -302,10 +313,17 @@ CREATE TABLE `usercarts` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `usercarts`
+--
+
+INSERT INTO `usercarts` (`id`, `userID`, `productID`, `quantity`, `status`, `created_at`, `updated_at`) VALUES
+(1, 6, 7, 1, 0, '2019-05-22 02:18:52', '2019-05-22 02:18:52');
+
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -319,37 +337,39 @@ CREATE TABLE `users` (
   `sex` tinyint(1) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `dateOfBirth` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `role` int(11) NOT NULL DEFAULT '0',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `address`, `avatar`, `sex`, `status`, `dateOfBirth`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Đặng Hoàng Ân', 'an@gmail.com', '123456', '0123456789', 'Hà Nội', NULL, 1, 1, '1998-11-11 17:00:00', NULL, NULL, NULL),
-(2, 'Chu Chỉ Nhược', 'ccn@gmail.com', '123456', '0123456789', 'Trung Quốc', NULL, 0, 1, '2019-04-16 17:00:00', NULL, NULL, NULL),
-(6, 'Hoang An', '1610132@hcmut.edu.vn', '$2y$10$CCV9rISZJo2ZgmW4E0gz2OYUnsW5USZEBVhaZKvgHqsLOhvcMtdve', '0383998672', 'HCMCaaaaaaaaaaaaaaaaaaaaa', NULL, 1, 1, '2019-05-13 15:11:34', 'Z7jPvnvG7L9qly9EbFf0gRE3VZi0kksCsUgq0ZML5kk8q9pRkc4YYUTDMktZ', '2019-04-28 08:52:38', '2019-05-10 17:22:32'),
-(9, 'Đặng Hoàng Ân', '16101322@hcmut.edu.vn', '$2y$10$laGqrtRqnX2JNT.tLEmK3e5GW7GaLnw15I9qzTnzLv/SgLqsKN/52', '0383998672', 'HCMC', NULL, 1, 1, '2019-04-16 17:00:00', 'Zu5sDlevuWpEU0qfXjEFWbtPQ6RUdpkdcTSJCb3y', '2019-04-28 09:20:38', '2019-04-28 09:20:38'),
-(10, 'Huỳnh Yến Nhi', 'nhihuynh@gmail.com', '$2y$10$xnL635mT9tfE0wb./6GiL..8w8ZDOy19yhF1kKhQxAv2MFTB4dl06', '0987654321', 'Nha Trang', NULL, 0, 1, '2019-05-13 15:11:57', 'eq2rAPAU5YhxvXVpxSNlrCKqUe0mGWeplkov27nIfUiRAAEYTrPTe2Ws2iD4', '2019-04-28 09:22:11', '2019-04-28 09:22:11'),
-(11, 'Ricardo KaKa', 'rikaka@gmail.com', '$2y$10$NGT6wIUp/PeMB2SJDKX6MOz/0ZOGLOf3H0EPMSmq91NAwXlaLoapu', '0123456789', 'Brazil', NULL, 1, 1, '2019-05-08 17:00:00', 'CcM9mINjZsY5PYlvKGCypzoZO3FBKLddpHGvOS34', '2019-05-13 08:13:02', '2019-05-13 08:13:02'),
-(12, 'Thoai', 'thoai@gmail.com', '$2y$10$X44ZgWB.lkIgMZaaetwZJ.r6mpqHGRBzRDIuKbFpPS5a8vwWjShFW', '033433434343', 'Quan 2', '256-512.png', 1, 1, '2019-05-19 12:43:51', 'zbMopwDi6IDZKUAwtEy6U3axAMslx1gGyKc7Z96krjmCKJ3NtdXJjz7WhALP', '2019-05-19 05:25:44', '2019-05-19 05:25:44'),
-(13, 'Trung', 'trung@gmail.com', '$2y$10$zwYhuM3StLq43e7v32Z7L.NuOT/WqJCrY41oj5SA6H7zX0O2YoVxW', '3434343434343', 'Quan 2', '256-512.png', 1, 1, '2019-05-19 12:35:56', 'eRQS0DIPogOvGEwkvIYuJ71vip91lCBXfHjpwEzH3tFU4Pzmj0JBJmjGVNgI', '2019-05-19 05:35:13', '2019-05-19 05:35:13');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `address`, `avatar`, `sex`, `status`, `dateOfBirth`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Đặng Hoàng Ân', 'an@gmail.com', '123456', '0123456789', 'Hà Nội', '256-512.png', 1, 1, '2019-05-24 13:07:38', 0, NULL, NULL, NULL),
+(2, 'Chu Chỉ Nhược', 'ccn@gmail.com', '123456', '0123456789', 'Trung Quốc', '256-512.png', 0, 1, '2019-05-24 13:07:35', 0, NULL, NULL, NULL),
+(6, 'Hoang An', '1610132@hcmut.edu.vn', '$2y$10$CCV9rISZJo2ZgmW4E0gz2OYUnsW5USZEBVhaZKvgHqsLOhvcMtdve', '0383998672', 'KTX khu A ĐHQG Thành phố Hồ Chí Minh', '1558153025.jpg', 1, 1, '2019-05-24 13:04:43', 0, 'NS3lD6FEwDpZuTHYyUfUjxI0Kqn50ri4sjWvAh5gAqAgNVpTNiMm0gfpGSGy', '2019-04-28 08:52:38', '2019-05-17 22:06:42'),
+(9, 'Đặng Hoàng Ân', '16101322@hcmut.edu.vn', '$2y$10$laGqrtRqnX2JNT.tLEmK3e5GW7GaLnw15I9qzTnzLv/SgLqsKN/52', '0383998672', 'HCMC', '256-512.png', 1, 1, '2019-05-24 13:04:59', 0, 'Zu5sDlevuWpEU0qfXjEFWbtPQ6RUdpkdcTSJCb3y', '2019-04-28 09:20:38', '2019-04-28 09:20:38'),
+(10, 'Huỳnh Yến Nhi', 'nhihuynh@gmail.com', '$2y$10$xnL635mT9tfE0wb./6GiL..8w8ZDOy19yhF1kKhQxAv2MFTB4dl06', '0987654321', 'Nha Trang', '256-512.png', 0, 1, '2019-05-24 04:26:30', 0, 'dLJMHorrjEhMX60WCMWAVb5DRAY82iZxKLDrxJzhFlWrnWgzlBPeuEzuoqSl', '2019-04-28 09:22:11', '2019-05-16 02:50:54'),
+(11, 'Ricardo KaKa', 'rikaka@gmail.com', '$2y$10$NGT6wIUp/PeMB2SJDKX6MOz/0ZOGLOf3H0EPMSmq91NAwXlaLoapu', '0123456789', 'Brazil', '256-512.png', 1, 1, '2019-05-18 14:03:08', 0, 'Ph7bA2qdDui5CACCiiZzJzBz6PnimUfwWsEQlWD8EePV9btn9XIBx3bAiGhB', '2019-05-13 08:13:02', '2019-05-13 08:13:02'),
+(12, 'Alexandre Pato', 'patomilan@gmail.com', '$2y$10$YD46bymUhJvPs8qFRj7kCODOpJM4PqYagOXxeVy7a2hueP/MunLDe', '0987654321', 'Brazil', '256-512.png', 1, 1, '2019-05-18 03:38:13', 0, 'WvefpgAz0uRI48s8kPUJLrcnTpSK7QPqjW2cQIZGi86BT4Hqa9D6PimyOWR8', '2019-05-17 20:37:12', '2019-05-17 20:37:12'),
+(13, 'Kuroba Kaitou', 'kaitoukido1412@gmail.com', '$2y$10$947kwE7b3y1Y1g89PbKp6u8Kpz68Q4VoV.BsOonevU1oUii.C.BjO', '0123456789', 'Tokio, Japan', '256-512.png', 1, 1, '2019-05-24 13:05:02', 0, 'db4rsehqM1qg714QaQXbcpk4Z6WBMhrNWJQJEdItYEkEIi403xTMrTXXkC27', '2019-05-17 20:39:18', '2019-05-17 20:39:18'),
+(14, 'Supreme Admin', 'andang12111998@gmail.com', '$2y$10$c/W1WP0uYm9EgEKE/LFuzOcgZz4BXXbuU55N.OKM3BL/QQVOOm0FC', '0383998672', 'Nha Trang', '256-512.png', 1, 1, '2019-05-24 04:22:21', 1, 'UvEVuBAsvvgTtzFoIhLpYkbfDmZom3NxQbkXkkoT', '2019-05-23 21:22:06', '2019-05-23 21:22:06');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `categories`
+-- Indexes for table `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `comments`
+-- Indexes for table `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
@@ -357,13 +377,13 @@ ALTER TABLE `comments`
   ADD KEY `comments_productid_foreign` (`productID`);
 
 --
--- Chỉ mục cho bảng `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `notifications`
+-- Indexes for table `notifications`
 --
 ALTER TABLE `notifications`
   ADD PRIMARY KEY (`id`),
@@ -372,14 +392,14 @@ ALTER TABLE `notifications`
   ADD KEY `notifications_orderid_foreign` (`orderID`);
 
 --
--- Chỉ mục cho bảng `orders`
+-- Indexes for table `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`),
   ADD KEY `orders_userid_foreign` (`userID`);
 
 --
--- Chỉ mục cho bảng `order_detail`
+-- Indexes for table `order_detail`
 --
 ALTER TABLE `order_detail`
   ADD PRIMARY KEY (`id`),
@@ -387,13 +407,13 @@ ALTER TABLE `order_detail`
   ADD KEY `order_detail_oderid_foreign` (`oderID`);
 
 --
--- Chỉ mục cho bảng `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Chỉ mục cho bảng `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
@@ -401,7 +421,17 @@ ALTER TABLE `products`
   ADD KEY `products_cateid_foreign` (`cateID`);
 
 --
--- Chỉ mục cho bảng `usercarts`
+-- Indexes for table `ratings`
+--
+ALTER TABLE `ratings`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `ratings_rateable_type_rateable_id_index` (`rateable_type`,`rateable_id`),
+  ADD KEY `ratings_rateable_id_index` (`rateable_id`),
+  ADD KEY `ratings_rateable_type_index` (`rateable_type`),
+  ADD KEY `ratings_user_id_index` (`user_id`);
+
+--
+-- Indexes for table `usercarts`
 --
 ALTER TABLE `usercarts`
   ADD PRIMARY KEY (`id`),
@@ -409,83 +439,89 @@ ALTER TABLE `usercarts`
   ADD KEY `usercarts_productid_foreign` (`productID`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `categories`
+-- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT cho bảng `comments`
+-- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT cho bảng `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT cho bảng `notifications`
+-- AUTO_INCREMENT for table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT cho bảng `orders`
+-- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
--- AUTO_INCREMENT cho bảng `order_detail`
+-- AUTO_INCREMENT for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
--- AUTO_INCREMENT cho bảng `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT cho bảng `usercarts`
+-- AUTO_INCREMENT for table `ratings`
+--
+ALTER TABLE `ratings`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `usercarts`
 --
 ALTER TABLE `usercarts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `comments`
+-- Constraints for table `comments`
 --
 ALTER TABLE `comments`
   ADD CONSTRAINT `comments_productid_foreign` FOREIGN KEY (`productID`) REFERENCES `products` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `comments_userid_foreign` FOREIGN KEY (`userID`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
--- Các ràng buộc cho bảng `notifications`
+-- Constraints for table `notifications`
 --
 ALTER TABLE `notifications`
   ADD CONSTRAINT `notifications_customerid_foreign` FOREIGN KEY (`customerID`) REFERENCES `users` (`id`) ON DELETE CASCADE,
@@ -493,27 +529,33 @@ ALTER TABLE `notifications`
   ADD CONSTRAINT `notifications_userid_foreign` FOREIGN KEY (`userID`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
--- Các ràng buộc cho bảng `orders`
+-- Constraints for table `orders`
 --
 ALTER TABLE `orders`
   ADD CONSTRAINT `orders_userid_foreign` FOREIGN KEY (`userID`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
--- Các ràng buộc cho bảng `order_detail`
+-- Constraints for table `order_detail`
 --
 ALTER TABLE `order_detail`
   ADD CONSTRAINT `order_detail_oderid_foreign` FOREIGN KEY (`oderID`) REFERENCES `orders` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `order_detail_productid_foreign` FOREIGN KEY (`productID`) REFERENCES `products` (`id`) ON DELETE CASCADE;
 
 --
--- Các ràng buộc cho bảng `products`
+-- Constraints for table `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_cateid_foreign` FOREIGN KEY (`cateID`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `products_sellerid_foreign` FOREIGN KEY (`sellerID`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
--- Các ràng buộc cho bảng `usercarts`
+-- Constraints for table `ratings`
+--
+ALTER TABLE `ratings`
+  ADD CONSTRAINT `ratings_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `usercarts`
 --
 ALTER TABLE `usercarts`
   ADD CONSTRAINT `usercarts_productid_foreign` FOREIGN KEY (`productID`) REFERENCES `products` (`id`) ON DELETE CASCADE,

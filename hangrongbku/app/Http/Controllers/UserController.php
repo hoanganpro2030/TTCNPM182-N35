@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Requests\UserRequest;
 use App\Products;
 use App\Http\Requests\ProductRequest;
-
+use Mail;
 
 class UserController extends Controller
 {
@@ -129,5 +129,14 @@ class UserController extends Controller
 
         return view('template.pages.history', compact('orders'));
     }
+    public function postMail(Request $req){
+        if (!Auth::check()){
+            return redirect()->route('signin.getSignin');
+        }
+        Mail::send('mailFeedback', array('email'=>Auth::User()->email,'content'=>$req->content,'subject'=>$req->subject), function($message){
+            $message->to('asupreme49@gmail.com', 'Supreme Admin')->subject('Feedback');
+        });
 
+        return redirect()->route('contact')->with('message','Cảm ơn bạn ! Góp ý của bạn đã được gửi tới quản trị viên.');
+    }
 }

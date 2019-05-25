@@ -181,6 +181,10 @@ Route::post('posts', 'HomeController@postPost')->name('posts.post');
 
 Route::get('posts/{id}', 'HomeController@show')->name('posts.show');
 
+Route::post('hangrongbku/postMail',[
+	'as'=> 'postMail.postMail',
+	'uses' => 'UserController@postMail'
+]);
 
 // this source for admin
 Route::post('hrbku/admin/login',[
@@ -202,4 +206,8 @@ Route::get('hrbku/admin/login',[
 Route::get('hrbku/admin/lock/{id}',[
 	'as'=>'admin.index.getLock',
 	'uses'=>'AdminController@getLock'
+]);
+Route::get('hrbku/admin/user-detail/{id}',[
+	'as'=>'admin.index.getDetail',
+	'uses'=>'AdminController@getDetail'
 ]);

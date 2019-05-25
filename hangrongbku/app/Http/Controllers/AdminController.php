@@ -35,11 +35,26 @@ class AdminController extends Controller
         }
     }
     public function getLock($id){
-    	if(!Auth::check() || Auth::User()->role!=1){
-    		return redirect()->route('admin.index.getLogin');
-    	}
-    	DB::table('users')->where('id',$id)->update(['status'=>0]);
-    	DB::table('products')->where('sellerID',$id)->update(['status'=>0]);
-    	return redirect()->route('admin.index.getIndex');
+        if(!Auth::check() || Auth::User()->role!=1){
+            return redirect()->route('admin.index.getLogin');
+        }
+        $user = DB::table('users')->where('id',$id)->first();
+        if($user->status==1){
+            DB::table('users')->where('id',$id)->update(['status'=>0]);
+            DB::table('products')->where('sellerID',$id)->update(['status'=>0]);
+        }
+        else {
+            DB::table('users')->where('id',$id)->update(['status'=>1]);
+            DB::table('products')->where('sellerID',$id)->update(['status'=>1]);
+        }
+        return redirect()->route('admin.index.getIndex');
+    }
+    public function getDetail($id){
+        if(!Auth::check() || Auth::User()->role!=1){
+            return redirect()->route('admin.index.getLogin');
+        }
+        $products = DB::table('products')->where('sellerID',$id)->get();
+        $user = DB::table('users')->where('id',$id)->first();
+        return view('admin.pages.user-detail',compact('products','user'));
     }
 }
