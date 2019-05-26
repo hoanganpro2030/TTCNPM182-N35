@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 25, 2019 at 10:12 AM
+-- Generation Time: May 26, 2019 at 08:12 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -87,7 +87,8 @@ INSERT INTO `comments` (`id`, `userID`, `productID`, `content`, `created_at`, `u
 (5, 6, 2, '<p>&Aacute;o đẹp m&agrave; rẻ</p>', '2019-05-04 21:15:53', '2019-05-04 21:15:53'),
 (6, 6, 2, '<p><strong>Ao dep qua</strong></p>', '2019-05-08 20:10:55', '2019-05-08 20:10:55'),
 (7, 10, 9, '<p>C&aacute;i n&agrave;y g&aacute;i x&agrave;i được ko</p>', '2019-05-16 02:57:27', '2019-05-16 02:57:27'),
-(8, 10, 1, '<p>C&oacute; m&agrave;u trắng kh&ocirc;ng ad ?</p>', '2019-05-16 08:31:31', '2019-05-16 08:31:31');
+(8, 10, 1, '<p>C&oacute; m&agrave;u trắng kh&ocirc;ng ad ?</p>', '2019-05-16 08:31:31', '2019-05-16 08:31:31'),
+(9, 6, 6, '<p>Đồng hồ rất tốt</p>', '2019-05-25 08:42:42', '2019-05-25 08:42:42');
 
 -- --------------------------------------------------------
 
@@ -139,18 +140,17 @@ CREATE TABLE `notifications` (
 --
 
 INSERT INTO `notifications` (`id`, `userID`, `customerID`, `orderID`, `isNew`, `isDone`, `created_at`, `updated_at`) VALUES
-(2, 6, 11, 41, 0, 0, '2019-05-13 08:13:35', '2019-05-13 08:13:35'),
 (3, 1, 11, 42, 1, 0, '2019-05-13 10:20:40', '2019-05-13 10:20:40'),
 (4, 10, 6, 50, 0, 0, '2019-05-18 06:32:18', '2019-05-18 06:32:18'),
 (5, 10, 11, 51, 0, 0, '2019-05-18 06:43:22', '2019-05-18 06:43:22'),
-(6, 6, 11, 52, 0, 0, '2019-05-18 07:03:04', '2019-05-18 07:03:04'),
 (7, 6, 11, 54, 0, 0, '2019-05-18 07:35:13', '2019-05-18 07:35:13'),
 (8, 1, 11, 54, 1, 0, '2019-05-18 07:35:13', '2019-05-18 07:35:13'),
 (9, 1, 11, 54, 1, 0, '2019-05-18 07:35:13', '2019-05-18 07:35:13'),
 (10, 6, 11, 54, 0, 0, '2019-05-18 07:35:13', '2019-05-18 07:35:13'),
 (11, 6, 11, 54, 0, 0, '2019-05-18 07:35:13', '2019-05-18 07:35:13'),
 (12, 6, 11, 54, 0, 0, '2019-05-18 07:35:13', '2019-05-18 07:35:13'),
-(13, 6, 11, 54, 0, 1, '2019-05-18 07:35:13', '2019-05-18 07:35:13');
+(13, 6, 11, 54, 0, 1, '2019-05-18 07:35:13', '2019-05-18 07:35:13'),
+(14, 2, 6, 55, 1, 0, '2019-05-25 08:45:23', '2019-05-25 08:45:23');
 
 -- --------------------------------------------------------
 
@@ -175,15 +175,14 @@ INSERT INTO `orders` (`id`, `date`, `userID`, `total`, `created_at`, `updated_at
 (11, '2019-05-13 11:48:27', 6, 20000000, '2019-05-13 04:48:27', '2019-05-13 04:48:27'),
 (13, '2019-05-13 11:50:53', 6, 10000000, '2019-05-13 04:50:53', '2019-05-13 04:50:53'),
 (14, '2019-05-13 11:52:44', 6, 10000000, '2019-05-13 04:52:44', '2019-05-13 04:52:44'),
-(41, '2019-05-13 15:13:35', 11, 1000000, '2019-05-13 08:13:35', '2019-05-13 08:13:35'),
 (42, '2019-05-13 17:20:40', 11, 40045000, '2019-05-13 10:20:40', '2019-05-13 10:20:40'),
 (48, '2019-05-15 17:56:47', 11, 700000, '2019-05-15 10:56:47', '2019-05-15 10:56:47'),
 (49, '2019-05-16 07:32:12', 6, 360000, '2019-05-16 00:32:12', '2019-05-16 00:32:12'),
 (50, '2019-05-18 13:32:18', 6, 10240000, '2019-05-18 06:32:18', '2019-05-18 06:32:18'),
 (51, '2019-05-18 13:43:22', 11, 480000, '2019-05-18 06:43:22', '2019-05-18 06:43:22'),
-(52, '2019-05-18 14:03:04', 11, 560000, '2019-05-18 07:03:04', '2019-05-18 07:03:04'),
 (53, '2019-05-18 14:09:15', 10, 480000, '2019-05-18 07:09:15', '2019-05-18 07:09:15'),
-(54, '2019-05-18 14:35:12', 11, 1965000, '2019-05-18 07:35:12', '2019-05-18 07:35:12');
+(54, '2019-05-18 14:35:12', 11, 1965000, '2019-05-18 07:35:12', '2019-05-18 07:35:12'),
+(55, '2019-05-25 15:45:22', 6, 30015000, '2019-05-25 08:45:22', '2019-05-25 08:45:22');
 
 -- --------------------------------------------------------
 
@@ -209,7 +208,6 @@ INSERT INTO `order_detail` (`id`, `productID`, `price`, `quantity`, `oderID`, `c
 (17, 6, 10000000, 2, 11, '2019-05-13 04:48:27', '2019-05-13 04:48:27'),
 (20, 6, 10000000, 1, 13, '2019-05-13 04:50:53', '2019-05-13 04:50:53'),
 (21, 6, 10000000, 1, 14, '2019-05-13 04:52:44', '2019-05-13 04:52:44'),
-(29, 1, 200000, 5, 41, '2019-05-13 08:13:35', '2019-05-13 08:13:35'),
 (30, 7, 15000, 3, 42, '2019-05-13 10:20:40', '2019-05-13 10:20:40'),
 (31, 6, 10000000, 4, 42, '2019-05-13 10:20:40', '2019-05-13 10:20:40'),
 (39, 8, 20000, 5, 48, '2019-05-15 10:56:47', '2019-05-15 10:56:47'),
@@ -219,15 +217,15 @@ INSERT INTO `order_detail` (`id`, `productID`, `price`, `quantity`, `oderID`, `c
 (43, 6, 10000000, 1, 50, '2019-05-18 06:32:18', '2019-05-18 06:32:18'),
 (44, 10, 120000, 3, 51, '2019-05-18 06:43:22', '2019-05-18 06:43:22'),
 (45, 9, 40000, 3, 51, '2019-05-18 06:43:22', '2019-05-18 06:43:22'),
-(46, 10, 120000, 4, 52, '2019-05-18 07:03:04', '2019-05-18 07:03:04'),
-(47, 8, 20000, 4, 52, '2019-05-18 07:03:04', '2019-05-18 07:03:04'),
 (48, 9, 40000, 2, 53, '2019-05-18 07:09:15', '2019-05-18 07:09:15'),
 (49, 2, 200000, 2, 53, '2019-05-18 07:09:15', '2019-05-18 07:09:15'),
 (50, 10, 120000, 4, 54, '2019-05-18 07:35:12', '2019-05-18 07:35:12'),
 (51, 1, 200000, 4, 54, '2019-05-18 07:35:12', '2019-05-18 07:35:12'),
 (52, 7, 15000, 3, 54, '2019-05-18 07:35:13', '2019-05-18 07:35:13'),
 (53, 2, 200000, 3, 54, '2019-05-18 07:35:13', '2019-05-18 07:35:13'),
-(54, 8, 20000, 2, 54, '2019-05-18 07:35:13', '2019-05-18 07:35:13');
+(54, 8, 20000, 2, 54, '2019-05-18 07:35:13', '2019-05-18 07:35:13'),
+(55, 7, 15000, 1, 55, '2019-05-25 08:45:23', '2019-05-25 08:45:23'),
+(56, 6, 10000000, 3, 55, '2019-05-25 08:45:23', '2019-05-25 08:45:23');
 
 -- --------------------------------------------------------
 
@@ -269,15 +267,15 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `sellerID`, `price`, `description`, `cateID`, `status`, `lastTime`, `quantity`, `numRate`, `image`, `created_at`, `updated_at`, `numStar`) VALUES
-(1, 'Quần em bé', 6, 200000, '<p><strong>aaaaaaaaaaaaaaaaaaaaaa</strong></p>', 1, 1, '2019-05-24 13:04:43', 11, 4, 'quan-thun-be-gai-ngan-concung-g017008.jpg', NULL, NULL, 16),
-(2, 'Áo sân nhà milan', 6, 200000, 'áo đẹp', 1, 1, '2019-05-24 13:04:43', 152, 0, 'Ao-ac-milan-san-nha-1-300x300.jpg', NULL, NULL, 0),
-(6, 'Đồng hồ Rolex', 2, 10000000, 'hello', 4, 1, '2019-05-24 13:07:35', 1094, 0, 'UploadsNewsoyster-perpetual-118348-day-date-36png_540_660.jpg', NULL, NULL, 0),
-(7, 'Cơm sườn 15k', 1, 15000, 'Cơm sườn chất lượng đảm bảo ngon hơn ktx, tặng kèm canh và cơm thêm nếu muốn.', 7, 1, '2019-05-24 13:07:38', 93, 2, 'cach-uop-thit-nuong-com-tam.jpg', NULL, NULL, 9),
-(8, 'LOGO', 6, 20000, '<p>asac</p>', 1, 1, '2019-05-24 13:04:43', 33, 0, '1557539007.jpg', '2019-05-10 18:43:27', '2019-05-10 18:43:27', 0),
-(9, 'Dầu gội X-men', 6, 40000, '<h2>Dầu gội hương nước hoa X-Men Active 180g lấy cảm hứng từ oải hương v&agrave; gỗ tuyết t&ugrave;ng cho bạn cảm gi&aacute;c m&aacute;t lạnh, sảng kho&aacute;i v&agrave; đầy c&aacute; t&iacute;nh , c&ocirc;ng thức độc đ&aacute;o từ dầu gội sẽ mang đến cho bạn m&aacute;i t&oacute;c khỏe mạnh v&agrave; sạch da đầu.</h2>', 12, 1, '2019-05-24 13:04:43', 9, 0, '1557745507.jpg', '2019-05-13 04:05:07', '2019-05-13 04:05:07', 0),
+(1, 'Quần em bé', 6, 200000, '<p><strong>aaaaaaaaaaaaaaaaaaaaaa</strong></p>', 1, 1, '2019-05-25 09:27:26', 11, 4, 'quan-thun-be-gai-ngan-concung-g017008.jpg', NULL, NULL, 16),
+(2, 'Áo sân nhà milan', 6, 200000, 'áo đẹp', 1, 1, '2019-05-25 09:27:26', 152, 0, 'Ao-ac-milan-san-nha-1-300x300.jpg', NULL, NULL, 0),
+(6, 'Đồng hồ Rolex', 2, 10000000, 'hello', 4, 1, '2019-05-25 15:44:08', 1090, 0, 'UploadsNewsoyster-perpetual-118348-day-date-36png_540_660.jpg', NULL, NULL, 0),
+(7, 'Cơm sườn 15k', 1, 15000, 'Cơm sườn chất lượng đảm bảo ngon hơn ktx, tặng kèm canh và cơm thêm nếu muốn.', 7, 1, '2019-05-25 09:18:31', 93, 2, 'cach-uop-thit-nuong-com-tam.jpg', NULL, NULL, 9),
+(8, 'LOGO', 6, 20000, '<p>asac</p>', 1, 1, '2019-05-25 09:27:26', 33, 0, '1557539007.jpg', '2019-05-10 18:43:27', '2019-05-10 18:43:27', 0),
+(9, 'Dầu gội X-men', 6, 40000, '<h2>Dầu gội hương nước hoa X-Men Active 180g lấy cảm hứng từ oải hương v&agrave; gỗ tuyết t&ugrave;ng cho bạn cảm gi&aacute;c m&aacute;t lạnh, sảng kho&aacute;i v&agrave; đầy c&aacute; t&iacute;nh , c&ocirc;ng thức độc đ&aacute;o từ dầu gội sẽ mang đến cho bạn m&aacute;i t&oacute;c khỏe mạnh v&agrave; sạch da đầu.</h2>', 12, 1, '2019-05-25 12:59:30', 8, 0, '1557745507.jpg', '2019-05-13 04:05:07', '2019-05-13 04:05:07', 0),
 (10, 'Attack on Titan tập 1', 10, 120000, '<p>Truyện c&ograve;n mới, h&igrave;nh vẽ đẹp, ai mua m&igrave;nh pass lại</p>', 20, 1, '2019-05-18 14:34:30', 34, 0, '1557991818.jpg', '2019-05-16 00:30:18', '2019-05-16 00:30:18', 0),
-(11, 'Fiction', 6, 400000, '<p>Rượu face</p>', 15, 1, '2019-05-24 13:04:43', 20, 3, '1558154408.jpg', '2019-05-17 21:40:08', '2019-05-17 21:40:08', 11),
-(12, 'FreeWings Coat', 11, 400000, '<p>Đ&ocirc;i c&aacute;nh tự do Attack on Titan</p>\r\n\r\n<p>&nbsp;</p>', 1, 1, '2019-05-18 14:34:13', 200, 0, '1558190053.jpg', '2019-05-18 07:34:13', '2019-05-18 07:34:13', 0);
+(11, 'Fiction', 6, 400000, '<p>Rượu face</p>', 15, 1, '2019-05-25 09:27:26', 20, 3, '1558154408.jpg', '2019-05-17 21:40:08', '2019-05-17 21:40:08', 11),
+(12, 'FreeWings Coat', 11, 400000, '<p>Đ&ocirc;i c&aacute;nh tự do Attack on Titan</p>\r\n\r\n<p>&nbsp;</p>', 1, 1, '2019-05-25 13:46:49', 200, 1, '1558190053.jpg', '2019-05-18 07:34:13', '2019-05-18 07:34:13', 4);
 
 -- --------------------------------------------------------
 
@@ -318,7 +316,8 @@ CREATE TABLE `usercarts` (
 --
 
 INSERT INTO `usercarts` (`id`, `userID`, `productID`, `quantity`, `status`, `created_at`, `updated_at`) VALUES
-(1, 6, 7, 1, 0, '2019-05-22 02:18:52', '2019-05-22 02:18:52');
+(2, 11, 9, 1, 0, '2019-05-25 05:59:30', '2019-05-25 05:59:30'),
+(3, 11, 6, 1, 0, '2019-05-25 06:08:26', '2019-05-25 06:08:26');
 
 -- --------------------------------------------------------
 
@@ -338,6 +337,8 @@ CREATE TABLE `users` (
   `status` tinyint(1) NOT NULL,
   `dateOfBirth` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `role` int(11) NOT NULL DEFAULT '0',
+  `confirm` tinyint(1) NOT NULL DEFAULT '0',
+  `confirmation_code` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -347,16 +348,18 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `address`, `avatar`, `sex`, `status`, `dateOfBirth`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Đặng Hoàng Ân', 'an@gmail.com', '123456', '0123456789', 'Hà Nội', '256-512.png', 1, 1, '2019-05-24 13:07:38', 0, NULL, NULL, NULL),
-(2, 'Chu Chỉ Nhược', 'ccn@gmail.com', '123456', '0123456789', 'Trung Quốc', '256-512.png', 0, 1, '2019-05-24 13:07:35', 0, NULL, NULL, NULL),
-(6, 'Hoang An', '1610132@hcmut.edu.vn', '$2y$10$CCV9rISZJo2ZgmW4E0gz2OYUnsW5USZEBVhaZKvgHqsLOhvcMtdve', '0383998672', 'KTX khu A ĐHQG Thành phố Hồ Chí Minh', '1558153025.jpg', 1, 1, '2019-05-24 13:04:43', 0, 'NS3lD6FEwDpZuTHYyUfUjxI0Kqn50ri4sjWvAh5gAqAgNVpTNiMm0gfpGSGy', '2019-04-28 08:52:38', '2019-05-17 22:06:42'),
-(9, 'Đặng Hoàng Ân', '16101322@hcmut.edu.vn', '$2y$10$laGqrtRqnX2JNT.tLEmK3e5GW7GaLnw15I9qzTnzLv/SgLqsKN/52', '0383998672', 'HCMC', '256-512.png', 1, 1, '2019-05-24 13:04:59', 0, 'Zu5sDlevuWpEU0qfXjEFWbtPQ6RUdpkdcTSJCb3y', '2019-04-28 09:20:38', '2019-04-28 09:20:38'),
-(10, 'Huỳnh Yến Nhi', 'nhihuynh@gmail.com', '$2y$10$xnL635mT9tfE0wb./6GiL..8w8ZDOy19yhF1kKhQxAv2MFTB4dl06', '0987654321', 'Nha Trang', '256-512.png', 0, 1, '2019-05-24 04:26:30', 0, 'dLJMHorrjEhMX60WCMWAVb5DRAY82iZxKLDrxJzhFlWrnWgzlBPeuEzuoqSl', '2019-04-28 09:22:11', '2019-05-16 02:50:54'),
-(11, 'Ricardo KaKa', 'rikaka@gmail.com', '$2y$10$NGT6wIUp/PeMB2SJDKX6MOz/0ZOGLOf3H0EPMSmq91NAwXlaLoapu', '0123456789', 'Brazil', '256-512.png', 1, 1, '2019-05-18 14:03:08', 0, 'Ph7bA2qdDui5CACCiiZzJzBz6PnimUfwWsEQlWD8EePV9btn9XIBx3bAiGhB', '2019-05-13 08:13:02', '2019-05-13 08:13:02'),
-(12, 'Alexandre Pato', 'patomilan@gmail.com', '$2y$10$YD46bymUhJvPs8qFRj7kCODOpJM4PqYagOXxeVy7a2hueP/MunLDe', '0987654321', 'Brazil', '256-512.png', 1, 1, '2019-05-18 03:38:13', 0, 'WvefpgAz0uRI48s8kPUJLrcnTpSK7QPqjW2cQIZGi86BT4Hqa9D6PimyOWR8', '2019-05-17 20:37:12', '2019-05-17 20:37:12'),
-(13, 'Kuroba Kaitou', 'kaitoukido1412@gmail.com', '$2y$10$947kwE7b3y1Y1g89PbKp6u8Kpz68Q4VoV.BsOonevU1oUii.C.BjO', '0123456789', 'Tokio, Japan', '256-512.png', 1, 1, '2019-05-24 13:05:02', 0, 'db4rsehqM1qg714QaQXbcpk4Z6WBMhrNWJQJEdItYEkEIi403xTMrTXXkC27', '2019-05-17 20:39:18', '2019-05-17 20:39:18'),
-(14, 'Supreme Admin', 'andang12111998@gmail.com', '$2y$10$c/W1WP0uYm9EgEKE/LFuzOcgZz4BXXbuU55N.OKM3BL/QQVOOm0FC', '0383998672', 'Nha Trang', '256-512.png', 1, 1, '2019-05-24 04:22:21', 1, 'UvEVuBAsvvgTtzFoIhLpYkbfDmZom3NxQbkXkkoT', '2019-05-23 21:22:06', '2019-05-23 21:22:06');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `address`, `avatar`, `sex`, `status`, `dateOfBirth`, `role`, `confirm`, `confirmation_code`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Đặng Hoàng Ân', 'an@gmail.com', '123456', '0123456789', 'Hà Nội', '256-512.png', 1, 1, '2019-05-25 15:08:19', 0, 1, NULL, NULL, NULL, NULL),
+(2, 'Chu Chỉ Nhược', 'ccn@gmail.com', '123456', '0123456789', 'Trung Quốc', '256-512.png', 0, 1, '2019-05-25 15:08:23', 0, 1, NULL, NULL, NULL, NULL),
+(6, 'Hoang An', '1610132@hcmut.edu.vn', '$2y$10$CCV9rISZJo2ZgmW4E0gz2OYUnsW5USZEBVhaZKvgHqsLOhvcMtdve', '0383998672', 'KTX khu A ĐHQG Thành phố Hồ Chí Minh', '1558153025.jpg', 1, 1, '2019-05-26 03:49:47', 0, 1, NULL, 'NIzwtQSEdQqNrJDq7uO7JwAfOk3AXQ5htmfXLTC926fVzuRqGhRrQFsK7UqN', '2019-04-28 08:52:38', '2019-05-17 22:06:42'),
+(9, 'Đặng Hoàng Ân', '16101322@hcmut.edu.vn', '$2y$10$laGqrtRqnX2JNT.tLEmK3e5GW7GaLnw15I9qzTnzLv/SgLqsKN/52', '0383998672', 'HCMC', '256-512.png', 1, 1, '2019-05-25 15:08:29', 0, 1, NULL, 'Zu5sDlevuWpEU0qfXjEFWbtPQ6RUdpkdcTSJCb3y', '2019-04-28 09:20:38', '2019-04-28 09:20:38'),
+(10, 'Huỳnh Yến Nhi', 'nhihuynh@gmail.com', '$2y$10$xnL635mT9tfE0wb./6GiL..8w8ZDOy19yhF1kKhQxAv2MFTB4dl06', '0987654321', 'Nha Trang', '256-512.png', 0, 1, '2019-05-25 15:08:32', 0, 1, NULL, 'dLJMHorrjEhMX60WCMWAVb5DRAY82iZxKLDrxJzhFlWrnWgzlBPeuEzuoqSl', '2019-04-28 09:22:11', '2019-05-16 02:50:54'),
+(11, 'Ricardo KaKa', 'rikaka@gmail.com', '$2y$10$NGT6wIUp/PeMB2SJDKX6MOz/0ZOGLOf3H0EPMSmq91NAwXlaLoapu', '0123456789', 'Brazil', '256-512.png', 1, 1, '2019-05-25 15:08:34', 0, 1, NULL, 'Ph7bA2qdDui5CACCiiZzJzBz6PnimUfwWsEQlWD8EePV9btn9XIBx3bAiGhB', '2019-05-13 08:13:02', '2019-05-25 06:13:43'),
+(12, 'Alexandre Pato', 'patomilan@gmail.com', '$2y$10$YD46bymUhJvPs8qFRj7kCODOpJM4PqYagOXxeVy7a2hueP/MunLDe', '0987654321', 'Brazil', '256-512.png', 1, 1, '2019-05-25 15:08:37', 0, 1, NULL, 'WvefpgAz0uRI48s8kPUJLrcnTpSK7QPqjW2cQIZGi86BT4Hqa9D6PimyOWR8', '2019-05-17 20:37:12', '2019-05-17 20:37:12'),
+(13, 'Kuroba Kaitou', 'kaitoukido1412@gmail.com', '$2y$10$947kwE7b3y1Y1g89PbKp6u8Kpz68Q4VoV.BsOonevU1oUii.C.BjO', '0123456789', 'Tokio, Japan', '256-512.png', 1, 1, '2019-05-25 15:08:40', 0, 1, NULL, 'db4rsehqM1qg714QaQXbcpk4Z6WBMhrNWJQJEdItYEkEIi403xTMrTXXkC27', '2019-05-17 20:39:18', '2019-05-17 20:39:18'),
+(14, 'Supreme Admin', 'andang12111998@gmail.com', '$2y$10$c/W1WP0uYm9EgEKE/LFuzOcgZz4BXXbuU55N.OKM3BL/QQVOOm0FC', '0383998672', 'Nha Trang', '256-512.png', 1, 1, '2019-05-26 02:53:19', 1, 1, NULL, 'VhppLZ4xZcDhlPxg67S34VsYeePqa7kpyUGXrTZtvNQB3gBiQ0iwdtpPf1fl', '2019-05-23 21:22:06', '2019-05-23 21:22:06'),
+(23, 'Kudo Shinichi', 'phantomkaitoukido1412@gmail.com', '$2y$10$uwTVZyluTLdYIVjZuYMpM.ShmDvLJLVJikpby1YbQ6SHHSP8K.r6G', '0383998672', 'Bieka, Tokio, Japan', '256-512.png', 1, 1, '2019-05-26 04:18:14', 0, 1, NULL, 'fvt1U4le1XFWpjb7bnXJXWR3sRrHAUunErbx21m0AdCz48Cl89WUdJduRdT0', '2019-05-25 20:50:12', '2019-05-25 20:52:39'),
+(24, 'dien', '1610179@hcmut.edu.vn', '$2y$10$6W92TxH/5p2rrpLZooTPquB85H9oYyV8HYJHpu91D8jXyGmzr/a32', '0123456789', 'HCMC', '256-512.png', 1, 1, '2019-05-26 04:20:26', 0, 1, NULL, 'i63q2lgtdUBj8VpIwoYOHKTvrnlwpLjKl6MsKO54', '2019-05-25 21:19:05', '2019-05-25 21:20:26');
 
 --
 -- Indexes for dumped tables
@@ -459,7 +462,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -471,19 +474,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -501,13 +504,13 @@ ALTER TABLE `ratings`
 -- AUTO_INCREMENT for table `usercarts`
 --
 ALTER TABLE `usercarts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Constraints for dumped tables
