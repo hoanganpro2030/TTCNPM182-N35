@@ -186,6 +186,8 @@ Route::post('hangrongbku/postMail',[
 	'uses' => 'UserController@postMail'
 ]);
 
+Route::get('register/verify/{code}', 'Auth\RegisterController@verify');
+
 // this source for admin
 Route::post('hrbku/admin/login',[
 	'as'=>'admin.login.postAdminLogin',
@@ -210,4 +212,12 @@ Route::get('hrbku/admin/lock/{id}',[
 Route::get('hrbku/admin/user-detail/{id}',[
 	'as'=>'admin.index.getDetail',
 	'uses'=>'AdminController@getDetail'
+]);
+Route::get('hrbku/admin/product-list',[
+	'as'=>'admin.index.getProductList',
+	'uses'=>'AdminController@getProductList'
+]);
+Route::get('hrbku/admin/user-list',[
+	'as'=>'admin.index.getUserList',
+	'uses'=>'AdminController@getUserList'
 ]);

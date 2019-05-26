@@ -44,7 +44,6 @@ class UserController extends Controller
         
 
         $user->name = $request->name;
-        $user->email = $request->email;
         $user->avatar = $imageName;
         $user->phone = $request->phone;
         $user->address = $request->address;

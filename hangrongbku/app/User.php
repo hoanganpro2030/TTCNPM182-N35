@@ -17,7 +17,7 @@ class User extends Authenticatable
      */
     protected $table = 'users';
     protected $fillable = [
-        'id', 'name', 'email', 'password', 'phone', 'address', 'avatar', 'sex', 'status', 'dateOfBirth','role', 'remember_token'
+        'id', 'name', 'email', 'password', 'phone', 'address', 'avatar', 'sex', 'status','confirm','confirmation_code', 'dateOfBirth','role', 'remember_token'
     ];
 
     public function products(){

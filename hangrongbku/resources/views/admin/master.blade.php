@@ -60,9 +60,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             <!--sidebar nav start-->
             <ul class="nav nav-pills nav-stacked custom-nav">
-                <li><a href="index.html"><i class="lnr lnr-power-switch"></i><span>Dashboard</span></a></li>
-                <li><a href="user.html"><i class="lnr lnr-user"></i> <span>User</span></a></li>
-                <li><a href="subject.html"><i class="lnr lnr-book"></i> <span>Subjects</span></a></li>
+                <li><a href="{{route('admin.index.getIndex')}}"><i class="lnr lnr-power-switch"></i><span>Dashboard</span></a></li>
+                <li><a href="{{route('admin.index.getUserList')}}"><i class="lnr lnr-user"></i> <span>User</span></a></li>
+                <li><a href="{{route('admin.index.getProductList')}}"><i class="lnr lnr-book"></i> <span>Sản phẩm</span></a></li>
                 <li><a href="class.html"><i class="lnr lnr-enter"></i> <span>Class</span></a></li>
                 <li><a href="account.html"><i class="lnr lnr-users"></i> <span>Account</span></a></li>
                 <li><a href="student.html"><i class="lnr lnr-user"></i><span>Student</span></a></li>

@@ -3,39 +3,32 @@
 	<div class="container">
 		<?php $total=0?>
 		<div id="content">
-			@foreach($carts as $cart)
+			
 			
 			<div class="table-responsive">
 				<!-- Shop Products Table -->
 				<table class="shop_table beta-shopping-cart-table" cellspacing="0" style = "color: red">
 					<thead>
 						<tr style="color: black;">
-							<?php
-								$product = DB::table('products')->where('id',$cart->productID)->first();
-								$total += $product->price*$cart->quantity
-							?>
-							<th class="product">{{$product->name}}</th>
-							<th class="product-name">Mô tả</th>
-							<th class="product-price">Giá cả</th>
-							<th class="product-user">Người bán</th>
-							<th class="product-quantity">Số lượng</th>
-							<th class="product-subtotal">Tổng tiền</th>
-							<th class="product-remove">Xóa sản phẩm</th>
+							
+							<th class="product">Tên sản phẩm</th>
+							<th class="product-price">Ảnh</th>
+							<th class="product-user">Giá / 1SP</th>
+							<th class="product-quantity">Người bán</th>
+							<th class="product-subtotal">Số lượng</th>
+							<th class="product-subtotal">Tổng cộng</th>
+							<th class="product-remove">Xóa</th>
 						</tr>
 					</thead>
 					<tbody>
-
+						@foreach($carts as $cart)
+						<?php
+								$product = DB::table('products')->where('id',$cart->productID)->first();
+								$total += $product->price*$cart->quantity
+							?>
 						<tr class="cart_item">
+							<td>{{$product->name}}</td>
 							<td style="padding: 0px auto"><img src="{{url('assets/dest/products/' . $product->image .'')}}" alt="" width ="150px"></td>
-							<td class="product-name" width="200px">
-								<div class="media">
-									<!-- <img class="pull-left" src="assets/dest/images/shoping1.jpg" alt=""> -->
-									<div class="media-body">
-										<span><?php echo htmlspecialchars_decode($product->description); ?></span>
-										<!-- <a class="table-edit" href="#">Edit</a> -->
-									</div>
-								</div>
-							</td>
 
 							<td class="product-price">
 								<span class="amount" style="color:#ffc826;font-size: 20px">{{number_format($product->price,0,',','.')}} đ</span>
@@ -60,13 +53,14 @@
 								<a href="{{route('order.removeCart',$cart->id)}}" class="remove" title="Remove this item"><i class="fa fa-trash-o" style= "color:yellow"></i></a>
 							</td>
 						</tr>
+						@endforeach
 					</tbody>
 
 
 				</table>
 				<!-- End of Shop Table Products -->
 			</div>
-			@endforeach
+			
 
 			<!-- Cart Collaterals -->
 			<div class="cart-collaterals">
@@ -97,7 +91,7 @@
 					<div class="cart-totals-row"><span>Thành tiền:</span> <span>{{number_format($total,0,',','.')}} đ</span></div>
 					<div class="cart-totals-row"><span>Vận chuyển:</span> <span>Miễn phí</span></div>
 					<div class="cart-totals-row"><span>Tổng hóa đơn:</span> <span>{{number_format($total,0,',','.')}} đ</span></div>
-					<div style="text-align: center;" class="cart-totals-row"><a style="position: inline;" class="btn btn-success" href="{{route('order.createOrder')}}" onclick="return confirm('Xác nhận mua ?')">Submit</a></div>
+					<div style="text-align: center;" class="cart-totals-row"><a style="position: inline;" class="btn btn-success" href="{{route('order.createOrder')}}" onclick="return confirm('Xác nhận mua ?')">Xác nhận mua</a></div>
 
 		
 				</div>

@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use App\Http\Requests\RegisterRequest;
+use Mail;
+use Illuminate\Support\Facades\Input;
 class RegisterController extends Controller
 {
     /*
@@ -78,6 +80,7 @@ class RegisterController extends Controller
 
     public function postSignUp(RegisterRequest $request){
         $user = new User();
+        $confirmation_code = time().uniqid(true);
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->pass);
@@ -86,9 +89,31 @@ class RegisterController extends Controller
         $user->avatar = "256-512.png";
         $user->sex = $request->sex;
         $user->status = 1;
+        $user->confirmation_code=$confirmation_code;
         $user->dateOfBirth = $request->dateOfBirth;
         $user->remember_token = $request->_token;
         $user->save();
-        return redirect()->route('signin.getSignin')->with(['signup'=>'Đăng kí tài khoản thành công !']);
+        Mail::send('email-verify', ['confirmation_code'=>$confirmation_code], function($message) {
+            $message->to(Input::get('email'), Input::get('name'))
+                ->subject('Verify your email address');
+        });
+        return redirect()->route('signin.getSignin')->with(['signup'=>'Đăng kí tài khoản thành công ! 
+            Bạn cần tiếp tục xác nhận Email để hoàn tất quá trình đăng kí.']);
+    }
+    public function verify($code)
+    {
+        $user = User::where('confirmation_code', $code);
+
+        if ($user->count() > 0) {
+            $user->update([
+                'confirm' => 1,
+                'confirmation_code' => null
+            ]);
+            $notification_status = 'Bạn đã xác nhận thành công';
+        } else {
+            $notification_status ='Mã xác nhận không chính xác';
+        }
+
+        return redirect(route('signin.getSignin'))->with('message', $notification_status);
     }
 }

@@ -29,7 +29,6 @@
 
 						<div class="clearfix"></div>
 						<div class="space20">&nbsp;</div>
-					
 						<div class="single-item-desc">
 								<p>Liên hệ người bán: <a href="" style="color: yellow">{{$seller->name}}</a></p>
 								<div class="space20">&nbsp;</div>

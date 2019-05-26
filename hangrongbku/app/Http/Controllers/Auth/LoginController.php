@@ -41,7 +41,7 @@ class LoginController extends Controller
         return view('login.sign-in');
     }
     public function postSignin(Request $request){
-        $user = array('email' =>$request->email ,'password'=>$request->pass);
+        $user = array('email' =>$request->email ,'password'=>$request->pass,'confirm'=>1);
         if(Auth::attempt($user)){
             return redirect()->route('index.getIndex');
         }
