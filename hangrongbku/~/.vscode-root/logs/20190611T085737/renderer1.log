@@ -1,2 +1,0 @@
-[2019-06-11 08:57:40.871] [renderer1] [error] Error: [File Watcher (chokidar)] Inotify limit reached (ENOSPC)
-[2019-06-11 08:57:52.096] [renderer1] [error] Error: Error: ENOENT: no such file or directory, stat '/opt/lampp/htdocs/TTCNPM182-N35/hangrongbku/.vscode'
