@@ -7,7 +7,8 @@
         <h2>Xác nhận địa chỉ email</h2>
 
         <div>
-            Cảm ơn vì đã sử dụng dịch vụ của chúng 
+            
+            Cảm ơn vì đã sử dụng dịch vụ của chúng toi, 
             Vui lòng theo link sau để xác nhận tài khoản email liên kết
             {{ URL::to('register/verify/' . $confirmation_code) }}.<br/>
 

@@ -1,0 +1,6 @@
+{
+    "window.zoomLevel": 1,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "extensions.ignoreRecommendations": true
+}

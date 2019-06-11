@@ -1,0 +1,26 @@
+[2019-06-11 08:57:41.227] [sharedprocess] [info] main {"machineId":"34046637804b48e5479369c1b8da9d53ac02c7b94ed6db860773dce133c7db0c"}
+[2019-06-11 08:57:41.420] [sharedprocess] [info] Scanned user extensions: 21
+[2019-06-11 08:57:41.447] [sharedprocess] [info] Scanned user extensions: 21
+[2019-06-11 08:57:41.458] [sharedprocess] [info] Scanned user extensions: 21
+[2019-06-11 08:57:41.487] [sharedprocess] [info] Scanned system extensions: 72
+[2019-06-11 08:57:41.496] [sharedprocess] [info] Scanned system extensions: 72
+[2019-06-11 08:57:41.504] [sharedprocess] [info] Scanned system extensions: 72
+[2019-06-11 08:57:41.610] [sharedprocess] [info] Scanned user extensions: 21
+[2019-06-11 08:57:41.639] [sharedprocess] [info] Scanned system extensions: 72
+[2019-06-11 08:57:41.791] [sharedprocess] [info] Scanned user extensions: 21
+[2019-06-11 08:57:43.143] [sharedprocess] [info] Installing extension: vscjava.vscode-maven
+[2019-06-11 08:57:43.187] [sharedprocess] [info] Scanned user extensions: 21
+[2019-06-11 08:57:44.171] [sharedprocess] [info] Downloaded extension: vscjava.vscode-maven /tmp/ea16c3c0-4522-44fa-8060-14713547694d
+[2019-06-11 08:57:44.234] [sharedprocess] [info] Extracted extension to /home/lap12448/.vscode/extensions/.vscjava.vscode-maven-0.17.1: vscjava.vscode-maven
+[2019-06-11 08:57:44.234] [sharedprocess] [info] Renamed to /home/lap12448/.vscode/extensions/vscjava.vscode-maven-0.17.1
+[2019-06-11 08:57:44.235] [sharedprocess] [info] Installation completed. vscjava.vscode-maven
+[2019-06-11 08:57:44.241] [sharedprocess] [info] Extensions installed successfully: vscjava.vscode-maven
+[2019-06-11 08:58:21.240] [sharedprocess] [info] Starting to clean up unused language packs.
+[2019-06-11 08:58:27.035] [sharedprocess] [info] Scanned user extensions: 21
+[2019-06-11 08:58:27.047] [sharedprocess] [info] Scanned system extensions: 72
+[2019-06-11 08:58:27.145] [sharedprocess] [info] Scanned user extensions: 21
+[2019-06-11 08:58:27.152] [sharedprocess] [info] Scanned system extensions: 72
+[2019-06-11 09:02:42.539] [sharedprocess] [info] Scanned user extensions: 21
+[2019-06-11 09:07:42.613] [sharedprocess] [info] Scanned user extensions: 21
+[2019-06-11 09:12:42.678] [sharedprocess] [info] Scanned user extensions: 21
+[2019-06-11 09:17:42.745] [sharedprocess] [info] Scanned user extensions: 21

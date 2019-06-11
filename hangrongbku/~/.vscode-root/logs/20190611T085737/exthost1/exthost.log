@@ -1,0 +1,44 @@
+[2019-06-11 08:57:39.668] [exthost] [info] extension host started
+[2019-06-11 08:57:39.700] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"activationEvent":"*"}
+[2019-06-11 08:57:39.700] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/debug-auto-launch/dist/extension
+[2019-06-11 08:57:39.704] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2019-06-11 08:57:39.704] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/emmet/dist/extension
+[2019-06-11 08:57:39.719] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2019-06-11 08:57:39.719] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/git/dist/main
+[2019-06-11 08:57:39.794] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2019-06-11 08:57:39.794] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/merge-conflict/dist/extension
+[2019-06-11 08:57:39.798] [exthost] [info] ExtensionService#_doActivateExtension alefragnani.project-manager {"startup":true,"activationEvent":"*"}
+[2019-06-11 08:57:39.798] [exthost] [info] ExtensionService#loadCommonJSModule /home/lap12448/.vscode/extensions/alefragnani.project-manager-10.5.2/dist/extension
+[2019-06-11 08:57:39.806] [exthost] [info] ExtensionService#_doActivateExtension eamodio.gitlens {"startup":true,"activationEvent":"*"}
+[2019-06-11 08:57:39.806] [exthost] [info] ExtensionService#loadCommonJSModule /home/lap12448/.vscode/extensions/eamodio.gitlens-9.8.1/dist/extension
+[2019-06-11 08:57:39.894] [exthost] [info] ExtensionService#_doActivateExtension michelemelluso.code-beautifier {"startup":true,"activationEvent":"*"}
+[2019-06-11 08:57:39.894] [exthost] [info] ExtensionService#loadCommonJSModule /home/lap12448/.vscode/extensions/michelemelluso.code-beautifier-2.2.1/out/src/extension
+[2019-06-11 08:57:39.919] [exthost] [info] ExtensionService#_doActivateExtension vector-of-bool.gitflow {"startup":true,"activationEvent":"*"}
+[2019-06-11 08:57:39.919] [exthost] [info] ExtensionService#loadCommonJSModule /home/lap12448/.vscode/extensions/vector-of-bool.gitflow-1.2.1/out/src/extension
+[2019-06-11 08:57:39.927] [exthost] [info] ExtensionService#_doActivateExtension waderyan.gitblame {"startup":true,"activationEvent":"*"}
+[2019-06-11 08:57:39.927] [exthost] [info] ExtensionService#loadCommonJSModule /home/lap12448/.vscode/extensions/waderyan.gitblame-2.8.0/out/src/index
+[2019-06-11 08:57:40.213] [exthost] [info] ExtensionService#_doActivateExtension vscode.html-language-features {"startup":false,"activationEvent":"onLanguage:html"}
+[2019-06-11 08:57:40.213] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/html-language-features/client/dist/htmlMain
+[2019-06-11 08:57:40.307] [exthost] [info] eager extensions activated
+[2019-06-11 08:57:49.473] [exthost] [info] ExtensionService#_doActivateExtension vscode.configuration-editing {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-06-11 08:57:49.473] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/configuration-editing/dist/extension
+[2019-06-11 08:57:49.481] [exthost] [info] ExtensionService#_doActivateExtension vscode.json-language-features {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-06-11 08:57:49.481] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/json-language-features/client/dist/jsonMain
+[2019-06-11 08:57:49.544] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-06-11 08:57:49.544] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/typescript-language-features/dist/extension
+[2019-06-11 08:57:51.723] [exthost] [info] ExtensionService#_doActivateExtension vscode.php-language-features {"startup":false,"activationEvent":"onLanguage:php"}
+[2019-06-11 08:57:51.723] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/php-language-features/dist/phpMain
+[2019-06-11 08:58:01.401] [exthost] [info] ExtensionService#_doActivateExtension vscode.extension-editing {"startup":false,"activationEvent":"onLanguage:json"}
+[2019-06-11 08:58:01.401] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/extension-editing/dist/extension
+[2019-06-11 08:58:01.499] [exthost] [info] ExtensionService#_doActivateExtension vscode.npm {"startup":false,"activationEvent":"onLanguage:json"}
+[2019-06-11 08:58:01.499] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/npm/dist/main
+[2019-06-11 08:58:11.073] [exthost] [info] ExtensionService#_doActivateExtension vscjava.vscode-maven {"startup":false,"activationEvent":"onLanguage:xml"}
+[2019-06-11 08:58:11.073] [exthost] [info] ExtensionService#loadCommonJSModule /home/lap12448/.vscode/extensions/vscjava.vscode-maven-0.17.0/dist/extension
+[2019-06-11 08:58:19.076] [exthost] [info] ExtensionService#_doActivateExtension VisualStudioExptTeam.vscodeintellicode {"startup":false,"activationEvent":"onLanguage:javascript"}
+[2019-06-11 08:58:19.076] [exthost] [info] ExtensionService#loadCommonJSModule /home/lap12448/.vscode/extensions/visualstudioexptteam.vscodeintellicode-1.1.6/dist/intellicode
+[2019-06-11 08:58:21.879] [exthost] [info] ExtensionService#_doActivateExtension vscode.markdown-language-features {"startup":false,"activationEvent":"onLanguage:markdown"}
+[2019-06-11 08:58:21.879] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/markdown-language-features/dist/extension
+[2019-06-11 08:58:22.006] [exthost] [info] ExtensionService#_doActivateExtension DavidAnson.vscode-markdownlint {"startup":false,"activationEvent":"onLanguage:markdown"}
+[2019-06-11 08:58:22.006] [exthost] [info] ExtensionService#loadCommonJSModule /home/lap12448/.vscode/extensions/davidanson.vscode-markdownlint-0.27.0/extension
+[2019-06-11 08:58:22.011] [exthost] [info] ExtensionService#_doActivateExtension shd101wyy.markdown-preview-enhanced {"startup":false,"activationEvent":"onLanguage:markdown"}
+[2019-06-11 08:58:22.011] [exthost] [info] ExtensionService#loadCommonJSModule /home/lap12448/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.4.1/out/src/extension
