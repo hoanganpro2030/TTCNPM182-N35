@@ -5,6 +5,9 @@
             
             <div class="space50">&nbsp;</div>
             <div class="row">
+                @if(Session::has('signup'))
+                <div class="alert alert-success">{{Session::get('message')}}</div>
+                @endif
                 <div class="col-sm-8">
                     <h2 style ="color: yellow">Form liên hệ</h2>
                     <div class="space20">&nbsp;</div>
@@ -24,7 +27,7 @@
                             <textarea name="content" placeholder="Nhập nội dung" style ="color:black"></textarea>
                         </div>
                         <div class="form-block">
-                            <button type="submit" class="beta-btn primary" style ="color: black">Gửi tin nhắn <i class="fa fa-chevron-right"></i></button>
+                            <button onclick="return confirm('Gửi phản hồi tới quản trị viên ?')" type="submit" class="beta-btn primary" style ="color: black">Gửi tin nhắn <i class="fa fa-chevron-right"></i></button>
                         </div>
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                     </form>

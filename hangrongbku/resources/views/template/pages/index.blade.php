@@ -43,7 +43,7 @@
 											</p>
 										</div>
 										<div class="single-item-caption">
-											<?php $user=Auth::User()->id?>
+											
 											<a class="add-to-cart pull-left" href="{{route('products.getProduct',$products[$i]->id)}}"><i class="fa fa-shopping-cart"></i></a>
 											<a class="beta-btn primary" href="{{route('products.getProduct',$products[$i]->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
 											<div class="clearfix"></div>
@@ -57,6 +57,7 @@
 							<div class="space60">&nbsp;</div>
 							@endif
 							@endfor
+							<div class = "row">{{$products->links()}}</div>
 						</div> <!-- .beta-products-list -->
 
 						<div class="space50">&nbsp;</div>

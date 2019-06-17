@@ -84,8 +84,12 @@
 			<div class="visible-xs clearfix"></div>
 			<nav class="main-account">		
 				<ul class ="l-inline ov">
+					@if (Auth::check())
 						<li><a href="{{route('user.inform')}}" style ="font-size: 16px;margin-right:10px;color:blue">{{Auth::User()->name}} <i class="fa fa-user fa-lg" style="color:ba"></i></a> </li>
-						<li><a href="{{route('signout.logout')}}" style ="font-size: 16px;margin-left:14px; color:blue"> Đăng xuất<i class="fa fa-sign-out fa-lg"></i></a> </li>			
+						<li><a href="{{route('signout.logout')}}" style ="font-size: 16px;margin-left:14px; color:blue"> Đăng xuất<i class="fa fa-sign-out fa-lg"></i></a> </li>	
+					@else
+						<li><a href="{{route('signin.getSignin')}}" style ="font-size: 16px;margin-left:14px; color:blue"> Đăng nhập<i class="fa fa-sign-out fa-lg"></i></a> </li>
+					@endif
 				</ul>	
 			</nav>
 		</div>
@@ -112,7 +116,8 @@
 				</form>
 				
 		</div>
-		
+
+		@if (Auth::check())
 		<?php
 			$notes = DB::table('notifications')->where('userID',Auth::User()->id)->where('isNew',1)->get();
 		?>
@@ -170,8 +175,8 @@
 			<a href="{{route('order.getCart')}}" style ="font-size: 16px;margin-right:10px;color:blue">Giỏ hàng <i class="fa fa-shopping-cart fa-lg"></i></a>
 			
 		</div>
-
-	
+		@endif
+		
 		</div> <!-- .container -->
 	</div>
 

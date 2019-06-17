@@ -22,10 +22,8 @@ use App\Http\Requests\PriceSearchRequest;
 class ProductController extends Controller
 {
     public function getIndex(){
-    	if (!Auth::check()){
-			return redirect()->route('signin.getSignin');
-		}
-		$products = DB::table('products')->where('status',1)->get();
+		//$products = DB::table('products')->where('status',1)->get();
+		$products = Products::where('status',1)->paginate(9);
 		$categories = DB::select('select * from categories');
     	return view('template.pages.index', compact('products', 'categories'));
 	}
@@ -84,9 +82,7 @@ class ProductController extends Controller
 	}
 	
 	public function getProduct($id){
-    	if (!Auth::check()){
-			return redirect()->route('signin.getSignin');
-		}
+
 		$product = DB::table('products')->where('id',$id)->first();
 		$relatedPd = DB::table('products')->where('cateID',$product->cateID)->where('status',1)->get();
 		$seller = DB::table('users')->where('id',$product->sellerID)->first();
@@ -94,10 +90,9 @@ class ProductController extends Controller
 		return view('template.pages.product',compact('product','seller','relatedPd','comments'));
 	}
 	public function getCategories($id){
-		if (!Auth::check()){
-			return redirect()->route('signin.getSignin');
-		}
-		$products = DB::table('products')->where('cateID',$id)->where('status',1)->get();
+
+		//$products = DB::table('products')->where('cateID',$id)->where('status',1)->get();
+		$products = Products::where('status',1)->where('cateID',$id)->paginate(9);
 		$categories = DB::select('select * from categories');
 		return view('template.pages.index',compact('products','categories'));
 	}
@@ -160,7 +155,7 @@ class ProductController extends Controller
 		if ($product->quantity < $request->quantity){
 			return redirect()->route('product',$pid)->withErrors(['error'=>'Số lượng hàng còn lại không đủ theo yêu cầu']);
 		}
-
+		
         $oldcart = DB::table('usercarts')->where('userID',$uid)->where('productID',$pid)->get();
         if (count($oldcart) != 0){
 
@@ -254,23 +249,17 @@ class ProductController extends Controller
 		//tao thong bao
 		
 		for($i = 0; $i < count($carts); $i++){
-			for($j =$i-1;$j>=0;$j--){
-				
-				$product1 = DB::table('products')->where('id',$carts[$i]->productID)->first();
-				$product2 = DB::table('products')->where('id',$carts[$j]->productID)->first();
-				if($product1->sellerID!=$product2->sellerID){
-					$cart = $carts[$i];
-					$product = DB::table('products')->where('id',$cart->productID)->first();
-					$notification = new Notifications();
-					$notification->userID = $product->sellerID;
-					$notification->customerID = Auth::User()->id;
-					$notification->orderID = $order->id;
-					$notification->isNew = 1;
-					$notification->isDone = 0;
-					$notification->save();
-				}
-				
-			}
+
+			$cart = $carts[$i];
+			$product = DB::table('products')->where('id',$cart->productID)->first();
+			$notification = new Notifications();
+			$notification->userID = $product->sellerID;
+			$notification->customerID = Auth::User()->id;
+			$notification->orderID = $order->id;
+			$notification->isNew = 1;
+			$notification->isDone = 0;
+			$notification->save();
+			break;
 			
 		}
 		

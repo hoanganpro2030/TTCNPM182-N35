@@ -60,8 +60,8 @@ class AdminController extends Controller
             DB::table('users')->where('id',$id)->update(['status'=>1]);
             DB::table('products')->where('sellerID',$id)->update(['status'=>1]);
         }
-        return redirect()->route('admin.index.getIndex');
-    }
+        return redirect()->route('admin.index.getUserList');
+    } 
     public function getDetail($id){
         if(!Auth::check() || Auth::User()->role!=1){
             return redirect()->route('admin.index.getLogin');
